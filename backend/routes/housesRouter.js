@@ -73,6 +73,38 @@ housesRouter.post("/rent/:userId/:houseId", async (req, res) => {
     }
 })
 
+//return rented home
+housesRouter.delete("/return/:userId/:rentId", async (req, res) => {
+    let userId = req.params.userId
+    let rentId = req.params.rentId
+
+    try {
+        let foundUser = await usersModel.find({_id: userId})
+        if (foundUser.length < 1) {
+            res.send("No user found")
+        }
+        else {
+            let foundRent = await rentsModel.findOne({_id: rentId})
+            if (foundRent.userId != userId) {
+                res.send("No rent found for user")
+            }
+            else {
+                let deletedRent = await rentsModel.deleteOne({_id: rentId})
+                let houseId = foundRent.houseId
+                let houseCurrent = await housesModel.findOne({_id: houseId})
+                let increment = houseCurrent.houseStock += 1
+                houseCurrent.houseStock = increment
+                let updatedHouse = houseCurrent
+                let returnerdHouse = await housesModel.updateOne({_id: houseId}, updatedHouse)
+                res.send({message:"Successfully deleted rent", deletedRent})
+            }
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).send("Server error")
+    }
+})
+
 //what homes user has rented
 housesRouter.get("/rents/:userId", async (req, res) => {
     userId = req.params.userId
