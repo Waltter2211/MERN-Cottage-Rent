@@ -121,4 +121,21 @@ housesRouter.get("/rents/:userId", async (req, res) => {
     }
 })
 
+//search for house
+housesRouter.get("/houses/:houseName", async (req, res) => {
+    let search = req.params.houseName
+    let foundHouses = await housesModel.find({houseName: {$regex:search, $options:'i'}})
+    try {
+        if (foundHouses.length === 0) {
+            res.send("Couldn't find any houses with search")
+        }
+        else {
+            res.send({message:`Found ${foundHouses.length} houses with search result`, foundHouses})
+        }
+    } catch (error) {
+        console.log(error)
+        res.send("Server error")
+    }
+})
+
 module.exports = housesRouter
