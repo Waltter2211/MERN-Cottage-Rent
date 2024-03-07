@@ -23,8 +23,13 @@ usersRouter.post("/register", async (req, res) => {
         let data = await usersModel.create(user)
         res.send({message: "successfully created", user: data})
     } catch (error) {
-        console.log(error)
-        res.send("server error while registering account")
+        if (error.code === 11000) {
+            res.status(403).send({message:"Account with that name already exists"})
+        }
+        else {
+            console.log(error)
+            res.status(500).send({message:"Server error while registering account"})
+        }
     }
 })
 
@@ -37,16 +42,16 @@ usersRouter.post("/login", async (req, res) => {
             let verifiedUser = await bcrypt.compare(userCred.password, foundUser.password)
             if (verifiedUser == true) {
                 let token = jwt.sign(userCred.email, "jsontoken")
-                res.send(token)
+                res.send({token:token})
             } else {
-                res.send("wrong password")
+                res.status(401).send({message:"wrong password"})
             }
         } else {
-            res.send("no user found")
+            res.status(404).send({message:"no user found"})
         }
     } catch (error) {
         console.log(error)
-        res.send("server error")
+        res.status(500).send({message:"server error"})
     }
 })
 

@@ -1,0 +1,161 @@
+.btn {
+    padding: 30px;
+    background-color: rgb(28, 132, 218);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(28, 132, 218);
+    font-weight: bold;
+}
+
+.success {
+    background-color: lightgreen;
+    color: green;
+}
+
+.error {
+    background-color: lightpink;
+    color: red;
+}
+
+/* header css */
+
+.header {
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(28, 132, 218);
+    color: white;
+    display: flex;
+}
+
+.header-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px
+}
+
+.header-buttons {
+    display: flex;
+    column-gap: 20px;
+}
+
+/* home css */
+
+.home {
+    width: 100%;
+    height: 95vh;
+    background-image: url('https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+.background-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.7);
+    position: absolute;
+}
+
+.main-content {
+    width: 80%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    z-index: 10;
+}
+
+.info-field {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.info-field > h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.info-field > p {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.register-field {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+    font-size: 20px;
+}
+
+.form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    row-gap: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inp {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+}
+
+/* login css */
+
+.login {
+    width: 100%;
+    height: 95vh;
+    background-image: url('https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+.main-content-login {
+    width: 80%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+    z-index: 10;
+}
+
+.main-content-login > p {
+    font-size: 20px;
+}
