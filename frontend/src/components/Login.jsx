@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from './Header'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import UserContext from '../contexts/UserContext'
 
 function Login() {
+
+  const navigate = useNavigate()
+  let loggedUser = useContext(UserContext)
 
   let [message, setMessage] = useState({
     type:"",
@@ -13,7 +17,7 @@ function Login() {
   let [loggingUser, setLoggingUser] = useState({
     email:"",
     password:""
-})
+  })
 
   function handleInput(event) {
     setLoggingUser((prev) => {
@@ -60,21 +64,18 @@ function Login() {
         }, 3000)
       }
       else {
-        setMessage({
-          type:"success",
-          text:"Logged in"
-        })
-        setTimeout(() => {
-            setMessage({
-                type:"",
-                text:""
-            })
-        }, 3000)
+        return res.json()
       }
-      return res.json()
+      
     })
     .then((data) => {
       console.log(data)
+      localStorage.setItem("jsontoken", `Bearer ${data.token}`)
+      localStorage.setItem("user", data.email)
+      loggedUser.setLoggedUser(data.email)
+      setTimeout(() => {
+        navigate("/")
+      }, 3000)
     })
     .catch((err) => {
       console.log(err)

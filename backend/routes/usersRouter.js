@@ -35,6 +35,7 @@ usersRouter.post("/register", async (req, res) => {
 
 usersRouter.post("/login", async (req, res) => {
     let userCred = req.body
+    let {email} = userCred
     
     try {
         let foundUser = await usersModel.findOne({email: userCred.email})
@@ -42,7 +43,7 @@ usersRouter.post("/login", async (req, res) => {
             let verifiedUser = await bcrypt.compare(userCred.password, foundUser.password)
             if (verifiedUser == true) {
                 let token = jwt.sign(userCred.email, "jsontoken")
-                res.send({token:token})
+                res.send({message: "logged in", token, email})
             } else {
                 res.status(401).send({message:"wrong password"})
             }
