@@ -73,9 +73,7 @@ function Login() {
       localStorage.setItem("jsontoken", `Bearer ${data.token}`)
       localStorage.setItem("user", data.email)
       loggedUser.setLoggedUser(data.email)
-      setTimeout(() => {
-        navigate("/")
-      }, 3000)
+      navigate("/")
     })
     .catch((err) => {
       console.log(err)
@@ -89,7 +87,7 @@ function Login() {
       <div className='background-overlay'>
 
       </div>
-      <section className='main-content-login'>
+      <section className='main-content-section'>
         <form className='form'>
           <p>Email</p>
           <input type='email' placeholder='Email...' className='inp' onChange={handleInput} name='email' value={loggingUser.email}></input>
@@ -98,7 +96,7 @@ function Login() {
           <button className='btn' onClick={handleLogin}>Login</button>
           <p className={message.type}>{message.text}</p>
         </form>
-        <p>Dont have and account? <Link to={'/'}>Register</Link></p>
+        <p>Dont have an account? <Link to={'/'}>Register</Link></p>
       </section>
     </div>
     </>

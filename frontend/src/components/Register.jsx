@@ -98,7 +98,7 @@ function Register() {
       <div className='background-overlay'>
 
       </div>
-      <section className='main-content-login'>
+      <section className='main-content-section'>
         <form className='form'>
             <p>Name</p>
             <input type='text' placeholder='Username...' className='inp' onChange={handleInput} name='name' value={registeringUser.name}></input>

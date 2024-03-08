@@ -6,6 +6,7 @@ import Register from './components/Register'
 import Homes from './components/Homes'
 import { useEffect, useRef, useState } from 'react'
 import UserContext from './contexts/UserContext'
+import Notfound from './components/Notfound'
 
 function App() {
   let [loggedUser, setLoggedUser] = useState(null)
@@ -24,7 +25,7 @@ function App() {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/homes' element={<Homes />}></Route>
-          <Route path='*' element={<h1>Not defined</h1>}></Route>
+          <Route path='*' element={<Notfound />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
