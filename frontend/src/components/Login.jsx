@@ -38,7 +38,7 @@ function Login() {
       body:JSON.stringify(loggingUser)
     })
     .then((res) => {
-      console.log(res)
+      /* console.log(res) */
       if (res.status === 401) {
         setMessage({
           type:"error",
@@ -69,7 +69,7 @@ function Login() {
       
     })
     .then((data) => {
-      console.log(data)
+      /* console.log(data) */
       localStorage.setItem("jsontoken", `Bearer ${data.token}`)
       localStorage.setItem("user", data.email)
       loggedUser.setLoggedUser(data.email)
@@ -96,7 +96,7 @@ function Login() {
           <button className='btn' onClick={handleLogin}>Login</button>
           <p className={message.type}>{message.text}</p>
         </form>
-        <p>Dont have an account? <Link to={'/'}>Register</Link></p>
+        <p>Dont have an account? <Link to={'/register'}>Register</Link></p>
       </section>
     </div>
     </>

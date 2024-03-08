@@ -1,20 +1,20 @@
 import React from 'react'
 import Header from './Header'
 
-function Homes() {
+function Profile() {
   return (
     <>
     <Header />
-    <div className='homes'>
+    <div className='profile'>
       <div className='background-overlay'>
 
       </div>
       <section className='main-content-section'>
-        <h1>Homes Component</h1>
+        <h1>Profile Component</h1>
       </section>
     </div>
     </>
   )
 }
 
-export default Homes
+export default Profile

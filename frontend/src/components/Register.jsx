@@ -113,7 +113,7 @@ function Register() {
             <button className='btn' onClick={handleRegister}>Register</button>
             <p className={message.type}>{message.text}</p>
         </form>
-        <p>Have an existing account? <Link to={'login'}>Login here</Link></p>
+        <p>Have an existing account? <Link to={'/login'}>Login here</Link></p>
       </section>
     </div>
     </>
