@@ -24,7 +24,7 @@ usersRouter.post("/register", async (req, res) => {
         res.send({message: "successfully created", user: data})
     } catch (error) {
         if (error.code === 11000) {
-            res.status(403).send({message:"Account with that name already exists"})
+            res.status(403).send({message:"Account with that email already exists"})
         }
         else {
             console.log(error)
@@ -43,7 +43,8 @@ usersRouter.post("/login", async (req, res) => {
             let verifiedUser = await bcrypt.compare(userCred.password, foundUser.password)
             if (verifiedUser == true) {
                 let token = jwt.sign(userCred.email, "jsontoken")
-                res.send({message: "logged in", token, email})
+                let {_id} = foundUser
+                res.send({message: "logged in", token, email, _id})
             } else {
                 res.status(401).send({message:"wrong password"})
             }
@@ -56,32 +57,41 @@ usersRouter.post("/login", async (req, res) => {
     }
 })
 
-usersRouter.put("/edituser/:id", (req, res) => {
+usersRouter.put("/edituser/:id", async (req, res) => {
     let userId = req.params.id
     let updatedData = req.body
+    let newPass = req.body.password
 
-    if (req.body != null) {
-        usersModel.updateOne({_id: userId}, updatedData)
-        .then((data) => {
-            res.send({message: "successfully updated", user: data})
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-    } else {
-        res.status(500).send("please add information")
+    try {
+        if (updatedData.name.length < 4 || updatedData.email.length < 4 || updatedData.password.length < 4) {
+            res.status(422).send({message:"Please fill all the fields"})
+        }
+        else {
+            let hpass = await bcrypt.hash(newPass, 10)
+            updatedData.password = hpass
+            let updatedUser = await usersModel.updateOne({_id: userId}, updatedData)
+            res.send({message:"Successfully updated user", updatedUser})
+        }
+    } catch (error) {
+        if (error.code === 11000) {
+            res.status(403).send({message:"Account with that email already exists"})
+        }
+        else {
+            console.log(error)
+            res.status(500).send({message:"Server error while updating account"})
+        }
     }
 })
 
-usersRouter.delete("/deleteuser/:id", (req, res) => {
+usersRouter.delete("/deleteuser/:id", async (req, res) => {
     let userId = req.params.id
-    usersModel.deleteOne({_id: userId})
-    .then((data) => {
-        res.send({message: "successfully deleted", user: data})
-    })
-    .catch((err) => {
-        console.log(err)
-    })
+    
+    try {
+        let deletedUser = await usersModel.deleteOne({_id: userId})
+        res.send({message: "successfully deleted", user: deletedUser})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 module.exports = usersRouter

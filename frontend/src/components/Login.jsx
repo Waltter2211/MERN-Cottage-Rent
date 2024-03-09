@@ -72,7 +72,11 @@ function Login() {
       /* console.log(data) */
       localStorage.setItem("jsontoken", `Bearer ${data.token}`)
       localStorage.setItem("user", data.email)
-      loggedUser.setLoggedUser(data.email)
+      localStorage.setItem("userId", data._id)
+      loggedUser.setLoggedUser({
+        email: data.email,
+        id: data._id
+      })
       navigate("/")
     })
     .catch((err) => {

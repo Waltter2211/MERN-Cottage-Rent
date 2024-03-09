@@ -9,8 +9,7 @@ function Header() {
   let loggedUser = useContext(UserContext)
   /* console.log(loggedUser) */
   function logout() {
-    localStorage.removeItem("jsontoken")
-    localStorage.removeItem("user")
+    localStorage.clear()
     loggedUser.setLoggedUser(null)
     navigate("/")
   }
@@ -22,7 +21,7 @@ function Header() {
             <Link to={"/"}><h1 className='header-btn'>MERN-Rent</h1></Link>
             <div>
                 <div>
-                  {loggedUser.loggedUser === null? <div className='header-buttons'><Link to={"/login"}><p className='header-btn'>Login</p></Link><Link to={"/register"}><p className='header-btn'>Register</p></Link></div>:<div className='header-buttons'><Link to={"/profile"}><p className='header-btn'>Logged in as {loggedUser.loggedUser}</p></Link><p className='header-btn' onClick={logout}>Logout</p></div>}
+                  {loggedUser.loggedUser?.email == null? <div className='header-buttons'><Link to={"/login"}><p className='header-btn'>Login</p></Link><Link to={"/register"}><p className='header-btn'>Register</p></Link></div>:<div className='header-buttons'><Link to={"/profile"}><p className='header-btn'>Logged in as {loggedUser.loggedUser.email}</p></Link><p className='header-btn' onClick={logout}>Logout</p></div>}
                 </div>
             </div>
         </div>

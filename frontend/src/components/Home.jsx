@@ -107,7 +107,7 @@ function Home() {
             </div>
             <div className='register-field'>
                 <h1>Dont have an account yet?</h1>
-                <form className='form'>
+                <form className='form form-home'>
                     <p>Name</p>
                     <input type='text' placeholder='Username...' className='inp' onChange={handleInput} name='name' value={registeringUser.name}></input>
                     <p>Email</p>
