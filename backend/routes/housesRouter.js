@@ -2,6 +2,7 @@ const express = require('express')
 const housesModel = require('../models/housesModel')
 const rentsModel = require("../models/rentsModel")
 const usersModel = require('../models/usersModel')
+const verifyToken = require('../middleware/jsonVerifier')
 
 const housesRouter = express.Router()
 
@@ -9,14 +10,32 @@ housesRouter.get("/", async (req, res) => {
     
     try {
         let houses = await housesModel.find({})
-        console.log(houses)
+        res.send(houses)
+        /* console.log(houses) */
     } catch (error) {
         console.log(error)
     }
 })
 
+//search for house
+housesRouter.get("/:houseName", async (req, res) => {
+    let search = req.params.houseName
+    let foundHouses = await housesModel.find({houseName: {$regex:search, $options:'i'}})
+    try {
+        if (foundHouses.length === 0) {
+            res.send({message:"Couldn't find any houses with search"})
+        }
+        else {
+            res.send({message:`Found ${foundHouses.length} houses with search result`, foundHouses})
+        }
+    } catch (error) {
+        console.log(error)
+        res.send("Server error")
+    }
+})
+
 //add home to the rented homes list
-housesRouter.post("/add", async (req, res) => {
+housesRouter.post("/add", verifyToken, async (req, res) => {
     let house = req.body
     try {
         let data = await housesModel.create(house)
@@ -32,7 +51,7 @@ housesRouter.post("/add", async (req, res) => {
 })
 
 //rent a home
-housesRouter.post("/rent/:userId/:houseId", async (req, res) => {
+housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
     let houseId = req.params.houseId
     let userId = req.params.userId
     try {
@@ -74,7 +93,7 @@ housesRouter.post("/rent/:userId/:houseId", async (req, res) => {
 })
 
 //return rented home
-housesRouter.delete("/return/:userId/:rentId", async (req, res) => {
+housesRouter.delete("/return/:userId/:rentId", verifyToken, async (req, res) => {
     let userId = req.params.userId
     let rentId = req.params.rentId
 
@@ -106,7 +125,7 @@ housesRouter.delete("/return/:userId/:rentId", async (req, res) => {
 })
 
 //what homes user has rented
-housesRouter.get("/rents/:userId", async (req, res) => {
+housesRouter.get("/rents/:userId", verifyToken, async (req, res) => {
     userId = req.params.userId
     let foundRents = await rentsModel.find({userId: userId}).populate("userId").populate("houseId")
     try {
@@ -118,23 +137,6 @@ housesRouter.get("/rents/:userId", async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-    }
-})
-
-//search for house
-housesRouter.get("/houses/:houseName", async (req, res) => {
-    let search = req.params.houseName
-    let foundHouses = await housesModel.find({houseName: {$regex:search, $options:'i'}})
-    try {
-        if (foundHouses.length === 0) {
-            res.send("Couldn't find any houses with search")
-        }
-        else {
-            res.send({message:`Found ${foundHouses.length} houses with search result`, foundHouses})
-        }
-    } catch (error) {
-        console.log(error)
-        res.send("Server error")
     }
 })
 

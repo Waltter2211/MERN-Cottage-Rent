@@ -47,11 +47,11 @@ body {
 }
 
 .delete {
-    background-color: lightcoral;
+    background-color: rgb(238, 66, 66);
 }
 
 .delete:hover {
-    background-color: rgb(230, 165, 165);
+    background-color: lightcoral;
 }
 
 a {
@@ -209,6 +209,75 @@ a {
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+.homes-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.homes-main > h1 {
+    font-size: 30px;
+}
+
+.homes-search {
+    width: 30%;
+}
+
+.homes-list {
+    width: 70%;
+    height: 80vh;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+}
+
+.homes-list-sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: red;
+    padding: 20px 0px;
+}
+
+.homes-list-buttons {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.homes-list-button {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.homes-list-main {
+    width: 80%;
+    height: 100%;
+    background-color: yellow;
+    padding: 20px 10px;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-content: flex-start;
+    row-gap: 20px;
+    column-gap: calc(10%/4);
+    overflow-y: scroll;
+}
+
+.homes-list-main-home {
+    width: 18%;
+    height: 200px;
+    background-color: green;
 }
 
 /* profile css */

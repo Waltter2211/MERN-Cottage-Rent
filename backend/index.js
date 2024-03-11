@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/users", usersRouter)
-app.use("/houses", verifyToken, housesRouter)
+app.use("/houses", housesRouter)
 
 mongoose.connect("mongodb://localhost:27017/rent-website")
 .then(() => {
