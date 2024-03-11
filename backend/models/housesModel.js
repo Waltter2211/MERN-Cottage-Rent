@@ -15,6 +15,10 @@ const housesSchema = mongoose.Schema({
         type:Number,
         required:true,
         min:0
+    },
+    houseImage:{
+        type:String,
+        required:true,
     }
 },{timestamps:true})
 

@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Header from './Header'
 import HomeSingle from './HomeSingle'
+import HouseContext from '../contexts/HouseContext'
 
 function Homes() {
   
   let [houses, setHouses] = useState([])
   let [searchedHouses, setSearchedHouses] = useState()
+  let containedHouses = useContext(HouseContext)
+
+  let homeSearch
 
   useEffect(() => {
     fetch(`http://localhost:8000/houses/`, {
@@ -21,14 +25,16 @@ function Homes() {
     .then((data) => {
       /* console.log(data) */
       setHouses(data)
+      containedHouses.setContainedHouses(data)
     })
     .catch((err) => {
       console.log(err)
     })
   }, [])
-
+  
   function handleSearch(event) {
-    let homeSearch = event.target.value
+    homeSearch = event.target.value
+    console.log(homeSearch, searchedHouses)
 
     fetch(`http://localhost:8000/houses/${homeSearch}`, {
       method:"GET",
@@ -43,6 +49,7 @@ function Homes() {
     .then((data) => {
       /* console.log(data) */
       setSearchedHouses(data.foundHouses)
+      containedHouses.setContainedHouses(searchedHouses)
     })
     .catch((err) => {
       console.log(err)
@@ -73,9 +80,11 @@ function Homes() {
               </ul>
             </div>
             <div className='homes-list-main'>
-              {searchedHouses === undefined? houses.map((house, index) => {
+              {searchedHouses === undefined && homeSearch !== undefined? <h1>No Homes Found</h1>
+              :searchedHouses === undefined && homeSearch === undefined? houses.map((house, index) => {
                 return <HomeSingle key={index} house={house} />
-              }):searchedHouses.map((house, index) => {
+              })
+              :searchedHouses?.map((house, index) => {
                 return <HomeSingle key={index} house={house} />
               })}
             </div>

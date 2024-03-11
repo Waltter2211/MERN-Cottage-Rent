@@ -239,20 +239,21 @@ a {
 .homes-list-sidebar {
     width: 20%;
     height: 100%;
-    background-color: red;
+    background-color: rgb(28, 132, 218);
     padding: 20px 0px;
 }
 
 .homes-list-buttons {
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: rgb(28, 132, 218);
     display: flex;
     flex-direction: column;
 }
 
 .homes-list-button {
     width: 100%;
+    background-color: rgb(28, 132, 218);
     padding: 20px;
     border-bottom: 1px solid grey;
     cursor: pointer;
@@ -263,7 +264,7 @@ a {
 .homes-list-main {
     width: 80%;
     height: 100%;
-    background-color: yellow;
+    /* background-color: yellow; */
     padding: 20px 10px;
     display: flex;
     /* flex-direction: column; */
@@ -277,7 +278,36 @@ a {
 .homes-list-main-home {
     width: 18%;
     height: 200px;
-    background-color: green;
+    /* background-color: green; */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+
+.homes-list-home-image {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.homes-list-home-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homes-list-home-info {
+    width: 100%;
+    height: 30%;
+    background-color:rgba(0, 0, 0, 0.6);
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    position: absolute;
 }
 
 /* profile css */

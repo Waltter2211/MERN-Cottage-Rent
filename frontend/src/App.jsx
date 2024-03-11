@@ -6,11 +6,14 @@ import Register from './components/Register'
 import Homes from './components/Homes'
 import { useEffect, useState } from 'react'
 import UserContext from './contexts/UserContext'
+import HouseContext from './contexts/HouseContext'
 import Notfound from './components/Notfound'
 import Profile from './components/Profile'
+import HomeSingleInfo from './components/HomeSingleInfo'
 
 function App() {
   let [loggedUser, setLoggedUser] = useState(null)
+  let [containedHouses, setContainedHouses] = useState(null)
 
   useEffect(() => {
     setLoggedUser({
@@ -22,17 +25,19 @@ function App() {
   return (
     <>
     <UserContext.Provider value={{loggedUser,setLoggedUser}}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Home />}></Route>
-          <Route path='/login' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Login />}></Route>
-          <Route path='/register' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Register />}></Route>
-          <Route path='/homes' element={<Homes />}></Route>
-          <Route path='/profile' element={loggedUser?.email!=null?<Profile />:<Navigate to="/" />}></Route>
-          {/* <Route path='/profile' element={<Private Component={Profile} />}></Route> */}
-          <Route path='*' element={<Notfound />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <HouseContext.Provider value={{containedHouses, setContainedHouses}}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Home />}></Route>
+            <Route path='/login' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Login />}></Route>
+            <Route path='/register' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Register />}></Route>
+            <Route path='/homes' element={<Homes />}></Route>
+            <Route path='/profile' element={loggedUser?.email!=null?<Profile />:<Navigate to="/" />}></Route>
+            <Route path='/homeSingle/:_id' element={loggedUser?.email!=null?<HomeSingleInfo houses={containedHouses} />:<Navigate to="/" />}></Route>
+            <Route path='*' element={<Notfound />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </HouseContext.Provider>
     </UserContext.Provider>
       
     </>
