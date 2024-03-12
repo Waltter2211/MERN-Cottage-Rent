@@ -101,12 +101,12 @@ housesRouter.delete("/return/:userId/:rentId", verifyToken, async (req, res) => 
     try {
         let foundUser = await usersModel.find({_id: userId})
         if (foundUser.length < 1) {
-            res.send("No user found")
+            res.send({message:"No user found"})
         }
         else {
             let foundRent = await rentsModel.findOne({_id: rentId})
             if (foundRent.userId != userId) {
-                res.send("No rent found for user")
+                res.send({message:"No rent found for user"})
             }
             else {
                 let deletedRent = await rentsModel.deleteOne({_id: rentId})
@@ -121,7 +121,7 @@ housesRouter.delete("/return/:userId/:rentId", verifyToken, async (req, res) => 
         }
     } catch (error) {
         console.log(error)
-        res.status(500).send("Server error")
+        res.status(500).send({message:"Server error"})
     }
 })
 
@@ -131,13 +131,14 @@ housesRouter.get("/rents/:userId", verifyToken, async (req, res) => {
     let foundRents = await rentsModel.find({userId: userId}).populate("userId").populate("houseId")
     try {
         if (foundRents.length < 1) {
-            res.send("No rents found")
+            res.send({message:"No rents found"})
         }
         else {
             res.send({message: "found rents", foundRents})
         }
     } catch (error) {
         console.log(error)
+        res.send({message:"Server error"})
     }
 })
 

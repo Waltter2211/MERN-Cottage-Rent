@@ -3,6 +3,7 @@ import Header from './Header'
 import UpdateAccount from './UpdateAccount'
 import UserContext from '../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
+import RentedHomes from './RentedHomes'
 
 function Profile() {
   const navigate = useNavigate()
@@ -42,7 +43,7 @@ function Profile() {
               <button className='btn' onClick={logout}>Logout</button>
             </div>
           </div>
-          {mode === 1?<h1>Rented Homes</h1>:<UpdateAccount />}
+          {mode === 1?<RentedHomes />:<UpdateAccount />}
         </div>
       </section>
     </div>

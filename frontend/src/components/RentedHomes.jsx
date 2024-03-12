@@ -1,0 +1,48 @@
+import React, { useContext, useEffect, useState } from 'react'
+import UserContext from '../contexts/UserContext'
+import RentedHome from './RentedHome'
+
+function RentedHomes() {
+
+    let loggedUser = useContext(UserContext)
+
+    let userId = loggedUser.loggedUser.id
+    let token = localStorage.getItem("jsontoken")
+
+    let [rentedHouses, setRentedHouses] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/houses/rents/${userId}`, {
+            method:"GET",
+            headers:{
+                "Authorization":token
+            }
+        })
+        .then((res) => {
+            /* console.log(res) */
+            return res.json()
+        })
+        .then((data) => {
+            /* console.log(data) */
+            setRentedHouses(data.foundRents)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }, [rentedHouses])
+
+    /* console.log(rentedHouses) */
+
+  return (
+    <div className='profile-inputs'>
+        <h1>Rented Homes</h1>
+        <div className='rented-homes-list'>
+            {rentedHouses !== undefined?rentedHouses.map((rentedHouse, index) => {
+                return <RentedHome key={index} rentedHouse={rentedHouse} />
+            }):<h2>No rented homes found</h2>}
+        </div>
+    </div>
+  )
+}
+
+export default RentedHomes
