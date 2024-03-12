@@ -34,7 +34,7 @@ function Homes() {
   
   function handleSearch(event) {
     homeSearch = event.target.value
-    console.log(homeSearch, searchedHouses)
+    /* console.log(homeSearch, searchedHouses) */
 
     fetch(`http://localhost:8000/houses/${homeSearch}`, {
       method:"GET",

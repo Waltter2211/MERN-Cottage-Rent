@@ -6,7 +6,7 @@ function HomeSingle({house}) {
     /* console.log(house) */
   return (
     <div className='homes-list-main-home' onClick={() => {
-        navigate(`/homeSingle/${house._id}`)
+        navigate(`/homeSingle/${house.houseName}`)
     }}>
         <div className='homes-list-home-image'>
             <img src={house.houseImage}></img>

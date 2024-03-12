@@ -42,10 +42,11 @@ housesRouter.post("/add", verifyToken, async (req, res) => {
         res.send({message:"House successfully created", data})
     } catch (error) {
         if (error.code === 11000) {
-            res.status(500).send("House already found in database")
+            res.status(500).send({message:"House already in database"})
         }
         else {
-            res.status(500).send("Server error")
+            console.log(error)
+            res.status(500).send({message:"Server error"})
         }
     }
 })
@@ -57,12 +58,12 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
     try {
         let foundUser = await usersModel.find({_id: userId})
         if (foundUser.length < 1) {
-            res.send("No user found")
+            res.send({message: "No user found"})
         }
         else {
             let foundHouse = await housesModel.find({_id: houseId})
             if (foundHouse.length < 1) {
-                res.send("no houses found")
+                res.send({message: "No houses found"})
             }
             else {
                 let foundHouseObj = foundHouse[0]
@@ -70,7 +71,7 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
                 foundHouseObj.houseStock = decrement
                 let updatedHouseObj = foundHouseObj
                 if (updatedHouseObj.houseStock < 0) {
-                    res.send("This house is out of stock")
+                    res.status(404).send({message: "This house is out of stock"})
                 }
                 else {
                     let updatedHouse = await housesModel.updateOne({_id: houseId}, updatedHouseObj)
@@ -80,7 +81,7 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
                         rentDate: new Date().toLocaleString()
                     }
                     rentsModel.create(rent)
-                    res.send("House rented successfully")
+                    res.send({message: "House rented successfully"})
                 }
             }
         }

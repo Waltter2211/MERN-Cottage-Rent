@@ -33,7 +33,7 @@ function App() {
             <Route path='/register' element={loggedUser?.email!=null?<Navigate to="/homes" />:<Register />}></Route>
             <Route path='/homes' element={<Homes />}></Route>
             <Route path='/profile' element={loggedUser?.email!=null?<Profile />:<Navigate to="/" />}></Route>
-            <Route path='/homeSingle/:_id' element={loggedUser?.email!=null?<HomeSingleInfo houses={containedHouses} />:<Navigate to="/" />}></Route>
+            <Route path='/homeSingle/:houseName' element={loggedUser?.email!=null?<HomeSingleInfo houses={containedHouses} />:<Navigate to="/homes" />}></Route>
             <Route path='*' element={<Notfound />}></Route>
           </Routes>
         </BrowserRouter>
