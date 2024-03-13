@@ -11,6 +11,8 @@ function HomeSingleInfo({houses}) {
       return house.houseName === houseName
     })
 
+    /* console.log(filteredHouse) */
+
     const loggedUser = useContext(UserContext)
 
     let userId = loggedUser.loggedUser.id

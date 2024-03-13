@@ -3,6 +3,9 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const usersModel = require('../models/usersModel')
 const usersRouter = express.Router()
+require('dotenv').config()
+
+const webtoken = process.env.JSONTOKEN
 
 usersRouter.get("/", (req, res) => {
     usersModel.find({})
@@ -42,7 +45,7 @@ usersRouter.post("/login", async (req, res) => {
         if (foundUser != null) {
             let verifiedUser = await bcrypt.compare(userCred.password, foundUser.password)
             if (verifiedUser == true) {
-                let token = jwt.sign(userCred.email, "jsontoken")
+                let token = jwt.sign(userCred.email, webtoken)
                 let {_id} = foundUser
                 res.send({message: "logged in", token, email, _id})
             } else {

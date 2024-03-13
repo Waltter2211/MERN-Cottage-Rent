@@ -30,7 +30,7 @@ housesRouter.get("/:houseName", async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        res.send("Server error")
+        res.send({message:"Server error"})
     }
 })
 

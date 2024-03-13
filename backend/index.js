@@ -1,9 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const verifyToken = require('./middleware/jsonVerifier')
 const usersRouter = require('./routes/usersRouter')
 const housesRouter = require('./routes/housesRouter')
+require('dotenv').config()
+
+const port = process.env.PORT
+const database = process.env.DATABASE
 
 const app = express()
 
@@ -14,7 +17,7 @@ app.use(cors())
 app.use("/users", usersRouter)
 app.use("/houses", housesRouter)
 
-mongoose.connect("mongodb://localhost:27017/rent-website")
+mongoose.connect(database)
 .then(() => {
     console.log("Connected to database")
 })
@@ -22,6 +25,6 @@ mongoose.connect("mongodb://localhost:27017/rent-website")
     console.log(err)
 })
 
-app.listen(8000, () => {
+app.listen(port, () => {
     console.log("Connected to server")
 })

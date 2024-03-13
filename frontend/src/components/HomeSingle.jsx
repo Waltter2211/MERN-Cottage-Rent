@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 function HomeSingle({house}) {
     const navigate = useNavigate()
     /* console.log(house) */
+
   return (
     <div className='homes-list-main-home' onClick={() => {
         navigate(`/homeSingle/${house.houseName}`)

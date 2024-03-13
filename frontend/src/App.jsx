@@ -15,6 +15,8 @@ function App() {
   let [loggedUser, setLoggedUser] = useState(null)
   let [containedHouses, setContainedHouses] = useState(null)
 
+  /* console.log(containedHouses) */
+
   useEffect(() => {
     setLoggedUser({
       email: localStorage.getItem("user"),
