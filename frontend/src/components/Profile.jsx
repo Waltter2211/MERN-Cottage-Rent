@@ -8,8 +8,8 @@ import RentedHomes from './RentedHomes'
 function Profile() {
   const navigate = useNavigate()
 
-  let loggedUser = useContext(UserContext)
-  let [mode, setMode] = useState(1)
+  const loggedUser = useContext(UserContext)
+  const [mode, setMode] = useState(1)
 
   function logout() {
     localStorage.clear()

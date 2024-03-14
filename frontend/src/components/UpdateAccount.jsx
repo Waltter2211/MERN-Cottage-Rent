@@ -13,18 +13,18 @@ function UpdateAccount() {
         navigate("/")
       }
 
-    let [user, setUser] = useState({
+    const [user, setUser] = useState({
         name:"",
         email:"",
         password:""
     })
 
-    let [message, setMessage] = useState({
+    const [message, setMessage] = useState({
         type:"",
         text:""
     })
 
-    let [confirmDelete, setConfirmDelete] = useState(1)
+    const [confirmDelete, setConfirmDelete] = useState(1)
 
     function handleInput(event) {
         setUser((prev) => {

@@ -4,12 +4,12 @@ import RentedHome from './RentedHome'
 
 function RentedHomes() {
 
-    let loggedUser = useContext(UserContext)
+    const loggedUser = useContext(UserContext)
 
-    let userId = loggedUser.loggedUser.id
-    let token = localStorage.getItem("jsontoken")
+    const userId = loggedUser.loggedUser.id
+    const token = localStorage.getItem("jsontoken")
 
-    let [rentedHouses, setRentedHouses] = useState([])
+    const [rentedHouses, setRentedHouses] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:8000/houses/rents/${userId}`, {

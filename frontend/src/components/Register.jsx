@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react'
 import Header from './Header'
 import { Link, useNavigate } from 'react-router-dom'
-import UserContext from '../contexts/UserContext'
+/* import UserContext from '../contexts/UserContext' */
 
 function Register() {
 
     
   const navigate = useNavigate()
-  let loggedUser = useContext(UserContext)
+  /* let loggedUser = useContext(UserContext) */
 
   let [message, setMessage] = useState({
     type:"",

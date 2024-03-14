@@ -4,9 +4,9 @@ function RentedHome({rentedHouse}) {
 
     /* console.log(rentedHouse._id) */
 
-    let rentUserId = rentedHouse.userId._id
-    let rentId = rentedHouse._id
-    let token = localStorage.getItem("jsontoken")
+    const rentUserId = rentedHouse.userId._id
+    const rentId = rentedHouse._id
+    const token = localStorage.getItem("jsontoken")
 
     function handleReturnHouse(event) {
         event.preventDefault()
