@@ -15,9 +15,9 @@ function HomeSingleInfo({houses}) {
 
     const loggedUser = useContext(UserContext)
 
-    let userId = loggedUser.loggedUser.id
-    let houseId = filteredHouse._id
-    let token = localStorage.getItem("jsontoken")
+    const userId = loggedUser.loggedUser.id
+    const houseId = filteredHouse._id
+    const token = localStorage.getItem("jsontoken")
 
     let [message,setMessage] = useState({
       type:"",
