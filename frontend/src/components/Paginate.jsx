@@ -32,6 +32,8 @@ function Paginate({houses, itemsPerPage}) {
         setItemOffset(newOffset)
     }
 
+    console.log(currentItems)
+
   return (
     <>
     <div className='homes-list-main-homes'>

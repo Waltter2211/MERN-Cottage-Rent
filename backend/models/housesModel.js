@@ -19,6 +19,11 @@ const housesSchema = mongoose.Schema({
     houseImage:{
         type:String,
         required:true,
+    },
+    houseTags:{
+        type:String,
+        required:true,
+        enum:["Cottages","Tower Blocks","Vans","Others"]
     }
 },{timestamps:true})
 
