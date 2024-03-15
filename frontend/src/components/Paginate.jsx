@@ -32,7 +32,7 @@ function Paginate({houses, itemsPerPage}) {
         setItemOffset(newOffset)
     }
 
-    console.log(currentItems)
+    /* console.log(currentItems) */
 
   return (
     <>
