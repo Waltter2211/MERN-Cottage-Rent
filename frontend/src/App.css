@@ -60,6 +60,10 @@ a {
     font-weight: bold;
 }
 
+.blue {
+    color: rgb(28, 132, 218);
+}
+
 .form {
     width: 20%;
     display: flex;
@@ -261,6 +265,16 @@ a {
     font-weight: bold;
 }
 
+.list-div {
+    background-color: white;
+    color: rgb(28, 132, 218);
+}
+
+.homes-list-button:hover {
+    background-color: white;
+    color: rgb(28, 132, 218);
+}
+
 .homes-list-main {
     width: 100%;
 }
@@ -276,7 +290,7 @@ a {
     align-content: flex-start;
     row-gap: 20px;
     column-gap: calc(10%/4);
-    /* overflow-y: auto; */
+    overflow-y: auto;
     position: relative;
 }
 
