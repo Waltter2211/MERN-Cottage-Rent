@@ -99,16 +99,16 @@ function Homes() {
               </ul>
             </div>
             <div className='homes-list-main'>
-              <div className='homes-list-main-homes'>
+              {/* <div className='homes-list-main-homes'>
                 {houses.length === 0? <h1 className='blue'>No Homes Found</h1>
-                /* :houses === undefined && homeSearch === undefined? houses?.map((house, index) => {
+                :houses === undefined && homeSearch === undefined? houses?.map((house, index) => {
                   return <HomeSingle key={index} house={house} />
-                }) */
-                :houses?.map((house, index) => {
+                })
+                :houses.map((house, index) => {
                   return <HomeSingle key={index} house={house} />
                 })}
-              </div>
-              {/* <Paginate houses={houses} itemsPerPage={15} /> */}
+              </div> */}
+              <Paginate houses={houses} itemsPerPage={15} />
             </div>
           </div>
         </div>

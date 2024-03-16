@@ -37,7 +37,7 @@ function Paginate({houses, itemsPerPage}) {
   return (
     <>
     <div className='homes-list-main-homes'>
-        <Houses currentItems={currentItems} />
+        {currentItems.length === 0?<h1 className='blue'>No Houses Found</h1>:<Houses currentItems={currentItems} />}
     </div>
     <div className='homes-list-pagination'>
         <ReactPaginate
