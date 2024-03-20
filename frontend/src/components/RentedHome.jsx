@@ -11,7 +11,7 @@ function RentedHome({rentedHouse}) {
     function handleReturnHouse(event) {
         event.preventDefault()
 
-        fetch(`http://localhost:8000/houses/return/${rentUserId}/${rentId}`, {
+        fetch(`/houses/return/${rentUserId}/${rentId}`, {
             method:"DELETE",
             headers:{
                 "Authorization":token

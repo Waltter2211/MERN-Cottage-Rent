@@ -30,7 +30,7 @@ function Login() {
   function handleLogin(event) {
     event.preventDefault()
     /* console.log(loggingUser) */
-    fetch("http://localhost:8000/users/login", {
+    fetch("/users/login", {
       method:"POST",
       headers:{
         "Content-Type":"application/json"

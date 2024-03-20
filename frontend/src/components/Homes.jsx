@@ -13,7 +13,7 @@ function Homes() {
   let homeSearch
 
   useEffect(() => {
-    fetch(`http://localhost:8000/houses/`, {
+    fetch(`/houses/`, {
       method:"GET",
       headers:{
         "Authorization":localStorage.getItem("jsontoken")
