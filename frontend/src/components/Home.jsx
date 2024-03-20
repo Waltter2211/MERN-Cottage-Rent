@@ -27,7 +27,7 @@ function Home() {
 
     function handleRegister(event) {
         event.preventDefault()
-        fetch("/users/register", {
+        fetch("http://localhost:8000/users/register", {
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

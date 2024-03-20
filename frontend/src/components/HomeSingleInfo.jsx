@@ -25,7 +25,7 @@ function HomeSingleInfo({houses}) {
     })
 
     function handleRent() {
-      fetch(`/houses/rent/${userId}/${houseId}`, {
+      fetch(`http://localhost:8000/houses/rent/${userId}/${houseId}`, {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
