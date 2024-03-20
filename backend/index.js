@@ -5,7 +5,7 @@ const usersRouter = require('./routes/usersRouter')
 const housesRouter = require('./routes/housesRouter')
 require('dotenv').config()
 
-const port = process.env.PORT
+const PORT = process.env.PORT || 8000
 const database = process.env.DATABASE
 
 const app = express()
@@ -25,6 +25,6 @@ mongoose.connect(database)
     console.log(err)
 })
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log("Connected to server")
 })
