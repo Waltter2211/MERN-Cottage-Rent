@@ -10,7 +10,7 @@
 ## Technologies
  Database: MongoDB, Backend: NodeJS, Frontend: React
 
- ##Requirements
+ ## Requirements
  MongoDB database
 
 ## Commands:
