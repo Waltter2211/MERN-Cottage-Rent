@@ -13,7 +13,7 @@ Simple full stack website where you can create account and rent imaginary cottag
 * React
 
 ## Languages used
-Javascript
+  Javascript
 
 ## Requirements
 * MongoDB database
