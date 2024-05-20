@@ -2,14 +2,15 @@
 
  Simple full stack website where you can create account and rent imaginary cottages or houses.
  
- Technologies used:
+ Technologies used: Database: MongoDB, Backend: NodeJS, Frontend: React
 
- Database: MongoDB
- Backend: NodeJS
- Frontend: React
+ Requirements: MongoDB database
 
 Commands:
 
 1. Download files to your system
-2. Use "npm install" to install dependencies
-3. Use "npm start" to start the app
+2. Use "npm install" to install dependencies in frontend and backend
+3. Create a .env file and create two fields "DATABASE" and "JSONTOKEN"
+4. Fill "DATABASE" fielf with your database connection string and fill "JSONTOKEN" with some string
+5. Use "npm run build frontend" to build frontend
+6. Use "npm run start-prod" to start the app
