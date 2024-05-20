@@ -19,7 +19,7 @@ Javascript
 MongoDB database
 
 ## How to run:
-1. Download files to your system
+1. Download files to your local system
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
 3. Use command "npm run install-deps" to install required dependencies
 4. Use command "npm run build-project" to build production version of frontend
