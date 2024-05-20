@@ -11,8 +11,8 @@ const database = process.env.DATABASE
 const app = express()
 
 app.use(express.json())
-
 app.use(cors())
+app.use(express.static('dist'))
 
 app.use("/users", usersRouter)
 app.use("/houses", housesRouter)
