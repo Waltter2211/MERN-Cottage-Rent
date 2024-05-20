@@ -1,6 +1,6 @@
 const express = require('express')
 const jwt = require('jsonwebtoken')
-const webtoken = process.env.JSONTOKEN
+const webtoken = process.env.JSONTOKEN || "jsontoken"
 
 function verifyToken(req, res, next) {
     let token = req.headers.authorization.split(" ")[1]

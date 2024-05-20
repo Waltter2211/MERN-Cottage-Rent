@@ -6,7 +6,7 @@ const housesRouter = require('./routes/housesRouter')
 require('dotenv').config()
 
 const PORT = process.env.PORT || 8000
-const database = process.env.DATABASE
+const database = process.env.DATABASE || 'mongodb://localhost:27017'
 
 const app = express()
 
