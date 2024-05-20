@@ -3,6 +3,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-v14.17.0-green)
 ![Express](https://img.shields.io/badge/Express-v4.17.1-blue)
 ![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v8.5.1-orange)
+
  Simple full stack website where you can create account and rent imaginary cottages or houses.
  
  Technologies used: Database: MongoDB, Backend: NodeJS, Frontend: React
