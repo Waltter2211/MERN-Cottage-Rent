@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build-frontend": "rm -rf dist && cd.. && cd frontend && npm install && npm run build",
+    "start-prod": "cp -r ../frontend/dist ../backend && node index.js"
   },
   "author": "Waltter Skogberg",
   "license": "ISC",
