@@ -1,8 +1,8 @@
 ﻿# MERN-Cottage-Rent
 
  Simple full stack website where you can create account and rent imaginary cottages or houses.
-
- Stack used:
+ 
+ Technologies used:
 
  Database: MongoDB
  Backend: NodeJS
