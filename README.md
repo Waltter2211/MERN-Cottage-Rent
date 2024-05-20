@@ -4,13 +4,16 @@
 ![Express](https://img.shields.io/badge/Express-v4.18.2-blue)
 ![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-orange)
 
+## Description
  Simple full stack website where you can create account and rent imaginary cottages or houses.
- 
- Technologies used: Database: MongoDB, Backend: NodeJS, Frontend: React
 
- Requirements: MongoDB database
+## Technologies
+ Database: MongoDB, Backend: NodeJS, Frontend: React
 
-Commands:
+ ##Requirements
+ MongoDB database
+
+## Commands:
 
 1. Download files to your system
 2. Use "npm install" to install dependencies in frontend and backend folders
