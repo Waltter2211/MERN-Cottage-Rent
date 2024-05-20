@@ -15,6 +15,6 @@ Commands:
 5. Create two fields "DATABASE" and "JSONTOKEN"
 6. Fill "DATABASE" field with your database connection string
 7. Fill "JSONTOKEN" with some string
-8. Use "npm run build frontend" to build frontend
+8. Use "npm run build-frontend" to build frontend
 9. Use "npm run start-prod" to start the app
 10. Open browser and navigate to "http://localhost:8000"
