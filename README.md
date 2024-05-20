@@ -23,6 +23,6 @@ Javascript
 1. Download files to your local system
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
 3. Use command "npm run install-deps" to install required dependencies
-4. Use command "npm run build-project" to build production version of frontend
-5. Use command "npm run start-prod" to start production build
+4. Use command "npm run build-project" to build production version of the frontend
+5. Use command "npm run start-prod" to start the production build
 6. Navigate to "http://localhost:8000" to view and test the page
