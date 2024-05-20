@@ -15,15 +15,11 @@
  ## Requirements
  MongoDB database
 
-## Commands:
+## How to run:
 
 1. Download files to your system
-2. Use "npm install" to install dependencies in frontend and backend folders
-3. Navigate to backend folder
-4. Create a .env file in the "backend" folder
-5. Create two fields "DATABASE" and "JSONTOKEN"
-6. Fill "DATABASE" field with your database connection string
-7. Fill "JSONTOKEN" with some string
-8. Use "npm run build-frontend" to build frontend
-9. Use "npm run start-prod" to start the app
-10. Open browser and navigate to "http://localhost:8000"
+2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
+3. Use command "npm run install-deps" to install required dependencies
+4. Use command "npm run build-project" to build production version of frontend
+5. Use command "npm run start-prod" to start production build
+6. Navigate to "http://localhost:8000" to view and test the page
