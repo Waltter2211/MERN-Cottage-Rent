@@ -19,6 +19,10 @@ Simple full stack website where you can create account and rent imaginary cottag
 * MongoDB database
 * Bash terminal
 
+## To-Dos
+* Fix bug with the pagination
+* Overall cleanup the code
+
 ## How to run:
 1. Download files to your local system
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
