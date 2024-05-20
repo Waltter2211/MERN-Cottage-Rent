@@ -1,8 +1,7 @@
 ﻿# MERN-Cottage-Rent
 
 ![Node.js](https://img.shields.io/badge/Node.js-v20.11.0-green)
-![Express](https://img.shields.io/badge/Express-v4.18.2-blue)
-![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-orange)
+![Express](https://img.shields.io/badge/Express-v4.18.2-orange)
 ![React.js](https://img.shields.io/badge/React.js-v18.2.56-blue)
 
 ## Description
