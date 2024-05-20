@@ -9,9 +9,12 @@
 Commands:
 
 1. Download files to your system
-2. Use "npm install" to install dependencies in frontend and backend
-3. Create a .env file in the "backend folder"
-4. Create two fields "DATABASE" and "JSONTOKEN"
-5. Fill "DATABASE" fielf with your database connection string and fill "JSONTOKEN" with some string
-6. Use "npm run build frontend" to build frontend
-7. Use "npm run start-prod" to start the app
+2. Use "npm install" to install dependencies in frontend and backend folders
+3. Navigate to backend folder
+4. Create a .env file in the "backend" folder
+5. Create two fields "DATABASE" and "JSONTOKEN"
+6. Fill "DATABASE" field with your database connection string
+7. Fill "JSONTOKEN" with some string
+8. Use "npm run build-frontend" to build frontend
+9. Use "npm run start-prod" to start the app
+10. Open browser and navigate to "http://localhost:8000"
