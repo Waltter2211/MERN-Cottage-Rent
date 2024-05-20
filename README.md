@@ -7,7 +7,7 @@
 ## Description
  Simple full stack website where you can create account and rent imaginary cottages or houses.
 
-## Technologies
+## Technologies used
  * MongoDB
  * NodeJS
  * React
