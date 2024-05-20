@@ -5,18 +5,20 @@
 ![JWT](https://img.shields.io/badge/JSON%20Web%20Token-v9.0.2-orange)
 
 ## Description
- Simple full stack website where you can create account and rent imaginary cottages or houses.
+Simple full stack website where you can create account and rent imaginary cottages or houses.
 
 ## Technologies used
- * MongoDB
- * NodeJS
- * React
+* MongoDB
+* NodeJS
+* React
 
- ## Requirements
- MongoDB database
+## Languages
+Javascript
+
+## Requirements
+MongoDB database
 
 ## How to run:
-
 1. Download files to your system
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
 3. Use command "npm run install-deps" to install required dependencies
