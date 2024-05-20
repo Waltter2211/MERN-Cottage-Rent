@@ -8,7 +8,9 @@
  Simple full stack website where you can create account and rent imaginary cottages or houses.
 
 ## Technologies
- Database: MongoDB, Backend: NodeJS, Frontend: React
+ * MongoDB
+ * NodeJS
+ * React
 
  ## Requirements
  MongoDB database
