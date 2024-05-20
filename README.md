@@ -16,8 +16,8 @@ Simple full stack website where you can create account and rent imaginary cottag
 Javascript
 
 ## Requirements
-MongoDB database
-Bash terminal
+* MongoDB database
+* Bash terminal
 
 ## How to run:
 1. Download files to your local system
