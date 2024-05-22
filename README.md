@@ -22,7 +22,6 @@ Simple full stack website where you can create account and rent imaginary cottag
 ## To-Dos
 * Fix bug with the pagination
 * Overall cleanup the code
-* Script to insert template data
 
 ## How to run:
 1. Download files to your local system
