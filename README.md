@@ -29,5 +29,6 @@ Simple full stack website where you can create account and rent imaginary cottag
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
 3. Use command "npm run install-deps" to install required dependencies
 4. Use command "npm run build-project" to build production version of the frontend
-5. Use command "npm run start-prod" to start the production build
-6. Navigate to "http://localhost:8000" to view and test the page
+5. Use command "add-data" to add some sample houses to rent
+6. Use command "npm run start-prod" to start the production build
+7. Navigate to "http://localhost:8000" to view and test the page
