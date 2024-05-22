@@ -1,20 +1,33 @@
 ﻿# MERN-Cottage-Rent
 
- Simple full stack website where you can create account and rent imaginary cottages or houses.
- 
- Technologies used: Database: MongoDB, Backend: NodeJS, Frontend: React
+![Node.js](https://img.shields.io/badge/Node.js-v20.11.0-green)
+![Express](https://img.shields.io/badge/Express-v4.18.2-orange)
+![React](https://img.shields.io/badge/React-v18.2.56-blue)
 
- Requirements: MongoDB database
+## Description
+Simple full stack website where you can create account and rent imaginary cottages or houses.
 
-Commands:
+## Technologies used
+* MongoDB
+* NodeJS
+* React
 
-1. Download files to your system
-2. Use "npm install" to install dependencies in frontend and backend folders
-3. Navigate to backend folder
-4. Create a .env file in the "backend" folder
-5. Create two fields "DATABASE" and "JSONTOKEN"
-6. Fill "DATABASE" field with your database connection string
-7. Fill "JSONTOKEN" with some string
-8. Use "npm run build-frontend" to build frontend
-9. Use "npm run start-prod" to start the app
-10. Open browser and navigate to "http://localhost:8000"
+## Languages used
+  Javascript
+
+## Requirements
+* MongoDB database
+* Bash terminal
+
+## To-Dos
+* Fix bug with the pagination
+* Overall cleanup the code
+* Script to insert template data
+
+## How to run:
+1. Download files to your local system
+2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
+3. Use command "npm run install-deps" to install required dependencies
+4. Use command "npm run build-project" to build production version of the frontend
+5. Use command "npm run start-prod" to start the production build
+6. Navigate to "http://localhost:8000" to view and test the page
