@@ -1,0 +1,114 @@
+[
+    {
+        "houseName": "Hill Shack",
+        "houseCost": 250000,
+        "houseStock": 3,
+        "houseImage": "https://live.staticflickr.com/7426/9197516209_7d2c30d4bb_c.jpg",
+        "houseTags": "Cottages"
+    },
+    {
+        "houseName": "Van",
+        "houseCost": 25,
+        "houseStock": 3,
+        "houseImage": "https://www.hobby-caravan.de/fileadmin/_processed_/e/0/csm_maxia-van-relax-laengsbetten_0cd155bbad.jpg",
+        "houseTags": "Vans"
+    },
+    {
+        "houseName": "Castle",
+        "houseCost": 100000000,
+        "houseStock": 2,
+        "houseImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg/1200px-Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Tower Block",
+        "houseCost": 300,
+        "houseStock": 20,
+        "houseImage": "https://omghcontent.affino.com/AcuCustom/Sitename/DAM/083/tower-block-2-MIN.jpg",
+        "houseTags": "Tower Blocks"
+    },
+    {
+        "houseName": "Japanese House",
+        "houseCost": 50000,
+        "houseStock": 10,
+        "houseImage": "https://media.timeout.com/images/106054872/750/422/image.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Igloo",
+        "houseCost": 900,
+        "houseStock": 20,
+        "houseImage": "https://www.descopera.ro/wp-content/uploads/2023/12/Cat-de-cald-este-intr-un-iglu_shutterstock_descopera.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Summer Cottage",
+        "houseCost": 400,
+        "houseStock": 15,
+        "houseImage": "https://cdn-datahub.visitfinland.com/images/aac1c040-0efa-11ec-9a89-83d7a734ff9d-Summer%20cottage_Merikoivula%20(4).jpg?s=1200",
+        "houseTags": "Cottages"
+    },
+    {
+        "houseName": "Farm House",
+        "houseCost": 2000000,
+        "houseStock": 7,
+        "houseImage": "https://www.logcabinhomes.com/wp-content/uploads/bb-plugin/cache/MillCreekFarm-landscape-8dd85ed7f9a1ee64bb08ecd1d06a32d7-.jpg",
+        "houseTags": "Cottages"
+    },
+    {
+        "houseName": "Underwater House",
+        "houseCost": 4000000,
+        "houseStock": 12,
+        "houseImage": "https://media.architecturaldigest.com/photos/635695e31386cb1d40eede61/1:1/w_3937,h_3937,c_limit/THE%20MURAKA_Family_Undersea%20Room_Night_%20credit%20Justin%20Nicholas%20-%20hi-res.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Apartment House",
+        "houseCost": 4000,
+        "houseStock": 30,
+        "houseImage": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/176405215.jpg?k=516e8d614584d7e13b633db2732e1d5262dc3b2bd5fb7abd073e38651fc98fa2&o=",
+        "houseTags": "Tower Blocks"
+    },
+    {
+        "houseName": "Pyramid House",
+        "houseCost": 60000,
+        "houseStock": 15,
+        "houseImage": "https://images.mansionglobal.com/im-135063?width=1280",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Hotel",
+        "houseCost": 600,
+        "houseStock": 40,
+        "houseImage": "https://www.fi.kayak.com/rimg/himg/c2/51/76/leonardo-73523-160580005-516242.jpg?width=968&height=607&crop=true",
+        "houseTags": "Tower Blocks"
+    },
+    {
+        "houseName": "Barn",
+        "houseCost": 300,
+        "houseStock": 5,
+        "houseImage": "https://nationaltoday.com/wp-content/uploads/2022/05/133-Barn-Day-1200x834.jpg.webp",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Snow Castle",
+        "houseCost": 2500,
+        "houseStock": 25,
+        "houseImage": "https://www.scandi.travel/wp-content/uploads/2014/08/40_Hotel_corridor_2012.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Boat House",
+        "houseCost": 11000,
+        "houseStock": 7,
+        "houseImage": "https://houseandhome.com/wp-content/uploads/2022/08/Feature-3.jpg",
+        "houseTags": "Others"
+    },
+    {
+        "houseName": "Car House",
+        "houseCost": 550,
+        "houseStock": 10,
+        "houseImage": "https://storage.googleapis.com/greatdalehousecar/2014/07/IMG_1655.jpg",
+        "houseTags": "Vans"
+    }
+]
