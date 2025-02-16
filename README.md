@@ -31,3 +31,20 @@ Simple full stack website where you can create account and rent imaginary cottag
 5. Use command "add-data" to add some sample houses to rent
 6. Use command "npm run start-prod" to start the production build
 7. Navigate to "http://localhost:8000" to view and test the page
+
+## Images:
+
+### Landing page:
+![Landing page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/landing_page.JPG)
+
+### Login page:
+![Login page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/login_page.JPG)
+
+### Homes page:
+![Homes page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/homes_page.JPG)
+
+### Profile page rents:
+![Profile page rents](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/profile_page_rented_homes.JPG)
+
+### Profile page update account:
+![Profile page update account](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/profile_page_update_account.JPG)
