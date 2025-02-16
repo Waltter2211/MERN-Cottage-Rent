@@ -32,7 +32,7 @@ Simple full stack website where you can create account and rent imaginary cottag
 6. Use command "npm run start-prod" to start the production build
 7. Navigate to "http://localhost:8000" to view and test the page
 
-## Images:
+## Images
 
 ### Landing page:
 ![Landing page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/landing_page.JPG)
