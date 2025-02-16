@@ -4,22 +4,22 @@
 ![Express](https://img.shields.io/badge/Express-v4.18.2-orange)
 ![React](https://img.shields.io/badge/React-v18.2.56-blue)
 
-## Description
+## Description:
 Simple full stack website where you can create account and rent imaginary cottages or houses.
 
-## Technologies used
+## Technologies used:
 * MongoDB
 * NodeJS
 * React
 
-## Languages used
+## Languages used:
   Javascript
 
-## Requirements
+## Requirements:
 * MongoDB database
 * Bash terminal
 
-## To-Dos
+## To-Dos:
 * Fix bug with the pagination
 * Overall cleanup the code
 
@@ -32,18 +32,18 @@ Simple full stack website where you can create account and rent imaginary cottag
 6. Use command "npm run start-prod" to start the production build
 7. Navigate to "http://localhost:8000" to view and test the page
 
-## Images
+## Images:
 
-### Landing page:
+### Landing page
 ![Landing page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/landing_page.JPG)
 
-### Login page:
+### Login page
 ![Login page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/login_page.JPG)
 
-### Homes page:
+### Homes page
 ![Homes page](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/homes_page.JPG)
 
-### Profile page rents:
+### Profile page rents
 ![Profile page rents](https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/profile_page_rented_homes.JPG)
 
 ### Profile page update account:
