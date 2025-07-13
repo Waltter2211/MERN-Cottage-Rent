@@ -3,7 +3,6 @@ const housesModel = require('../models/housesModel')
 const rentsModel = require("../models/rentsModel")
 const usersModel = require('../models/usersModel')
 const verifyToken = require('../middleware/jsonVerifier')
-
 const housesRouter = express.Router()
 
 housesRouter.get("/", async (req, res) => {
@@ -11,7 +10,6 @@ housesRouter.get("/", async (req, res) => {
     try {
         let houses = await housesModel.find({})
         res.send(houses)
-        /* console.log(houses) */
     } catch (error) {
         console.log(error)
     }
@@ -74,7 +72,7 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
                     res.status(404).send({message: "This house is out of stock"})
                 }
                 else {
-                    let updatedHouse = await housesModel.updateOne({_id: houseId}, updatedHouseObj)
+                    await housesModel.updateOne({_id: houseId}, updatedHouseObj)
                     let rent = {
                         userId,
                         houseId,
@@ -85,8 +83,6 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
                 }
             }
         }
-        /* console.log(foundHouse)
-        res.send("test") */
     } catch (error) {
         console.log(error)
         res.status(500).send("Some error happened")
@@ -115,7 +111,7 @@ housesRouter.delete("/return/:userId/:rentId", verifyToken, async (req, res) => 
                 let increment = houseCurrent.houseStock += 1
                 houseCurrent.houseStock = increment
                 let updatedHouse = houseCurrent
-                let returnerdHouse = await housesModel.updateOne({_id: houseId}, updatedHouse)
+                await housesModel.updateOne({_id: houseId}, updatedHouse)
                 res.send({message:"Successfully deleted rent", deletedRent})
             }
         }
@@ -127,7 +123,7 @@ housesRouter.delete("/return/:userId/:rentId", verifyToken, async (req, res) => 
 
 //what homes user has rented
 housesRouter.get("/rents/:userId", verifyToken, async (req, res) => {
-    userId = req.params.userId
+    let userId = req.params.userId
     let foundRents = await rentsModel.find({userId: userId}).populate("userId").populate("houseId")
     try {
         if (foundRents.length < 1) {
