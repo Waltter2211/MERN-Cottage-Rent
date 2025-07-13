@@ -7,7 +7,6 @@ function Header() {
   const navigate = useNavigate()
 
   let loggedUser = useContext(UserContext)
-  /* console.log(loggedUser) */
   function logout() {
     localStorage.clear()
     loggedUser.setLoggedUser(null)
