@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Header from './Header'
 import UpdateAccount from './UpdateAccount'
 import UserContext from '../contexts/UserContext'
@@ -21,9 +21,7 @@ function Profile() {
     <>
     <Header />
     <div className='profile'>
-      <div className='background-overlay'>
-
-      </div>
+      <div className='background-overlay'></div>
       <section className='main-content-section'>
         <div className='profile-frame'>
           <div className='profile-selection'>

@@ -29,7 +29,6 @@ function Login() {
 
   function handleLogin(event) {
     event.preventDefault()
-    /* console.log(loggingUser) */
     fetch("http://localhost:8000/users/login", {
       method:"POST",
       headers:{
@@ -38,7 +37,6 @@ function Login() {
       body:JSON.stringify(loggingUser)
     })
     .then((res) => {
-      /* console.log(res) */
       if (res.status === 401) {
         setMessage({
           type:"error",
@@ -68,7 +66,6 @@ function Login() {
       }
     })
     .then((data) => {
-      /* console.log(data) */
       localStorage.setItem("jsontoken", `Bearer ${data.token}`)
       localStorage.setItem("user", data.email)
       localStorage.setItem("userId", data._id)

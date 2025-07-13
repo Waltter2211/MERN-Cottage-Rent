@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from './Header'
 import HouseContext from '../contexts/HouseContext'
-import HomeSingle from './HomeSingle'
 import Paginate from './Paginate'
 
 function Homes() {
@@ -10,7 +9,6 @@ function Homes() {
   const [initialHouses, setInitialHouses] = useState([])
   const [tag, setTag] = useState("")
   let containedHouses = useContext(HouseContext)
-  let homeSearch
 
   useEffect(() => {
     fetch(`http://localhost:8000/houses/`, {
@@ -20,11 +18,9 @@ function Homes() {
       }
     })
     .then((res) => {
-      /* console.log(res) */
       return res.json()
     })
     .then((data) => {
-      /* console.log(data) */
       setHouses(data)
       setInitialHouses(data)
       containedHouses.setContainedHouses(data)
@@ -36,7 +32,6 @@ function Homes() {
 
   function handleTagSelect(event) {
     let houseList = initialHouses
-
     setHouses(() => {
       return (
         houseList.filter((house) => {
@@ -48,8 +43,6 @@ function Homes() {
   }
   
   function handleSearch(event) {
-    homeSearch = event.target.value
-
     let searchHouses = houses.filter((house) => {
       const regex = new RegExp(`${event.target.value}`, 'i')
       return house.houseName.match(regex)
@@ -69,8 +62,6 @@ function Homes() {
     setHouses(initialHouses)
     setTag("")
   }
-
-  /* console.log(houses) */
 
   return (
     <>
@@ -99,15 +90,6 @@ function Homes() {
               </ul>
             </div>
             <div className='homes-list-main'>
-              {/* <div className='homes-list-main-homes'>
-                {houses.length === 0? <h1 className='blue'>No Homes Found</h1>
-                :houses === undefined && homeSearch === undefined? houses?.map((house, index) => {
-                  return <HomeSingle key={index} house={house} />
-                })
-                :houses.map((house, index) => {
-                  return <HomeSingle key={index} house={house} />
-                })}
-              </div> */}
               <Paginate houses={houses} itemsPerPage={15} />
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import React, { useContext, useState } from "react"
 import UserContext from "../contexts/UserContext"
 import { useNavigate } from "react-router-dom"
 
@@ -44,7 +44,6 @@ function UpdateAccount() {
             body:JSON.stringify(user)
         })
         .then((res) => {
-            /* console.log(res) */
             if (res.status === 422) {
                 setMessage({
                     type:"error",
@@ -86,7 +85,6 @@ function UpdateAccount() {
             }
         })
         .then((data) => {
-            /* console.log(data) */
             if (data !== undefined) {
                 setMessage({
                     type:"success",

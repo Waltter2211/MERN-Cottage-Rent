@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 function HomeSingle({house}) {
     const navigate = useNavigate()
-    /* console.log(house) */
 
   return (
     <div className='homes-list-main-home' onClick={() => {
@@ -19,6 +19,10 @@ function HomeSingle({house}) {
         </div>
     </div>
   )
+}
+
+HomeSingle.propTypes = {
+  house: PropTypes.object.isRequired
 }
 
 export default HomeSingle

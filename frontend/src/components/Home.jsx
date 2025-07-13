@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import { Link, useNavigate } from 'react-router-dom'
-/* import UserContext from '../contexts/UserContext' */
 
 function Home() {
 
     const navigate = useNavigate()
-    /* let loggedUser = useContext(UserContext) */
     let [message, setMessage] = useState({
         type:"",
         text:""
@@ -75,8 +73,7 @@ function Home() {
             }
             return res.json()
         })
-        .then((data) => {
-            /* console.log(data) */
+        .then(() => {
             setRegisteringUser({
                 name:"",
                 email:"",
@@ -87,8 +84,6 @@ function Home() {
             console.log(err)
         })
     }
-
-    /* console.log(loggedInUser) */
 
   return (
     <>
@@ -114,10 +109,6 @@ function Home() {
                     <input type='email' placeholder='Email...' className='inp' onChange={handleInput} name='email' value={registeringUser.email}></input>
                     <p>Password</p>
                     <input type='password' placeholder='Password...' className='inp' onChange={handleInput} name='password' value={registeringUser.password}></input>
-                    {/* <p>Age</p>
-                    <input type='number' placeholder='Age...' className='inp' onChange={handleInput} name='age' value={registeringUser.age}></input> */}
-                    {/* <p>Address</p>
-                    <input type='text' placeholder='Address...' className='inp' onChange={handleInput} name='address' value={registeringUser.address}></input> */}
                     <button className='btn' onClick={handleRegister}>Register</button>
                     <p className={message.type}>{message.text}</p>
                 </form>

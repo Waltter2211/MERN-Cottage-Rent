@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './components/Home'
@@ -14,8 +15,6 @@ import HomeSingleInfo from './components/HomeSingleInfo'
 function App() {
   let [loggedUser, setLoggedUser] = useState(null)
   let [containedHouses, setContainedHouses] = useState(null)
-
-  /* console.log(containedHouses) */
 
   useEffect(() => {
     setLoggedUser({

@@ -19,19 +19,15 @@ function RentedHomes() {
             }
         })
         .then((res) => {
-            /* console.log(res) */
             return res.json()
         })
         .then((data) => {
-            /* console.log(data) */
             setRentedHouses(data.foundRents)
         })
         .catch((err) => {
             console.log(err)
         })
     }, [rentedHouses])
-
-    /* console.log(rentedHouses) */
 
   return (
     <div className='profile-inputs'>

@@ -1,13 +1,9 @@
-import { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import { Link, useNavigate } from 'react-router-dom'
-/* import UserContext from '../contexts/UserContext' */
 
 function Register() {
-
-    
   const navigate = useNavigate()
-  /* let loggedUser = useContext(UserContext) */
 
   let [message, setMessage] = useState({
     type:"",
@@ -38,7 +34,6 @@ function Register() {
         body:JSON.stringify(registeringUser)
     })
     .then((res) => {
-        /* console.log(res) */
         if (res.status === 403) {
             setMessage({
                 type:"error",
@@ -78,8 +73,7 @@ function Register() {
         }
         return res.json()
     })
-    .then((data) => {
-        /* console.log(data) */
+    .then(() => {
         setRegisteringUser({
             name:"",
             email:"",
@@ -95,9 +89,7 @@ function Register() {
     <>
     <Header />
     <div className='login'>
-      <div className='background-overlay'>
-
-      </div>
+      <div className='background-overlay'></div>
       <section className='main-content-section'>
         <form className='form'>
             <p>Name</p>
@@ -106,10 +98,6 @@ function Register() {
             <input type='email' placeholder='Email...' className='inp' onChange={handleInput} name='email' value={registeringUser.email}></input>
             <p>Password</p>
             <input type='password' placeholder='Password...' className='inp' onChange={handleInput} name='password' value={registeringUser.password}></input>
-            {/* <p>Age</p>
-            <input type='number' placeholder='Age...' className='inp' onChange={handleInput} name='age' value={registeringUser.age}></input> */}
-            {/* <p>Address</p>
-            <input type='text' placeholder='Address...' className='inp' onChange={handleInput} name='address' value={registeringUser.address}></input> */}
             <button className='btn' onClick={handleRegister}>Register</button>
             <p className={message.type}>{message.text}</p>
         </form>

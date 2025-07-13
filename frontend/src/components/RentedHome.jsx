@@ -1,9 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 function RentedHome({rentedHouse}) {
-
-    /* console.log(rentedHouse._id) */
-
     const rentUserId = rentedHouse.userId._id
     const rentId = rentedHouse._id
     const token = localStorage.getItem("jsontoken")
@@ -19,9 +17,6 @@ function RentedHome({rentedHouse}) {
         })
         .then((res) => {
             return res.json()
-        })
-        .then((data) => {
-            /* console.log(data) */
         })
         .catch((err) => {
             console.log(err)
@@ -45,6 +40,10 @@ function RentedHome({rentedHouse}) {
         </div>
     </div>
   )
+}
+
+RentedHome.propTypes = {
+    rentedHouse: PropTypes.object.isRequired
 }
 
 export default RentedHome

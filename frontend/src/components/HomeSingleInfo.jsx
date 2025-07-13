@@ -4,14 +4,13 @@ import Header from './Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import UserContext from '../contexts/UserContext'
+import PropTypes from 'prop-types';
 
 function HomeSingleInfo({houses}) {
     let {houseName} = useParams()
     let filteredHouse = houses.find((house) => {
       return house.houseName === houseName
     })
-
-    /* console.log(filteredHouse) */
 
     const loggedUser = useContext(UserContext)
 
@@ -33,7 +32,6 @@ function HomeSingleInfo({houses}) {
         }
       })
       .then((res) => {
-        /* console.log(res) */
         if (res.status === 404) {
           setMessage({
             type:"error",
@@ -63,7 +61,6 @@ function HomeSingleInfo({houses}) {
         }
       })
       .then((data) => {
-        /* console.log(data) */
         if (data !== undefined) {
           navigate("/homes")
         }
@@ -104,6 +101,10 @@ function HomeSingleInfo({houses}) {
     </div>
     </>
   )
+}
+
+HomeSingleInfo.propTypes = {
+  houses: PropTypes.array.isRequired
 }
 
 export default HomeSingleInfo
