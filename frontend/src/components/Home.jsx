@@ -30,7 +30,6 @@ function Home() {
       body: JSON.stringify(registeringUser),
     })
       .then((res) => {
-        /* console.log(res) */
         if (res.status === 403) {
           setMessage({
             type: "error",

@@ -10,6 +10,7 @@ Create an account, explore homes, and simulate a cozy getaway!
 ---
 
 ## 📌 Features
+
 - 🔐 User Authentication (Sign up / Log in)
 - 🏠 Browse cottages and rental listings
 - 💾 Save rentals to profile
@@ -18,21 +19,24 @@ Create an account, explore homes, and simulate a cozy getaway!
 ---
 
 ## 🚀 Tech Stack
-| Frontend | Backend  | Database |
-|----------|----------|----------|
-| React    | Express  | MongoDB  |
+
+| Frontend | Backend | Database |
+| -------- | ------- | -------- |
+| React    | Express | MongoDB  |
 
 > Built with JavaScript across the stack
 
 ---
 
 ## 📁 Requirements
+
 - Bash-compatible terminal
 - Local MongoDB instance
 
 ---
 
 ## 🧠 To-Do List
+
 - [ ] Fix pagination bug
 - [ ] Refactor and optimize codebase
 
@@ -67,16 +71,21 @@ Create an account, explore homes, and simulate a cozy getaway!
 ## 📸 Screenshots
 
 ### 🔹 Landing Page
+
 <img src="https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/landing_page.JPG" alt="Landing page" width="600"/>
 
 ### 🔹 Login Page
+
 <img src="https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/login_page.JPG" alt="Login page" width="600"/>
 
 ### 🔹 Homes Page
+
 <img src="https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/homes_page.JPG" alt="Homes page" width="600"/>
 
 ### 🔹 Profile Page – Rented Homes
+
 <img src="https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/profile_page_rented_homes.JPG" alt="Profile page rents" width="600"/>
 
 ### 🔹 Profile Page – Update Info
+
 <img src="https://github.com/Waltter2211/MERN-Cottage-Rent/blob/main/images/profile_page_update_account.JPG" alt="Profile page update account" width="600"/>
