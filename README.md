@@ -5,25 +5,31 @@
 ![React](https://img.shields.io/badge/React-v18.2.56-blue)
 
 ## Description
+
 Simple full stack website where you can create account and rent imaginary cottages or houses.
 
 ## Technologies used
-* MongoDB
-* NodeJS
-* React
+
+- MongoDB
+- NodeJS
+- React
 
 ## Languages used
-  Javascript
+
+Javascript
 
 ## Requirements
-* MongoDB database
-* Bash terminal
+
+- MongoDB database
+- Bash terminal
 
 ## To-Dos
-* Fix bug with the pagination
-* Overall cleanup the code
+
+- Fix bug with the pagination
+- Overall cleanup the code
 
 ## How to run:
+
 1. Download files to your local system
 2. Extract files and navigate to root folder "MERN-Cottage-Rent-main"
 3. Use command "npm run install-deps" to install required dependencies

@@ -1,20 +1,21 @@
 {
-    "name": "MERN-rent-project",
-    "version": "1.0.0",
-    "description": "Rent Website",
-    "main": "./backend/index.js",
-    "scripts": {
-        "install-deps": "cd backend && npm install && cd ../frontend && npm install",
-        "build-project": "rm -rf ./backend/dist && cd frontend && npm run build && cp -r ../frontend/dist ../backend",
-        "add-data": "node ./backend/utils/addTestData.js",
-        "start-prod": "cd backend && node index.js"
-    },
-    "author": "Waltter Skogberg",
-    "license": "ISC",
-    "devDependencies": {
-        "@eslint/js": "^9.31.0",
-        "eslint": "^9.31.0",
-        "eslint-plugin-react": "^7.37.5",
-        "globals": "^16.3.0"
-    }
+  "name": "MERN-rent-project",
+  "version": "1.0.0",
+  "description": "Rent Website",
+  "main": "./backend/index.js",
+  "scripts": {
+    "install-deps": "cd backend && npm install && cd ../frontend && npm install",
+    "build-project": "rm -rf ./backend/dist && cd frontend && npm run build && cp -r ../frontend/dist ../backend",
+    "add-data": "node ./backend/utils/addTestData.js",
+    "start-prod": "cd backend && node index.js"
+  },
+  "author": "Waltter Skogberg",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2"
+  }
 }
