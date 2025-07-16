@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 function Paginate({ houses, itemsPerPage }) {
   const prev = <FontAwesomeIcon icon={faAngleLeft} />;
-  const next = <FontAwesomeIcon icon={faAngleRight} />;
+  const next = <FontAwesomeIcon icon={faAngleRight} />
 
   function Houses({ currentItems }) {
     return (
@@ -53,6 +53,7 @@ function Paginate({ houses, itemsPerPage }) {
           pageCount={pageCount}
           previousLabel={prev}
           renderOnZeroPageCount={null}
+          activeClassName="homes-list-pagination-button-active"
         />
       </div>
     </>

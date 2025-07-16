@@ -23,7 +23,9 @@ function HomeSingle({ house }) {
           <p className="homes-list-home-info-name">{house.houseName}</p>
           <p className="homes-list-home-info-cost">${house.houseCost}</p>
         </div>
-        <p className="homes-list-home-info-stock">In stock: {house.houseStock}</p>
+        <p className="homes-list-home-info-stock">
+          In stock: {house.houseStock}
+        </p>
         <button className="homes-list-home-info-details">View Details</button>
       </div>
     </div>
