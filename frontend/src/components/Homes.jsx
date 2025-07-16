@@ -132,7 +132,7 @@ function Homes() {
               </ul>
             </div>
             <div className="homes-list-main">
-              <Paginate houses={houses} itemsPerPage={15} />
+              <Paginate houses={houses} itemsPerPage={6} />
             </div>
           </div>
         </div>
