@@ -17,27 +17,27 @@ function Header() {
       <div className="header">
         <div className="header-content">
           <Link to={"/"}>
-            <h1 className="header-btn">MERN-Rent</h1>
+            <h1 className="header-logo-btn">MERN-Rent</h1>
           </Link>
           <div>
             <div>
               {loggedUser.loggedUser?.email == null ? (
                 <div className="header-buttons">
                   <Link to={"/login"}>
-                    <p className="header-btn">Login</p>
+                    <p className="header-login-btn">Login</p>
                   </Link>
                   <Link to={"/register"}>
-                    <p className="header-btn">Register</p>
+                    <p className="header-register-btn">Register</p>
                   </Link>
                 </div>
               ) : (
                 <div className="header-buttons">
                   <Link to={"/profile"}>
-                    <p className="header-btn">
+                    <p className="header-logged-in-text">
                       Logged in as {loggedUser.loggedUser.email}
                     </p>
                   </Link>
-                  <p className="header-btn" onClick={logout}>
+                  <p className="header-logout-btn" onClick={logout}>
                     Logout
                   </p>
                 </div>

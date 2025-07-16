@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import HouseContext from "../contexts/HouseContext";
 import Paginate from "./Paginate";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBorderAll, faMagnifyingGlass, faHouse, faBuilding, faVanShuttle, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 function Homes() {
   const [houses, setHouses] = useState([]);
@@ -59,15 +61,22 @@ function Homes() {
     setTag("");
   }
 
+  console.log(tag)
+
   return (
     <>
       <Header />
       <div className="homes">
-        <div className="background-overlay"></div>
-        <section className="main-content-section">
-          <div className="homes-main">
-            <h1>Currently Available Houses</h1>
+        <div className="homes-main">
+          <div className="homes-main-title-search">
+            <div className="homes-main-title">
+              <h1>Currently Available Houses</h1>
+              <p>Find your perfect rental property from our collection</p>
+            </div>
             <div className="homes-search">
+              <div className="homes-search-icon">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </div>
               <input
                 type="text"
                 className="inp"
@@ -75,85 +84,58 @@ function Homes() {
                 onChange={handleSearch}
               ></input>
             </div>
-            <div className="homes-list">
-              <div className="homes-list-sidebar">
-                <ul className="homes-list-buttons">
-                  {tag === "Cottages" ? (
-                    <li
-                      className="homes-list-button list-div"
-                      onClick={clearTags}
-                      id="Cottages"
-                    >
-                      Cottages
-                    </li>
-                  ) : (
-                    <li
-                      className="homes-list-button"
-                      onClick={handleTagSelect}
-                      id="Cottages"
-                    >
-                      Cottages
-                    </li>
-                  )}
-                  {tag === "Tower Blocks" ? (
-                    <li
-                      className="homes-list-button list-div"
-                      onClick={clearTags}
-                      id="Tower Blocks"
-                    >
-                      Tower Blocks
-                    </li>
-                  ) : (
-                    <li
-                      className="homes-list-button"
-                      onClick={handleTagSelect}
-                      id="Tower Blocks"
-                    >
-                      Tower Blocks
-                    </li>
-                  )}
-                  {tag === "Vans" ? (
-                    <li
-                      className="homes-list-button list-div"
-                      onClick={clearTags}
-                      id="Vans"
-                    >
-                      Vans
-                    </li>
-                  ) : (
-                    <li
-                      className="homes-list-button"
-                      onClick={handleTagSelect}
-                      id="Vans"
-                    >
-                      Vans
-                    </li>
-                  )}
-                  {tag === "Others" ? (
-                    <li
-                      className="homes-list-button list-div"
-                      onClick={clearTags}
-                      id="Others"
-                    >
-                      Others
-                    </li>
-                  ) : (
-                    <li
-                      className="homes-list-button"
-                      onClick={handleTagSelect}
-                      id="Others"
-                    >
-                      Others
-                    </li>
-                  )}
-                </ul>
-              </div>
-              <div className="homes-list-main">
-                <Paginate houses={houses} itemsPerPage={15} />
-              </div>
+          </div>
+          <div className="homes-list">
+            <div className="homes-list-sidebar">
+              <h2>Categories</h2>
+              <ul className="homes-list-buttons">
+                <li className={tag === "" ? "list-div" : "homes-list-button"}>
+                  <div className="homes-list-button-frame" onClick={clearTags}>
+                    <div className="homes-list-button-fa-frame">
+                      <FontAwesomeIcon icon={faBorderAll} />
+                    </div>
+                    <p>All Properties</p>
+                  </div>
+                </li>
+                <li className={tag === "Cottages" ? "list-div" : "homes-list-button"} id="Cottages">
+                  <div className="homes-list-button-frame" onClick={handleTagSelect} id="Cottages">
+                    <div className="homes-list-button-fa-frame">
+                      <FontAwesomeIcon icon={faHouse} />
+                    </div>
+                    <p id="Cottages">Cottages</p>
+                  </div>
+                </li>
+                <li className={tag === "Tower Blocks" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Tower Blocks">
+                  <div className="homes-list-button-frame" id="Tower Blocks">
+                    <div className="homes-list-button-fa-frame">
+                      <FontAwesomeIcon icon={faBuilding} />
+                    </div>
+                    <p id="Tower Blocks">Tower Blocks</p>
+                  </div>
+                </li>
+                <li className={tag === "Vans" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Vans">
+                  <div className="homes-list-button-frame" id="Vans">
+                    <div className="homes-list-button-fa-frame">
+                      <FontAwesomeIcon icon={faVanShuttle} />
+                    </div>
+                    <p id="Vans">Vans</p>
+                  </div>
+                </li>
+                <li className={tag == "Others" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Others">
+                  <div className="homes-list-button-frame" id="Others">
+                    <div className="homes-list-button-fa-frame">
+                      <FontAwesomeIcon icon={faEllipsis} />
+                    </div>
+                    <p id="Others">Others</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="homes-list-main">
+              <Paginate houses={houses} itemsPerPage={15} />
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );
