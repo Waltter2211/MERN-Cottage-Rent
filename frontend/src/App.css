@@ -574,13 +574,22 @@ a {
 }
 
 .rent-btn {
-  padding: 10px 50px;
-  margin-top: 0px;
-  background-color: rgb(5, 156, 5);
+  width: 100%;
+  padding: 12px 50px;
+  margin-top: 10px;
+  background-color: rgb(20, 151, 68);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(247, 252, 249);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
 }
 
 .rent-btn:hover {
-  background-color: rgb(63, 155, 63);
+  background-color: rgb(10, 126, 53);
+  transition: .2s;
 }
 
 .homes-single-info-page-main-img-frame {
@@ -788,7 +797,7 @@ a {
   align-items: center;
   border-radius: 6px;
   column-gap: 10px;
-  color: rgb(85, 128, 219);
+  color: rgb(21, 93, 252);
 }
 
 .homes-single-info-page-main-info-amenity > p {
@@ -799,7 +808,127 @@ a {
 
 .homes-single-info-page-main-info-frame-right {
   width: 35%;
-  background-color: green;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.homes-single-info-page-main-info-rent {
+  height: 70%;
+  background-color: white;
+  border: 0.1px solid rgb(235, 235, 235);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  row-gap: 14px;
+}
+
+.homes-single-info-page-main-info-rent > h2 {
+  font-size: 24px;
+  color: rgb(15, 23, 43);
+}
+
+.homes-single-info-page-main-info-rent > p {
+  font-size: 14px;
+  font-weight: 400;
+  color: grey;
+}
+
+.homes-single-info-page-main-info-favorite-share-frame {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 12px;
+}
+
+.favorite-share-btn {
+  width: 50%;
+  background-color: white;
+  color: rgb(10, 10, 10);
+  padding: 11px 20px;
+  border: 0.1px solid rgb(229, 229, 229);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.favorite-share-btn:hover {
+  background-color: rgb(233, 235, 239);
+  transition: .2s;
+}
+
+.homes-single-info-page-main-info-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(226, 232, 240);
+  margin-top: 6px;
+}
+
+.homes-single-info-page-main-info-stock-available-response-time {
+  width: 100%;
+  color: grey;
+  font-size: 12px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.homes-single-info-page-main-info-stock-available {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homes-single-info-page-main-info-response-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homes-single-info-page-main-info-stock-available-response-time-font-weight {
+  font-weight: 500;
+}
+
+.homes-single-info-page-main-info-help {
+  height: 30%;
+  padding: 20px;
+  background-color: rgb(239, 246, 255);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: 0.1px solid rgb(190, 219, 255);
+  border-radius: 15px;
+}
+
+.homes-single-info-page-main-info-help > h2 {
+  font-size: 14px;
+  color: rgb(15, 23, 43);
+}
+
+.homes-single-info-page-main-info-help > p {
+  font-size: 12px;
+  color: rgb(124, 129, 136);
+}
+
+.contact-support-btn {
+  padding: 7px 0px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: rgb(255, 255, 255);
+  color: rgb(77, 77, 77);
+  border: 0.1px solid rgb(229, 229, 229);
+  border-radius: 6px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.contact-support-btn:hover {
+  background-color: rgb(233, 235, 239);
+  transition: .2s;
 }
 
 /* profile css */

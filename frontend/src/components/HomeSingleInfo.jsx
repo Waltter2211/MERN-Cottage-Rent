@@ -6,7 +6,9 @@ import {
   faArrowLeft,
   faCalendar,
   faCarSide,
+  faHeart,
   faLocationDot,
+  faShareNodes,
   faUtensils,
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
@@ -173,10 +175,33 @@ function HomeSingleInfo({ houses }) {
               <p className={message.type}>{message.text}</p>
             </div>
             <div className="homes-single-info-page-main-info-frame-right">
-              <h1>House Cost: {filteredHouse.houseCost}$</h1>
-              <button className="btn rent-btn" onClick={handleRent}>
-                Rent
-              </button>
+              <div className="homes-single-info-page-main-info-rent">
+                <h2>${filteredHouse.houseCost}</h2>
+                <p>per rental period</p>
+                <button className="rent-btn" onClick={handleRent}>
+                  RENT NOW
+                </button>
+                <div className="homes-single-info-page-main-info-favorite-share-frame">
+                  <button className="favorite-share-btn"><FontAwesomeIcon icon={faHeart} /> Favorite</button>
+                  <button className="favorite-share-btn"><FontAwesomeIcon icon={faShareNodes} /> Share</button>
+                </div>
+                <div className="homes-single-info-page-main-info-line"></div>
+                <div className="homes-single-info-page-main-info-stock-available-response-time">
+                  <div className="homes-single-info-page-main-info-stock-available">
+                    <p>Stock Available:</p>
+                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">{filteredHouse.houseStock} units</p>
+                  </div>
+                  <div className="homes-single-info-page-main-info-response-time">
+                    <p>Response Time:</p>
+                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">Within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+              <div className="homes-single-info-page-main-info-help">
+                <h2>Need Help?</h2>
+                <p>Have questions about this property? Our team is here to help.</p>
+                <button className="contact-support-btn">Contact Support</button>
+              </div>
             </div>
           </div>
         </div>
