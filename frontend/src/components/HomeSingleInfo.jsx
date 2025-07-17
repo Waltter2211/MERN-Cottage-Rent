@@ -2,7 +2,11 @@ import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faCalendar,
+  faLocationDot
+} from "@fortawesome/free-solid-svg-icons";
 import UserContext from "../contexts/UserContext";
 import PropTypes from "prop-types";
 
@@ -70,40 +74,53 @@ function HomeSingleInfo({ houses }) {
 
   const navigate = useNavigate();
 
-  const x = <FontAwesomeIcon icon={faX} />;
-
   return (
     <>
       <Header />
       <div className="homes-single-info-page">
-        <div className="background-overlay"></div>
-        <section className="main-content-section">
-          <div className="homes-single-info-page-main">
-            <button
-              className="btn close-btn"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              {x}
-            </button>
-            <div className="homes-single-info-page-main-img-frame">
-              <img
-                className="homes-single-info-page-main-image"
-                src={filteredHouse.houseImage}
-              ></img>
+        <div className="homes-single-info-page-main">
+          <div className="homes-single-info-page-main-img-frame">
+            <div className="homes-single-info-page-main-image-backround"></div>
+            <button className="close-btn" onClick={() => {navigate("/")}}><FontAwesomeIcon icon={faArrowLeft} /> Back to properties</button>
+            <div className="homes-single-info-page-main-image-info">
+              <div className="homes-single-info-page-main-image-info-tag">
+                <p>{filteredHouse.houseTags}</p>
+              </div>
+              <div>
+                <div className="homes-single-info-page-main-image-info-title-cost">
+                  <div className="homes-single-info-page-main-image-info-title-availability">
+                    <h1>{filteredHouse.houseName}</h1>
+                    <div className="homes-single-info-page-main-image-info-location-availability">
+                      <p>
+                        <FontAwesomeIcon icon={faLocationDot} /> City Center
+                      </p>
+                      <p>
+                        <FontAwesomeIcon icon={faCalendar} /> Available Now
+                      </p>
+                    </div>
+                  </div>
+                  <div className="homes-single-info-page-main-image-info-cost-amount-available">
+                    <h2>${filteredHouse.houseCost}</h2>
+                    <p>{filteredHouse.houseStock} available</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="homes-single-info-page-main-info-frame">
-              <button className="btn rent-btn" onClick={handleRent}>
-                Rent
-              </button>
-              <h1>House Name: {filteredHouse.houseName}</h1>
-              <h1>House Cost: {filteredHouse.houseCost}$</h1>
-              <h1>Houses in Stock: {filteredHouse.houseStock}</h1>
-              <p className={message.type}>{message.text}</p>
-            </div>
+            <img
+              className="homes-single-info-page-main-image"
+              src={filteredHouse.houseImage}
+            ></img>
           </div>
-        </section>
+          <div className="homes-single-info-page-main-info-frame">
+            <button className="btn rent-btn" onClick={handleRent}>
+              Rent
+            </button>
+            <h1>House Name: {filteredHouse.houseName}</h1>
+            <h1>House Cost: {filteredHouse.houseCost}$</h1>
+            <h1>Houses in Stock: {filteredHouse.houseStock}</h1>
+            <p className={message.type}>{message.text}</p>
+          </div>
+        </div>
       </div>
     </>
   );
