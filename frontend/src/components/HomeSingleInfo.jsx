@@ -5,7 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
   faCalendar,
-  faLocationDot
+  faCarSide,
+  faLocationDot,
+  faUtensils,
+  faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import UserContext from "../contexts/UserContext";
 import PropTypes from "prop-types";
@@ -81,7 +84,14 @@ function HomeSingleInfo({ houses }) {
         <div className="homes-single-info-page-main">
           <div className="homes-single-info-page-main-img-frame">
             <div className="homes-single-info-page-main-image-backround"></div>
-            <button className="close-btn" onClick={() => {navigate("/")}}><FontAwesomeIcon icon={faArrowLeft} /> Back to properties</button>
+            <button
+              className="close-btn"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <FontAwesomeIcon icon={faArrowLeft} /> Back to properties
+            </button>
             <div className="homes-single-info-page-main-image-info">
               <div className="homes-single-info-page-main-image-info-tag">
                 <p>{filteredHouse.houseTags}</p>
@@ -112,13 +122,62 @@ function HomeSingleInfo({ houses }) {
             ></img>
           </div>
           <div className="homes-single-info-page-main-info-frame">
-            <button className="btn rent-btn" onClick={handleRent}>
-              Rent
-            </button>
-            <h1>House Name: {filteredHouse.houseName}</h1>
-            <h1>House Cost: {filteredHouse.houseCost}$</h1>
-            <h1>Houses in Stock: {filteredHouse.houseStock}</h1>
-            <p className={message.type}>{message.text}</p>
+            <div className="homes-single-info-page-main-info-frame-left">
+              <div className="homes-single-info-page-main-info-property-details">
+                <h2>Property Details</h2>
+                <div className="homes-single-info-page-main-info-property-details-frame">
+                  <div className="homes-sing-info-page-main-info-detail bedrooms-color">
+                    <h3>2</h3>
+                    <p>Bedrooms</p>
+                  </div>
+                  <div className="homes-sing-info-page-main-info-detail bathrooms-color">
+                    <h3>1</h3>
+                    <p>Bathrooms</p>
+                  </div>
+                  <div className="homes-sing-info-page-main-info-detail size-color">
+                    <h3>850</h3>
+                    <p>Sq Ft</p>
+                  </div>
+                  <div className="homes-sing-info-page-main-info-detail available-color">
+                    <h3>{filteredHouse.houseStock}</h3>
+                    <p>Available</p>
+                  </div>
+                </div>
+              </div>
+              <div className="homes-single-info-page-main-info-description">
+                <h2>Description</h2>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                  unde asperiores soluta, maxime, facere voluptatem eius tempora
+                  nam sed illum rem cumque numquam error, laboriosam omnis.
+                  Voluptatum earum ut quam.
+                </p>
+              </div>
+              <div className="homes-single-info-page-main-info-amenities">
+                <h2>Amenities</h2>
+                <div className="homes-single-info-page-main-info-amenities-frame">
+                  <div className="homes-single-info-page-main-info-amenity">
+                    <FontAwesomeIcon icon={faWifi} />
+                    <p>WiFi</p>
+                  </div>
+                  <div className="homes-single-info-page-main-info-amenity">
+                    <FontAwesomeIcon icon={faCarSide} />
+                    <p>Parking</p>
+                  </div>
+                  <div className="homes-single-info-page-main-info-amenity">
+                    <FontAwesomeIcon icon={faUtensils} />
+                    <p>Kitchen</p>
+                  </div>
+                </div>
+              </div>
+              <p className={message.type}>{message.text}</p>
+            </div>
+            <div className="homes-single-info-page-main-info-frame-right">
+              <h1>House Cost: {filteredHouse.houseCost}$</h1>
+              <button className="btn rent-btn" onClick={handleRent}>
+                Rent
+              </button>
+            </div>
           </div>
         </div>
       </div>
