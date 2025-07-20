@@ -61,8 +61,6 @@ function Homes() {
     setTag("");
   }
 
-  console.log(tag)
-
   return (
     <>
       <Header />
