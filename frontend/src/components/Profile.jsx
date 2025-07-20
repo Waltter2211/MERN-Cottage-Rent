@@ -55,7 +55,11 @@ function Profile() {
                 <FontAwesomeIcon icon={faHouse} /> Browse Properties
               </button>
               <button
-                className={mode === 1 ? "profile-selection-button-border" : "profile-selection-button"}
+                className={
+                  mode === 1
+                    ? "profile-selection-button-border"
+                    : "profile-selection-button"
+                }
                 onClick={() => {
                   setMode(1);
                 }}
@@ -63,14 +67,21 @@ function Profile() {
                 <FontAwesomeIcon icon={faClock} /> Rented Homes
               </button>
               <button
-                className={mode === 2 ? "profile-selection-button-border" : "profile-selection-button"}
+                className={
+                  mode === 2
+                    ? "profile-selection-button-border"
+                    : "profile-selection-button"
+                }
                 onClick={() => {
                   setMode(2);
                 }}
               >
                 <FontAwesomeIcon icon={faGear} /> Account Settings
               </button>
-              <button className="profile-selection-button logout-button" onClick={logout}>
+              <button
+                className="profile-selection-button logout-button"
+                onClick={logout}
+              >
                 <FontAwesomeIcon icon={faRightFromBracket} /> Logout
               </button>
             </div>

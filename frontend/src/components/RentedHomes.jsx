@@ -30,7 +30,8 @@ function RentedHomes() {
 
   return (
     <div className="profile-inputs">
-      <h1>Rented Homes</h1>
+      <h2>Rented Homes</h2>
+      <p>Manage your current rental properties</p>
       <div className="rented-homes-list">
         {rentedHouses !== undefined ? (
           rentedHouses.map((rentedHouse, index) => {

@@ -123,7 +123,7 @@ function UpdateAccount() {
 
   return (
     <div className="profile-inputs">
-      <h1>Update Account</h1>
+      <h2>Update Account</h2>
       <form className="form profile-form">
         <h2>Name</h2>
         <input
