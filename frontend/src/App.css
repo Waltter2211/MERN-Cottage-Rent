@@ -82,6 +82,7 @@ a {
 .error {
   background-color: lightpink;
   color: red;
+  position: absolute;
 }
 
 /* header css */
@@ -1264,17 +1265,14 @@ a {
   transition: .2s;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 5px;

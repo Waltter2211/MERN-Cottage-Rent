@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import UserContext from "../contexts/UserContext";
 import PropTypes from "prop-types";
+import { ToastContainer, toast } from "react-toastify";
 
 function HomeSingleInfo({ houses }) {
   let { houseName } = useParams();
@@ -27,11 +28,6 @@ function HomeSingleInfo({ houses }) {
   const houseId = filteredHouse._id;
   const token = localStorage.getItem("jsontoken");
 
-  let [message, setMessage] = useState({
-    type: "",
-    text: "",
-  });
-
   function handleRent() {
     fetch(`http://localhost:8000/houses/rent/${userId}/${houseId}`, {
       method: "POST",
@@ -42,29 +38,29 @@ function HomeSingleInfo({ houses }) {
     })
       .then((res) => {
         if (res.status === 404) {
-          setMessage({
-            type: "error",
-            text: "This house is out of stock",
+          toast.error("This house is out of stock", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
           });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
         } else if (res.status === 200) {
           return res.json();
         } else {
-          setMessage({
-            type: "error",
-            text: "Server error",
+          toast.error("Server error", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
           });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
         }
       })
       .then((data) => {
@@ -172,7 +168,6 @@ function HomeSingleInfo({ houses }) {
                   </div>
                 </div>
               </div>
-              <p className={message.type}>{message.text}</p>
             </div>
             <div className="homes-single-info-page-main-info-frame-right">
               <div className="homes-single-info-page-main-info-rent">
@@ -182,30 +177,52 @@ function HomeSingleInfo({ houses }) {
                   RENT NOW
                 </button>
                 <div className="homes-single-info-page-main-info-favorite-share-frame">
-                  <button className="favorite-share-btn"><FontAwesomeIcon icon={faHeart} /> Favorite</button>
-                  <button className="favorite-share-btn"><FontAwesomeIcon icon={faShareNodes} /> Share</button>
+                  <button className="favorite-share-btn">
+                    <FontAwesomeIcon icon={faHeart} /> Favorite
+                  </button>
+                  <button className="favorite-share-btn">
+                    <FontAwesomeIcon icon={faShareNodes} /> Share
+                  </button>
                 </div>
                 <div className="homes-single-info-page-main-info-line"></div>
                 <div className="homes-single-info-page-main-info-stock-available-response-time">
                   <div className="homes-single-info-page-main-info-stock-available">
                     <p>Stock Available:</p>
-                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">{filteredHouse.houseStock} units</p>
+                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">
+                      {filteredHouse.houseStock} units
+                    </p>
                   </div>
                   <div className="homes-single-info-page-main-info-response-time">
                     <p>Response Time:</p>
-                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">Within 24 hours</p>
+                    <p className="homes-single-info-page-main-info-stock-available-response-time-font-weight">
+                      Within 24 hours
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="homes-single-info-page-main-info-help">
                 <h2>Need Help?</h2>
-                <p>Have questions about this property? Our team is here to help.</p>
+                <p>
+                  Have questions about this property? Our team is here to help.
+                </p>
                 <button className="contact-support-btn">Contact Support</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }

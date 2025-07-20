@@ -3,6 +3,7 @@ import UserContext from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { toast, ToastContainer } from "react-toastify";
 
 function UpdateAccount() {
   const loggedUser = useContext(UserContext);
@@ -18,11 +19,6 @@ function UpdateAccount() {
     name: "",
     email: "",
     password: "",
-  });
-
-  const [message, setMessage] = useState({
-    type: "",
-    text: "",
   });
 
   const [confirmDelete, setConfirmDelete] = useState(1);
@@ -49,53 +45,55 @@ function UpdateAccount() {
     })
       .then((res) => {
         if (res.status === 422) {
-          setMessage({
-            type: "error",
-            text: "Please fill all the fields",
+          toast.error('Please fill all the fields', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
           });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
         } else if (res.status === 403) {
-          setMessage({
-            type: "error",
-            text: "Account with that email already exists",
+          toast.error('Account with that email already exists', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
           });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
         } else if (res.status === 200) {
           return res.json();
         } else {
-          setMessage({
-            type: "error",
-            text: "Server error",
+          toast.error('Server error', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
           });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
         }
       })
       .then((data) => {
         if (data !== undefined) {
-          setMessage({
-            type: "success",
-            text: "Successfully updated account logging out to save",
+          toast.success('Successfully updated account logging out to save', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored"
           });
           setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
             logout();
           }, 3000);
         }
@@ -171,8 +169,19 @@ function UpdateAccount() {
             </div>
           )}
         </div>
-        <p className={message.type}>{message.text}</p>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }
