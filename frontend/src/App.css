@@ -1068,21 +1068,91 @@ a {
 }
 
 .profile-form {
-  width: 80%;
-}
-
-.profile-inp {
-  border: 1px solid grey;
-}
-
-.delete-confirm {
+  width: 70%;
+  background-color: white;
   display: flex;
-  column-gap: 2%;
+  flex-direction: column;
+  padding: 20px;
+  border: 0.1px solid rgb(235, 235, 235);
+  border-radius: 14px;
+  row-gap: 10px;
+  margin-top: 10px;
 }
 
-.delete-confirm > button {
-  width: 48%;
-  column-gap: 2%;
+.profile-form > h1 {
+  color: rgb(72, 72, 72);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.profile-form > h2 {
+  color: rgb(72, 72, 72);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.profile-input {
+  border: 0.1px solid rgb(225, 225, 225);
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.profile-update-button-frame {
+  display: flex;
+  margin-top: 25px;
+  column-gap: 10px;
+}
+
+.profile-update-button {
+  background-color: rgb(21, 93, 252);
+  color: white;
+  width: 50%;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.profile-update-button:hover {
+  background-color: rgb(20, 71, 230);
+  transition: .2s;
+}
+
+.profile-delete-button {
+  background-color: rgb(212, 24, 61);
+  color: white;
+  width: 50%;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.profile-delete-button:hover {
+  background-color: rgb(216, 47, 80);
+  transition: .2s;
+}
+
+.profile-delete-button-frame {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.profile-delete-button-frame > p {
+  color: rgb(212, 24, 61);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* rented homes css */
