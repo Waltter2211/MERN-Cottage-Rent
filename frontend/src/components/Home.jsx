@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const navigate = useNavigate();
@@ -86,16 +88,33 @@ function Home() {
         <div className="background-overlay"></div>
         <section className="main-content">
           <div className="info-field">
-            <h1>Welcome to house renting site</h1>
-            <p>Rent homes fast and easy</p>
-            <button
-              className="btn"
-              onClick={() => {
-                navigate("/homes");
-              }}
-            >
-              Search Homes
-            </button>
+            <div className="info-field-small-title">
+              <p><FontAwesomeIcon icon={faHouse} /> Premium Property Rentals</p>
+            </div>
+            <h1>Welcome to <span className="info-field-span">house renting</span> site</h1>
+            <h2>Rent homes fast and easy</h2>
+            <div className="info-field-title-frame">
+              <p>Discover your perfect home from our curated collection of premium properties. Experience seamless rentals with verified listings and instant booking.</p>
+            </div>
+            <div className="info-field-button-frame">
+              <button className="search-homes-button" onClick={() => {navigate("/homes");}}><FontAwesomeIcon icon={faMagnifyingGlass} /> SEARCH HOMES</button>
+              <button className="already-a-member-button">Already a Member?</button>
+            </div>
+            <div className="info-field-line"></div>
+            <div className="info-field-stats-frame">
+              <div className="info-field-stat">
+                <h2>500+</h2>
+                <p>Properties</p>
+              </div>
+              <div className="info-field-stat">
+                <h2>1k+</h2>
+                <p>Happy Customers</p>
+              </div>
+              <div className="info-field-stat">
+                <h2>24/7</h2>
+                <p>Support</p>
+              </div>
+            </div>
           </div>
           <div className="register-field">
             <h1>Dont have an account yet?</h1>
