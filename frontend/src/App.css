@@ -12,17 +12,6 @@ body {
   z-index: 10;
 }
 
-.main-content-section {
-  /* width: 70%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: yellow;
-  z-index: 10; */
-}
-
 .main-content-section > p {
   font-size: 20px;
 }
@@ -52,11 +41,11 @@ body {
   background-color: lightcoral;
 }
 
-a {
+/* a {
   text-decoration: none;
   color: rgb(28, 132, 218);
   font-weight: bold;
-}
+} */
 
 .blue {
   color: rgb(28, 132, 218);
@@ -93,6 +82,12 @@ a {
   border-bottom: 0.1px solid rgb(235, 235, 235);
 }
 
+.header-blue {
+  background-color: rgb(27, 93, 184);
+  border: 0.1px solid rgb(27, 93, 184);
+  color: white;
+}
+
 .header-content {
   width: 100%;
   height: 100%;
@@ -102,26 +97,55 @@ a {
   padding: 0px 18%;
 }
 
-.header-buttons {
-  display: flex;
-  column-gap: 20px;
-  align-items: center;
+.header-content > a {
+  text-decoration: none;
 }
 
-.header-logo-btn {
+.header-logo-button {
+  text-decoration: none;
   color: black;
   cursor: pointer;
   font-size: 24px;
 }
 
-.header-login-btn {
-  color: white;
-  cursor: pointer;
+.header-buttons {
+  display: flex;
+  column-gap: 14px;
+  align-items: center;
 }
 
-.header-register-btn {
+.header-logo-white {
+  color: white;
+}
+
+.header-button {
   color: white;
   cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: .2s;
+}
+
+.header-button:hover {
+  background-color: rgb(255, 255, 255, .1);
+  color: rgb(0, 0, 0, .8);
+}
+
+.header-button-selected {
+  color: rgb(24, 99, 246);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: .2s;
+}
+
+.header-button-selected:hover {
+  background-color: rgb(255, 255, 255, .7);
 }
 
 .header-logged-in-text {
@@ -131,7 +155,7 @@ a {
   font-weight: 400;
 }
 
-.header-logout-btn {
+.header-logout-button {
   border: 1px solid rgb(173, 173, 173);
   border-radius: 7px;
   padding: 5px 10px;
@@ -140,7 +164,7 @@ a {
   transition: .2s;
 }
 
-.header-logout-btn:hover {
+.header-logout-button:hover {
   cursor: pointer;
   background-color: rgb(230, 230, 230);
   transition: .2s;

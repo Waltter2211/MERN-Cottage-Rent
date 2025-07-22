@@ -83,7 +83,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header extraClassHeader="header-blue" extraClassHeaderLogo="header-logo-white" />
       <div className="home">
         <div className="background-overlay"></div>
         <section className="main-content">
