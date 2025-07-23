@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import UserContext from "../contexts/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import SelectionContext from "../contexts/SelectionContext";
 
 function Header({extraClassHeader, extraClassHeaderLogo}) {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Header({extraClassHeader, extraClassHeaderLogo}) {
     navigate("/");
   }
 
-  const [selection, setSelection] = useState(1)
+  const { selection, setSelection } = useContext(SelectionContext)
 
   return (
     <>

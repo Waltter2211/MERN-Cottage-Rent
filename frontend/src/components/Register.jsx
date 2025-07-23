@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import SelectionContext from "../contexts/SelectionContext";
 
 function Register() {
   const navigate = useNavigate();
+
+  const { setSelection } = useContext(SelectionContext)
 
   let [message, setMessage] = useState({
     type: "",
@@ -83,47 +85,43 @@ function Register() {
 
   return (
     <>
-      <Header />
       <div className="login">
-        <div className="background-overlay"></div>
-        <section className="main-content-section">
-          <form className="form">
-            <p>Name</p>
-            <input
-              type="text"
-              placeholder="Username..."
-              className="inp"
-              onChange={handleInput}
-              name="name"
-              value={registeringUser.name}
-            ></input>
-            <p>Email</p>
-            <input
-              type="email"
-              placeholder="Email..."
-              className="inp"
-              onChange={handleInput}
-              name="email"
-              value={registeringUser.email}
-            ></input>
-            <p>Password</p>
-            <input
-              type="password"
-              placeholder="Password..."
-              className="inp"
-              onChange={handleInput}
-              name="password"
-              value={registeringUser.password}
-            ></input>
-            <button className="btn" onClick={handleRegister}>
-              Register
-            </button>
-            <p className={message.type}>{message.text}</p>
-          </form>
-          <p>
-            Have an existing account? <Link to={"/login"}>Login here</Link>
-          </p>
-        </section>
+        <form className="form">
+          <p>Name</p>
+          <input
+            type="text"
+            placeholder="Username..."
+            className="inp"
+            onChange={handleInput}
+            name="name"
+            value={registeringUser.name}
+          ></input>
+          <p>Email</p>
+          <input
+            type="email"
+            placeholder="Email..."
+            className="inp"
+            onChange={handleInput}
+            name="email"
+            value={registeringUser.email}
+          ></input>
+          <p>Password</p>
+          <input
+            type="password"
+            placeholder="Password..."
+            className="inp"
+            onChange={handleInput}
+            name="password"
+            value={registeringUser.password}
+          ></input>
+          <button className="btn" onClick={handleRegister}>
+            Register
+          </button>
+          <p className={message.type}>{message.text}</p>
+        </form>
+        <p>
+          Have an existing account? <span onClick={() => setSelection(1)}>Log in</span>
+        </p>
       </div>
     </>
   );

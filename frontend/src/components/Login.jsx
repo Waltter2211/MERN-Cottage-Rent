@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import Header from "./Header";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
+import SelectionContext from "../contexts/SelectionContext";
 
 function Login() {
   const navigate = useNavigate();
   let loggedUser = useContext(UserContext);
+  const { setSelection } = useContext(SelectionContext)
 
   let [message, setMessage] = useState({
     type: "",
@@ -77,38 +78,34 @@ function Login() {
 
   return (
     <>
-      <Header />
       <div className="login">
-        <div className="background-overlay"></div>
-        <section className="main-content-section">
-          <form className="form">
-            <p>Email</p>
-            <input
-              type="email"
-              placeholder="Email..."
-              className="inp"
-              onChange={handleInput}
-              name="email"
-              value={loggingUser.email}
-            ></input>
-            <p>Password</p>
-            <input
-              type="password"
-              placeholder="Password..."
-              className="inp"
-              onChange={handleInput}
-              name="password"
-              value={loggingUser.password}
-            ></input>
-            <button className="btn" onClick={handleLogin}>
-              Login
-            </button>
-            <p className={message.type}>{message.text}</p>
-          </form>
-          <p>
-            Dont have an account? <Link to={"/register"}>Register</Link>
-          </p>
-        </section>
+        <form className="form">
+          <p>Email</p>
+          <input
+            type="email"
+            placeholder="Email..."
+            className="inp"
+            onChange={handleInput}
+            name="email"
+            value={loggingUser.email}
+          ></input>
+          <p>Password</p>
+          <input
+            type="password"
+            placeholder="Password..."
+            className="inp"
+            onChange={handleInput}
+            name="password"
+            value={loggingUser.password}
+          ></input>
+          <button className="btn" onClick={handleLogin}>
+            Login
+          </button>
+          <p className={message.type}>{message.text}</p>
+        </form>
+        <p>
+          Dont have an account? <span onClick={() => setSelection(2)}>Register</span>
+        </p>
       </div>
     </>
   );
