@@ -51,16 +51,6 @@ body {
   color: rgb(28, 132, 218);
 }
 
-.form {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  row-gap: 10px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
 .success {
   background-color: lightgreen;
   color: green;
@@ -301,17 +291,19 @@ body {
   font-size: 12px;
 }
 
-.register-field {
+/* login & register css */
+
+/* .register-field {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: red; */
+  background-color: red;
   font-size: 20px;
   padding-top: 50px;
-}
+} */
 
-.form-home {
+/* .form-home {
   width: 60%;
 }
 
@@ -321,19 +313,140 @@ body {
   border-radius: 5px;
   border: none;
   font-size: 15px;
+} */
+
+
+.login-frame {
+  width: 50%;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-/* login & register css */
-
 .login {
-  width: 100%;
-  height: 95vh;
+  width: 68%;
+  background-color: rgb(244, 246, 249);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
   color: white;
+  padding: 30px 30px;
+  border-radius: 15px;
+}
+
+.login-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+  margin-bottom: 20px;
+}
+
+.login-description > h2 {
+  color: rgb(15, 23, 42);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.login-description > p {
+  color: rgb(111, 124, 141);
+  font-size: 14px;
+}
+
+.login-form {
+  width: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.login-form-input-frame {
+  width: 100%;
+}
+
+.login-form-input-frame > p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login-form-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  color: rgb(185, 199, 214);
+  border: 0.1px solid rgb(235, 235, 235);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  outline: none;
+  column-gap: 10px;
+}
+
+.login-form-input > input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.login-form > button {
+  background-color: rgb(24, 99, 246);
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login-form > button:hover {
+  background-color: rgb(23, 78, 225);
+  transition: .2s;
+}
+
+.login-line {
+  width: 100%;
+  padding: 1px;
+  background-color: rgb(235, 235, 235);
+}
+
+.login-sub-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.login-sub-description > h3 {
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login-sub-description-highlight {
+  color: rgb(28, 102, 246);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-sub-description-highlight:hover {
+  text-decoration: underline;
+}
+
+.login-sub-description > p {
+  color: rgb(69, 86, 107);
+}
+
+.login-terms-text {
+  font-size: 10px;
+  font-weight: 400;
 }
 
 /* not found css */
