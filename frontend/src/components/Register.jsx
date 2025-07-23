@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import SelectionContext from "../contexts/SelectionContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 function Register() {
-  const navigate = useNavigate();
 
-  const { setSelection } = useContext(SelectionContext)
+  const { setSelection } = useContext(SelectionContext);
 
   let [message, setMessage] = useState({
     type: "",
@@ -66,7 +66,7 @@ function Register() {
               type: "",
               text: "",
             });
-            navigate("/login");
+            setSelection(1)
           }, 3000);
         }
         return res.json();
@@ -84,46 +84,74 @@ function Register() {
   }
 
   return (
-    <>
+    <div className="login-frame">
       <div className="login">
-        <form className="form">
-          <p>Name</p>
-          <input
-            type="text"
-            placeholder="Username..."
-            className="inp"
-            onChange={handleInput}
-            name="name"
-            value={registeringUser.name}
-          ></input>
-          <p>Email</p>
-          <input
-            type="email"
-            placeholder="Email..."
-            className="inp"
-            onChange={handleInput}
-            name="email"
-            value={registeringUser.email}
-          ></input>
-          <p>Password</p>
-          <input
-            type="password"
-            placeholder="Password..."
-            className="inp"
-            onChange={handleInput}
-            name="password"
-            value={registeringUser.password}
-          ></input>
-          <button className="btn" onClick={handleRegister}>
-            Register
+        <div className="login-description">
+          <h2>Don&apos;t have an account yet?</h2>
+          <p>Create your account to get started</p>
+        </div>
+        <form className="login-form">
+          <div className="login-form-input-frame">
+            <p>Username</p>
+            <div className="login-form-input">
+              <FontAwesomeIcon icon={faUser} />
+              <input
+                type="text"
+                placeholder="Username..."
+                onChange={handleInput}
+                name="name"
+                value={registeringUser.name}
+              ></input>
+            </div>
+          </div>
+          <div className="login-form-input-frame">
+            <p>Email</p>
+            <div className="login-form-input">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <input
+                type="email"
+                placeholder="Email..."
+                onChange={handleInput}
+                name="email"
+                value={registeringUser.email}
+              ></input>
+            </div>
+          </div>
+          <div className="login-form-input-frame">
+            <p>Password</p>
+            <div className="login-form-input">
+              <FontAwesomeIcon icon={faLock} />
+              <input
+                type="password"
+                placeholder="Password..."
+                onChange={handleInput}
+                name="password"
+                value={registeringUser.password}
+              ></input>
+            </div>
+          </div>
+          <button className="button" onClick={handleRegister}>
+            REGISTER
           </button>
           <p className={message.type}>{message.text}</p>
         </form>
-        <p>
-          Have an existing account? <span onClick={() => setSelection(1)}>Log in</span>
-        </p>
+        <div className="login-sub-description">
+          <h3>
+            Have an existing account? {" "}
+            <span
+              className="login-sub-description-highlight"
+              onClick={() => setSelection(1)}
+            >
+              Login
+            </span>
+          </h3>
+          <div className="login-line"></div>
+          <p className="login-terms-text">
+            By continuing, you agree to our Terms of Service and Privacy Policy
+          </p>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

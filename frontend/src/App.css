@@ -8,7 +8,6 @@ body {
 .main-content {
   width: 60%;
   display: flex;
-  /* background-color: yellow; */
   z-index: 10;
 }
 
@@ -104,6 +103,10 @@ body {
   align-items: center;
 }
 
+.header-buttons > a {
+  text-decoration: none;
+}
+
 .header-logo-white {
   color: white;
 }
@@ -115,12 +118,12 @@ body {
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 6px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .header-button:hover {
-  background-color: rgb(255, 255, 255, .1);
-  color: rgb(0, 0, 0, .8);
+  background-color: rgb(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0, 0.8);
 }
 
 .header-button-selected {
@@ -131,11 +134,11 @@ body {
   background-color: white;
   padding: 6px 10px;
   border-radius: 6px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .header-button-selected:hover {
-  background-color: rgb(255, 255, 255, .7);
+  background-color: rgb(255, 255, 255, 0.7);
 }
 
 .header-logged-in-text {
@@ -151,13 +154,13 @@ body {
   padding: 5px 10px;
   font-size: 13px;
   font-weight: 500;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .header-logout-button:hover {
   cursor: pointer;
   background-color: rgb(230, 230, 230);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 /* home css */
@@ -190,7 +193,7 @@ body {
 
 .info-field-small-title {
   width: fit-content;
-  background-color: rgb(255, 255, 255, .2);
+  background-color: rgb(255, 255, 255, 0.2);
   border: 0.1px solid rgb(177, 177, 177);
   border-radius: 6px;
   padding: 8px 14px;
@@ -241,12 +244,12 @@ body {
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .search-homes-button:hover {
   background-color: rgb(23, 78, 225);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .already-a-member-button {
@@ -259,18 +262,18 @@ body {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .already-a-member-button:hover {
-  background-color: rgb(139, 139, 139, .2);
-  transition: .2s;
+  background-color: rgb(139, 139, 139, 0.2);
+  transition: 0.2s;
 }
 
 .info-field-line {
   width: 100%;
   padding: 1px;
-  background-color: rgb(255, 255, 255, .2);
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
 .info-field-stats-frame {
@@ -292,29 +295,6 @@ body {
 }
 
 /* login & register css */
-
-/* .register-field {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: red;
-  font-size: 20px;
-  padding-top: 50px;
-} */
-
-/* .form-home {
-  width: 60%;
-}
-
-.inp {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 15px;
-} */
-
 
 .login-frame {
   width: 50%;
@@ -367,6 +347,7 @@ body {
 }
 
 .login-form-input-frame > p {
+  color: rgb(57, 74, 94);
   font-size: 12px;
   font-weight: 500;
 }
@@ -402,12 +383,12 @@ body {
   border-radius: 6px;
   margin-top: 18px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login-form > button:hover {
   background-color: rgb(23, 78, 225);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .login-line {
@@ -454,7 +435,6 @@ body {
 .not-found {
   width: 100%;
   height: 100vh;
-  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -511,13 +491,14 @@ body {
 
 .homes-search {
   width: 30%;
-  height: 45px;
+  /* height: 45px; */
   background-color: white;
   border: 0.1px solid rgb(235, 235, 235);
   border-radius: 7px;
   display: flex;
   align-items: center;
-  padding: 2px 15px;
+  padding: 12px 15px;
+  column-gap: 10px;
 }
 
 .homes-search-icon {
@@ -526,8 +507,10 @@ body {
 }
 
 .homes-search > input {
+  width: 100%;
   font-size: 13px;
   outline: none;
+  border: none;
 }
 
 .homes-list {
@@ -566,7 +549,7 @@ body {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-button-frame {
@@ -600,7 +583,7 @@ body {
 .homes-list-button:hover {
   background-color: rgb(244, 246, 248);
   border-radius: 9px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-main {
@@ -629,12 +612,12 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-main-home:hover {
   box-shadow: 1px 5px 10px rgb(207, 207, 207);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-home-image {
@@ -704,12 +687,12 @@ body {
   border: none;
   border-radius: 7px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-home-info-details:hover {
   background-color: rgb(18, 85, 228);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-pagination {
@@ -790,13 +773,13 @@ body {
   font-weight: 500;
   border: none;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .close-btn:hover {
   color: white;
   background-color: rgb(255, 255, 255, 0.3);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .rent-btn {
@@ -810,12 +793,12 @@ body {
   color: rgb(247, 252, 249);
   border-radius: 6px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .rent-btn:hover {
   background-color: rgb(10, 126, 53);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-single-info-page-main-img-frame {
@@ -1079,12 +1062,12 @@ body {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .favorite-share-btn:hover {
   background-color: rgb(233, 235, 239);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-single-info-page-main-info-line {
@@ -1149,12 +1132,12 @@ body {
   border-radius: 6px;
   margin-top: 5px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .contact-support-btn:hover {
   background-color: rgb(233, 235, 239);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 /* profile css */
@@ -1242,13 +1225,13 @@ body {
   font-size: 14px;
   border-radius: 8px;
   background-color: white;
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
 .profile-selection-button:hover {
   background-color: rgb(249, 249, 250);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .profile-selection-button-border {
@@ -1343,12 +1326,12 @@ body {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .profile-update-button:hover {
   background-color: rgb(20, 71, 230);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .profile-delete-button {
@@ -1361,12 +1344,12 @@ body {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .profile-delete-button:hover {
   background-color: rgb(216, 47, 80);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .profile-delete-button-frame {
@@ -1481,13 +1464,13 @@ body {
   color: rgb(232, 0, 11);
   border-radius: 6px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .return-house-button:hover {
   color: black;
   background-color: rgb(254, 242, 242);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 ::-webkit-scrollbar {
