@@ -2,8 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import Register from "./components/Register";
 import Homes from "./components/Homes";
 import { useEffect, useState } from "react";
 import UserContext from "./contexts/UserContext";
@@ -39,26 +37,6 @@ function App() {
                       <Navigate to="/homes" />
                     ) : (
                       <Home />
-                    )
-                  }
-                ></Route>
-                <Route
-                  path="/login"
-                  element={
-                    loggedUser?.email != null ? (
-                      <Navigate to="/homes" />
-                    ) : (
-                      <Login />
-                    )
-                  }
-                ></Route>
-                <Route
-                  path="/register"
-                  element={
-                    loggedUser?.email != null ? (
-                      <Navigate to="/homes" />
-                    ) : (
-                      <Register />
                     )
                   }
                 ></Route>

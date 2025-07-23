@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import SelectionContext from "../contexts/SelectionContext";
 
-function Header({extraClassHeader, extraClassHeaderLogo}) {
+function Header({ extraClassHeader, extraClassHeaderLogo, extraClassButton, extraClassButtonSelected }) {
   const navigate = useNavigate();
 
   let loggedUser = useContext(UserContext);
@@ -27,8 +27,8 @@ function Header({extraClassHeader, extraClassHeaderLogo}) {
             <div>
               {loggedUser.loggedUser?.email == null ? (
                 <div className="header-buttons">
-                  <p className={selection === 1 ? "header-button-selected" : "header-button"} onClick={() => setSelection(1)}>Login</p>
-                  <p className={selection === 2 ? "header-button-selected" : "header-button"} onClick={() => setSelection(2)}>Register</p>
+                  <p className={selection === 1 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => setSelection(1)}>Login</p>
+                  <p className={selection === 2 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => setSelection(2)}>Register</p>
                 </div>
               ) : (
                 <div className="header-buttons">
@@ -52,7 +52,9 @@ function Header({extraClassHeader, extraClassHeaderLogo}) {
 
 Header.propTypes = {
   extraClassHeader: PropTypes.object,
-  extraClassHeaderLogo: PropTypes.object
+  extraClassHeaderLogo: PropTypes.object,
+  extraClassButton: PropTypes.object,
+  extraClassButtonSelected: PropTypes.object
 };
 
 export default Header;

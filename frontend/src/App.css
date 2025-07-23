@@ -15,7 +15,7 @@ body {
   font-size: 20px;
 }
 
-.btn {
+/* .btn {
   padding: 30px;
   background-color: rgb(28, 132, 218);
   color: white;
@@ -38,12 +38,6 @@ body {
 
 .delete:hover {
   background-color: lightcoral;
-}
-
-/* a {
-  text-decoration: none;
-  color: rgb(28, 132, 218);
-  font-weight: bold;
 } */
 
 .blue {
@@ -139,6 +133,25 @@ body {
 
 .header-button-selected:hover {
   background-color: rgb(255, 255, 255, 0.7);
+}
+
+.header-button-reverse {
+  color: rgb(24, 99, 246);
+  transition: 0.2s;
+}
+
+.header-button-reverse:hover {
+  background-color: rgba(180, 180, 180, 0.1);
+  color: rgb(0, 0, 0, 0.8);
+}
+
+.header-button-selected-reverse {
+  color: white;
+  background-color: rgb(24, 99, 246);
+}
+
+.header-button-selected-reverse:hover {
+  background-color: rgb(24, 99, 246, 0.7);
 }
 
 .header-logged-in-text {

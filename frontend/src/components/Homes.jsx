@@ -63,7 +63,7 @@ function Homes() {
 
   return (
     <>
-      <Header />
+      <Header extraClassButton={"header-button-reverse"} extraClassButtonSelected={"header-button-selected-reverse"} />
       <div className="homes">
         <div className="homes-main">
           <div className="homes-main-title-search">
