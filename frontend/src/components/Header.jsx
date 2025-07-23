@@ -14,6 +14,11 @@ function Header({ extraClassHeader, extraClassHeaderLogo, extraClassButton, extr
     navigate("/");
   }
 
+  function handleSelection(selection) {
+    setSelection(selection)
+    navigate("/")
+  }
+
   const { selection, setSelection } = useContext(SelectionContext)
 
   return (
@@ -27,8 +32,8 @@ function Header({ extraClassHeader, extraClassHeaderLogo, extraClassButton, extr
             <div>
               {loggedUser.loggedUser?.email == null ? (
                 <div className="header-buttons">
-                  <p className={selection === 1 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => setSelection(1)}>Login</p>
-                  <p className={selection === 2 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => setSelection(2)}>Register</p>
+                  <p className={selection === 1 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => handleSelection(1)}>Login</p>
+                  <p className={selection === 2 ? `header-button-selected ${extraClassButtonSelected}` : `header-button ${extraClassButton}`} onClick={() => handleSelection(2)}>Register</p>
                 </div>
               ) : (
                 <div className="header-buttons">

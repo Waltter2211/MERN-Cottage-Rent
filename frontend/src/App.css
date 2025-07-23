@@ -86,7 +86,8 @@ body {
 
 .header-logo-button {
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: rgb(24, 99, 246);
   cursor: pointer;
   font-size: 24px;
 }
@@ -136,6 +137,7 @@ body {
 }
 
 .header-button-reverse {
+  background-color: none;
   color: rgb(24, 99, 246);
   transition: 0.2s;
 }
@@ -146,12 +148,14 @@ body {
 }
 
 .header-button-selected-reverse {
-  color: white;
-  background-color: rgb(24, 99, 246);
+  background-color: none;
+  color: rgb(24, 99, 246);
+  transition: 0.2s;
 }
 
 .header-button-selected-reverse:hover {
-  background-color: rgb(24, 99, 246, 0.7);
+  background-color: rgba(180, 180, 180, 0.1);
+  color: rgb(0, 0, 0, 0.8);
 }
 
 .header-logged-in-text {
