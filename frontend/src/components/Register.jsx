@@ -2,15 +2,10 @@ import React, { useContext, useState } from "react";
 import SelectionContext from "../contexts/SelectionContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 function Register() {
-
   const { setSelection } = useContext(SelectionContext);
-
-  let [message, setMessage] = useState({
-    type: "",
-    text: "",
-  });
 
   function handleInput(event) {
     setRegisteringUser((prev) => {
@@ -35,39 +30,11 @@ function Register() {
     })
       .then((res) => {
         if (res.status === 403) {
-          setMessage({
-            type: "error",
-            text: "Account already exists",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("Account already exists");
         } else if (res.status === 500) {
-          setMessage({
-            type: "error",
-            text: "Server error",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("Server error");
         } else {
-          setMessage({
-            type: "success",
-            text: "Successfully registered an account",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-            setSelection(1)
-          }, 3000);
+          toast.success("Successfully registered an account");
         }
         return res.json();
       })
@@ -133,7 +100,6 @@ function Register() {
           <button className="button" onClick={handleRegister}>
             REGISTER
           </button>
-          <p className={message.type}>{message.text}</p>
         </form>
         <div className="login-sub-description">
           <h3>

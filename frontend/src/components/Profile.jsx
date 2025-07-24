@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import UpdateAccount from "./UpdateAccount";
-import UserContext from "../contexts/UserContext";
+import { ProfileContext, UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import RentedHomes from "./RentedHomes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,8 @@ function Profile() {
   const navigate = useNavigate();
 
   const loggedUser = useContext(UserContext);
-  const [mode, setMode] = useState(1);
+  const { mode, setMode } = useContext(ProfileContext);
+  /* const [mode, setMode] = useState(1); */
   const [user, setUser] = useState("");
 
   useEffect(() => {

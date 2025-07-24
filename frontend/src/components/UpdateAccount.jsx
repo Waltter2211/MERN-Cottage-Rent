@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import UserContext from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 function UpdateAccount() {
   const loggedUser = useContext(UserContext);
@@ -45,54 +45,18 @@ function UpdateAccount() {
     })
       .then((res) => {
         if (res.status === 422) {
-          toast.error('Please fill all the fields', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored"
-          });
+          toast.error('Please fill all the fields');
         } else if (res.status === 403) {
-          toast.error('Account with that email already exists', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored"
-          });
+          toast.error('Account with that email already exists');
         } else if (res.status === 200) {
           return res.json();
         } else {
-          toast.error('Server error', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored"
-          });
+          toast.error('Server error');
         }
       })
       .then((data) => {
         if (data !== undefined) {
-          toast.success('Successfully updated account logging out to save', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored"
-          });
+          toast.success('Successfully updated account logging out to save');
           setTimeout(() => {
             logout();
           }, 3000);
@@ -170,18 +134,6 @@ function UpdateAccount() {
           )}
         </div>
       </form>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </div>
   );
 }

@@ -9,6 +9,7 @@ function Homes() {
   const [houses, setHouses] = useState([]);
   const [initialHouses, setInitialHouses] = useState([]);
   const [tag, setTag] = useState("");
+  const [searchTerm, setSearchTerm] = useState("")
   let containedHouses = useContext(HouseContext);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ function Homes() {
   }
 
   function handleSearch(event) {
+    setSearchTerm(event.target.value)
     let searchHouses = houses.filter((house) => {
       const regex = new RegExp(`${event.target.value}`, "i");
       return house.houseName.match(regex);
@@ -130,7 +132,7 @@ function Homes() {
               </ul>
             </div>
             <div className="homes-list-main">
-              <Paginate houses={houses} itemsPerPage={6} />
+              <Paginate houses={houses} itemsPerPage={6} searchTerm={searchTerm} searchTag={tag} />
             </div>
           </div>
         </div>

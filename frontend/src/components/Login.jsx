@@ -1,20 +1,16 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 import SelectionContext from "../contexts/SelectionContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 function Login() {
   const navigate = useNavigate();
   let loggedUser = useContext(UserContext);
   const { setSelection } = useContext(SelectionContext);
-
-  let [message, setMessage] = useState({
-    type: "",
-    text: "",
-  });
 
   let [loggingUser, setLoggingUser] = useState({
     email: "",
@@ -38,27 +34,9 @@ function Login() {
     })
       .then((res) => {
         if (res.status === 401) {
-          setMessage({
-            type: "error",
-            text: "Wrong password",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("Wrong password");
         } else if (res.status === 404) {
-          setMessage({
-            type: "error",
-            text: "No user found",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("No user found");
         } else {
           return res.json();
         }
@@ -115,7 +93,6 @@ function Login() {
           <button className="button" onClick={handleLogin}>
             LOGIN
           </button>
-          <p className={message.type}>{message.text}</p>
         </form>
         <div className="login-sub-description">
           <h3>

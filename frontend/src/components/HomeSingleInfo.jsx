@@ -12,9 +12,9 @@ import {
   faUtensils,
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
-import UserContext from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 import PropTypes from "prop-types";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function HomeSingleInfo({ houses }) {
   let { houseName } = useParams();
@@ -38,34 +38,16 @@ function HomeSingleInfo({ houses }) {
     })
       .then((res) => {
         if (res.status === 404) {
-          toast.error("This house is out of stock", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
+          toast.error("This house is out of stock");
         } else if (res.status === 200) {
           return res.json();
         } else {
-          toast.error("Server error", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored"
-          });
+          toast.error("Server error");
         }
       })
       .then((data) => {
         if (data !== undefined) {
-          navigate("/homes");
+          toast.success(`Successfully rented ${filteredHouse.houseName}!`)
         }
       })
       .catch((err) => {
@@ -211,24 +193,12 @@ function HomeSingleInfo({ houses }) {
           </div>
         </div>
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </>
   );
 }
 
 HomeSingleInfo.propTypes = {
-  houses: PropTypes.array.isRequired,
+  houses: PropTypes.array
 };
 
 export default HomeSingleInfo;
