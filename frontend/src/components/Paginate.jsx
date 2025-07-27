@@ -43,7 +43,7 @@ function Paginate({ houses, itemsPerPage, searchTerm, searchTag }) {
       <div className="homes-list-main-homes">
         {currentItems.length === 0 ? (
           <div className="homes-list-main-homes-not-found">
-            <img src="/public/NoHomesFoundLogo.JPG" />
+            <img src="/NoHomesFoundLogo.JPG" />
             <h1 className="blue">No Properties Found</h1>
             <p>We couldn&apos;t find any properties matching &quot;<span className="homes-list-main-homes-search-span">{searchTerm}</span>&quot;</p>
             <div className="homes-list-main-homes-not-found-tag-frame">
