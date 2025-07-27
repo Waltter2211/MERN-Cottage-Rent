@@ -57,8 +57,6 @@ function HomeSingleInfo({ houses }) {
 
   const navigate = useNavigate();
 
-  console.log(filteredHouse.houseAmenities.length)
-
   return (
     <>
       <Header />
