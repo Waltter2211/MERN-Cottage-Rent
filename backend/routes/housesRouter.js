@@ -24,6 +24,7 @@ housesRouter.get("/:houseName", async (req, res) => {
     if (foundHouses.length === 0) {
       res.send({ message: "Couldn't find any houses with search" });
     } else {
+      console.log(foundHouses)
       res.send({
         message: `Found ${foundHouses.length} houses with search result`,
         foundHouses,

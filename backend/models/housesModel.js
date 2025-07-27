@@ -26,6 +26,30 @@ const housesSchema = mongoose.Schema(
       required: true,
       enum: ["Cottages", "Tower Blocks", "Vans", "Others"],
     },
+    houseDescription: {
+      type: String,
+      required: true,
+      min: 0
+    },
+    houseBedrooms: {
+      type: Number,
+      required: true,
+      min: 0
+    },
+    houseBathrooms: {
+      type: Number,
+      required: true,
+      min: 0
+    },
+    houseSize: {
+      type: Number,
+      required: true,
+      min: 0
+    },
+    houseAmenities: {
+      type: Array,
+      required: true
+    }
   },
   { timestamps: true },
 );

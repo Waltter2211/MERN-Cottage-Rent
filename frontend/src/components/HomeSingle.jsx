@@ -13,7 +13,7 @@ function HomeSingle({ house }) {
       }}
     >
       <div className="homes-list-home-image">
-        <img src={house.houseImage}></img>
+        <img onError="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" src={house.houseImage}></img>
         <div className="homes-list-home-tag-frame">
           <p>{house.houseTags}</p>
         </div>

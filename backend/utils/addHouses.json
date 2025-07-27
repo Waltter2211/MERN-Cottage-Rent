@@ -1,0 +1,365 @@
+[
+    {
+        "houseName": "Hill Shack",
+        "houseCost": 185000,
+        "houseStock": 3,
+        "houseImage": "https://live.staticflickr.com/7426/9197516209_7d2c30d4bb_c.jpg",
+        "houseTags": "Cottages",
+        "houseDescription": "A peaceful retreat in the hills with timber charm and scenic surroundings.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 1,
+        "houseSize": 780,
+        "houseAmenities": [
+            "WiFi",
+            "Parking"
+        ]
+    },
+    {
+        "houseName": "Van",
+        "houseCost": 8200,
+        "houseStock": 3,
+        "houseImage": "https://www.hobby-caravan.de/fileadmin/_processed_/e/0/csm_maxia-van-relax-laengsbetten_0cd155bbad.jpg",
+        "houseTags": "Vans",
+        "houseDescription": "Compact mobile van with built-in kitchen and sleeping area for nomadic living.",
+        "houseBedrooms": 1,
+        "houseBathrooms": 1,
+        "houseSize": 100,
+        "houseAmenities": [
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Castle",
+        "houseCost": 68000000,
+        "houseStock": 2,
+        "houseImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg/1200px-Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Historic stone castle with towers, banquet halls, and private gardens.",
+        "houseBedrooms": 16,
+        "houseBathrooms": 10,
+        "houseSize": 18500,
+        "houseAmenities": [
+            "WiFi",
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Tower Block",
+        "houseCost": 145000,
+        "houseStock": 20,
+        "houseImage": "https://omghcontent.affino.com/AcuCustom/Sitename/DAM/083/tower-block-2-MIN.jpg",
+        "houseTags": "Tower Blocks",
+        "houseDescription": "Urban apartment unit with two bedrooms and elevator access.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 2,
+        "houseSize": 870,
+        "houseAmenities": [
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Japanese House",
+        "houseCost": 280000,
+        "houseStock": 10,
+        "houseImage": "https://media.timeout.com/images/106054872/750/422/image.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Elegant home featuring tatami rooms, sliding doors, and zen ambiance.",
+        "houseBedrooms": 3,
+        "houseBathrooms": 2,
+        "houseSize": 1050,
+        "houseAmenities": [
+            "WiFi",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Igloo",
+        "houseCost": 1200,
+        "houseStock": 20,
+        "houseImage": "https://www.descopera.ro/wp-content/uploads/2023/12/Cat-de-cald-este-intr-un-iglu_shutterstock_descopera.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Traditional ice house designed for Arctic comfort and minimalist style.",
+        "houseBedrooms": 1,
+        "houseBathrooms": 1,
+        "houseSize": 450,
+        "houseAmenities": [
+            "WiFi"
+        ]
+    },
+    {
+        "houseName": "Summer Cottage",
+        "houseCost": 95000,
+        "houseStock": 15,
+        "houseImage": "https://cdn-datahub.visitfinland.com/images/aac1c040-0efa-11ec-9a89-83d7a734ff9d-Summer%20cottage_Merikoivula%20(4).jpg?s=1200",
+        "houseTags": "Cottages",
+        "houseDescription": "A lakeside summer retreat with veranda and garden access.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 1,
+        "houseSize": 720,
+        "houseAmenities": [
+            "WiFi",
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Farm House",
+        "houseCost": 275000,
+        "houseStock": 7,
+        "houseImage": "https://www.logcabinhomes.com/wp-content/uploads/bb-plugin/cache/MillCreekFarm-landscape-8dd85ed7f9a1ee64bb08ecd1d06a32d7-.jpg",
+        "houseTags": "Cottages",
+        "houseDescription": "Traditional farmhouse with open fields, wood décor, and a fireplace.",
+        "houseBedrooms": 4,
+        "houseBathrooms": 2,
+        "houseSize": 1600,
+        "houseAmenities": [
+            "WiFi",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Underwater House",
+        "houseCost": 4200000,
+        "houseStock": 12,
+        "houseImage": "https://media.architecturaldigest.com/photos/635695e31386cb1d40eede61/1:1/w_3937,h_3937,c_limit/THE%20MURAKA_Family_Undersea%20Room_Night_%20credit%20Justin%20Nicholas%20-%20hi-res.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Luxury villa beneath the sea featuring coral views and ocean immersion.",
+        "houseBedrooms": 3,
+        "houseBathrooms": 3,
+        "houseSize": 2500,
+        "houseAmenities": [
+            "WiFi",
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Apartment House",
+        "houseCost": 120000,
+        "houseStock": 30,
+        "houseImage": "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/176405215.jpg?k=516e8d614584d7e13b633db2732e1d5262dc3b2bd5fb7abd073e38651fc98fa2&o=",
+        "houseTags": "Tower Blocks",
+        "houseDescription": "Functional city apartment with easy transport access and community amenities.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 1,
+        "houseSize": 730,
+        "houseAmenities": [
+            "WiFi",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Pyramid House",
+        "houseCost": 125000,
+        "houseStock": 15,
+        "houseImage": "https://images.mansionglobal.com/im-135063?width=1280",
+        "houseTags": "Others",
+        "houseDescription": "Geometric pyramid-shaped home with slanted ceilings and skylights.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 2,
+        "houseSize": 1150,
+        "houseAmenities": [
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Hotel",
+        "houseCost": 275000,
+        "houseStock": 40,
+        "houseImage": "https://www.fi.kayak.com/rimg/himg/c2/51/76/leonardo-73523-160580005-516242.jpg?width=968&height=607&crop=true",
+        "houseTags": "Tower Blocks",
+        "houseDescription": "High-rise hotel building with multiple units, elevator access, and concierge desk.",
+        "houseBedrooms": 5,
+        "houseBathrooms": 5,
+        "houseSize": 3900,
+        "houseAmenities": [
+            "WiFi",
+            "Parking"
+        ]
+    },
+    {
+        "houseName": "Barn",
+        "houseCost": 58000,
+        "houseStock": 5,
+        "houseImage": "https://nationaltoday.com/wp-content/uploads/2022/05/133-Barn-Day-1200x834.jpg.webp",
+        "houseTags": "Others",
+        "houseDescription": "Renovated barn house with rustic beams and wide-open living space.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 1,
+        "houseSize": 1100,
+        "houseAmenities": [
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Snow Castle",
+        "houseCost": 4200,
+        "houseStock": 25,
+        "houseImage": "https://www.scandi.travel/wp-content/uploads/2014/08/40_Hotel_corridor_2012.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Seasonal ice hotel carved fresh every winter with sculpted frozen walls.",
+        "houseBedrooms": 1,
+        "houseBathrooms": 1,
+        "houseSize": 600,
+        "houseAmenities": [
+            "WiFi",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Glass Retreat",
+        "houseCost": 260000,
+        "houseStock": 5,
+        "houseImage": "https://cdn.pixabay.com/photo/2017/08/10/03/33/architecture-2616849_1280.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Modern glass structure tucked in a forest clearing. Minimalist and scenic.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 2,
+        "houseSize": 1200,
+        "houseAmenities": [
+            "WiFi",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Tiny Tower",
+        "houseCost": 85000,
+        "houseStock": 12,
+        "houseImage": "https://cdn.pixabay.com/photo/2016/07/28/01/17/architecture-1546626_1280.jpg",
+        "houseTags": "Tower Blocks",
+        "houseDescription": "Compact vertical space with all essentials stacked smartly.",
+        "houseBedrooms": 1,
+        "houseBathrooms": 1,
+        "houseSize": 500,
+        "houseAmenities": [
+            "Parking"
+        ]
+    },
+    {
+        "houseName": "Alpine Cottage",
+        "houseCost": 190000,
+        "houseStock": 8,
+        "houseImage": "https://cdn.pixabay.com/photo/2015/06/14/08/20/alps-808714_1280.jpg",
+        "houseTags": "Cottages",
+        "houseDescription": "Charming mountain escape with timber beams and alpine views.",
+        "houseBedrooms": 3,
+        "houseBathrooms": 2,
+        "houseSize": 1450,
+        "houseAmenities": [
+            "WiFi",
+            "Parking",
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Solar Van",
+        "houseCost": 18000,
+        "houseStock": 6,
+        "houseImage": "https://cdn.pixabay.com/photo/2018/03/30/13/42/van-3270485_1280.jpg",
+        "houseTags": "Vans",
+        "houseDescription": "Eco-travel van powered by solar panels, ideal for nomadic explorers.",
+        "houseBedrooms": 1,
+        "houseBathrooms": 1,
+        "houseSize": 90,
+        "houseAmenities": [
+            "Kitchen"
+        ]
+    },
+    {
+        "houseName": "Lighthouse Loft",
+        "houseCost": 120000,
+        "houseStock": 3,
+        "houseImage": "https://cdn.pixabay.com/photo/2017/07/27/14/56/lighthouse-2542798_1280.jpg",
+        "houseTags": "Others",
+        "houseDescription": "Converted lighthouse with panoramic ocean views and spiral staircases.",
+        "houseBedrooms": 2,
+        "houseBathrooms": 1,
+        "houseSize": 950,
+        "houseAmenities": [
+            "WiFi",
+            "Parking"
+        ]
+    },
+    [
+        {
+            "houseName": "Floating Cabin",
+            "houseCost": 175000,
+            "houseStock": 4,
+            "houseImage": "https://cdn.pixabay.com/photo/2020/05/10/21/14/houseboat-5154721_1280.jpg",
+            "houseTags": "Others",
+            "houseDescription": "Serene waterfront living with a private deck and great sunrise views.",
+            "houseBedrooms": 2,
+            "houseBathrooms": 2,
+            "houseSize": 980,
+            "houseAmenities": [
+                "WiFi",
+                "Kitchen"
+            ]
+        },
+        {
+            "houseName": "Urban Cube",
+            "houseCost": 99000,
+            "houseStock": 6,
+            "houseImage": "https://cdn.pixabay.com/photo/2020/07/21/12/56/tiny-house-5427091_1280.jpg",
+            "houseTags": "Tower Blocks",
+            "houseDescription": "A clever stacked-unit apartment with sustainable materials and style.",
+            "houseBedrooms": 1,
+            "houseBathrooms": 1,
+            "houseSize": 620,
+            "houseAmenities": [
+                "Parking",
+                "Kitchen"
+            ]
+        },
+        {
+            "houseName": "Retro Van",
+            "houseCost": 9500,
+            "houseStock": 5,
+            "houseImage": "https://cdn.pixabay.com/photo/2017/03/28/12/10/van-2189690_1280.jpg",
+            "houseTags": "Vans",
+            "houseDescription": "A throwback mobile home with vintage finishes and camper charm.",
+            "houseBedrooms": 1,
+            "houseBathrooms": 1,
+            "houseSize": 110,
+            "houseAmenities": [
+                "WiFi",
+                "Parking"
+            ]
+        },
+        {
+            "houseName": "Zen Cottage",
+            "houseCost": 135000,
+            "houseStock": 9,
+            "houseImage": "https://cdn.pixabay.com/photo/2017/07/10/02/24/house-2483333_1280.jpg",
+            "houseTags": "Cottages",
+            "houseDescription": "Peaceful countryside sanctuary surrounded by natural beauty.",
+            "houseBedrooms": 3,
+            "houseBathrooms": 2,
+            "houseSize": 1320,
+            "houseAmenities": [
+                "WiFi",
+                "Parking",
+                "Kitchen"
+            ]
+        },
+        {
+            "houseName": "Geometric Block",
+            "houseCost": 158000,
+            "houseStock": 10,
+            "houseImage": "https://cdn.pixabay.com/photo/2022/02/14/06/09/tiny-house-7011613_1280.jpg",
+            "houseTags": "Tower Blocks",
+            "houseDescription": "A bold concrete structure with modular living and rooftop solar panels.",
+            "houseBedrooms": 2,
+            "houseBathrooms": 2,
+            "houseSize": 950,
+            "houseAmenities": [
+                "Parking",
+                "Kitchen"
+            ]
+        }
+    ]
+]
