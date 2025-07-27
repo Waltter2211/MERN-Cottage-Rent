@@ -33,12 +33,15 @@ function RentedHome({ rentedHouse }) {
       </div>
       <div className="rented-homes-home-wrapper">
         <div className="rented-homes-home-info">
-          <p>{rentedHouse.houseId.houseName}</p>
-          <p>{rentedHouse.houseId.houseCost}$</p>
+          <div className="rented-homes-home-rented-status">
+            <h2>{rentedHouse.houseId.houseName}</h2>
+            <p>Active</p>
+          </div>
+          <p>Rental ends: {rentedHouse.rentDate}</p>
+          <h3>${rentedHouse.houseId.houseCost}</h3>
         </div>
         <div className="rented-homes-home-rented-date">
-          <p>{rentedHouse.rentDate}</p>
-          <button className="btn return-house-btn" onClick={handleReturnHouse}>
+          <button className="return-house-button" onClick={handleReturnHouse}>
             Return House
           </button>
         </div>

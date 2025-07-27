@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import Header from "./Header";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import UserContext from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
+import SelectionContext from "../contexts/SelectionContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 function Login() {
   const navigate = useNavigate();
   let loggedUser = useContext(UserContext);
-
-  let [message, setMessage] = useState({
-    type: "",
-    text: "",
-  });
+  const { setSelection } = useContext(SelectionContext);
 
   let [loggingUser, setLoggingUser] = useState({
     email: "",
@@ -35,27 +34,9 @@ function Login() {
     })
       .then((res) => {
         if (res.status === 401) {
-          setMessage({
-            type: "error",
-            text: "Wrong password",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("Wrong password");
         } else if (res.status === 404) {
-          setMessage({
-            type: "error",
-            text: "No user found",
-          });
-          setTimeout(() => {
-            setMessage({
-              type: "",
-              text: "",
-            });
-          }, 3000);
+          toast.error("No user found");
         } else {
           return res.json();
         }
@@ -76,41 +57,60 @@ function Login() {
   }
 
   return (
-    <>
-      <Header />
+    <div className="login-frame">
       <div className="login">
-        <div className="background-overlay"></div>
-        <section className="main-content-section">
-          <form className="form">
+        <div className="login-description">
+          <h2>Welcome Back!</h2>
+          <p>Sign in to access your rentals</p>
+        </div>
+        <form className="login-form">
+          <div className="login-form-input-frame">
             <p>Email</p>
-            <input
-              type="email"
-              placeholder="Email..."
-              className="inp"
-              onChange={handleInput}
-              name="email"
-              value={loggingUser.email}
-            ></input>
+            <div className="login-form-input">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <input
+                type="email"
+                placeholder="Email..."
+                onChange={handleInput}
+                name="email"
+                value={loggingUser.email}
+              ></input>
+            </div>
+          </div>
+          <div className="login-form-input-frame">
             <p>Password</p>
-            <input
-              type="password"
-              placeholder="Password..."
-              className="inp"
-              onChange={handleInput}
-              name="password"
-              value={loggingUser.password}
-            ></input>
-            <button className="btn" onClick={handleLogin}>
-              Login
-            </button>
-            <p className={message.type}>{message.text}</p>
-          </form>
-          <p>
-            Dont have an account? <Link to={"/register"}>Register</Link>
+            <div className="login-form-input">
+              <FontAwesomeIcon icon={faLock} />
+              <input
+                type="password"
+                placeholder="Password..."
+                onChange={handleInput}
+                name="password"
+                value={loggingUser.password}
+              ></input>
+            </div>
+          </div>
+          <button className="button" onClick={handleLogin}>
+            LOGIN
+          </button>
+        </form>
+        <div className="login-sub-description">
+          <h3>
+            Don&apos;t have an account?{" "}
+            <span
+              className="login-sub-description-highlight"
+              onClick={() => setSelection(2)}
+            >
+              Register
+            </span>
+          </h3>
+          <div className="login-line"></div>
+          <p className="login-terms-text">
+            By continuing, you agree to our Terms of Service and Privacy Policy
           </p>
-        </section>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

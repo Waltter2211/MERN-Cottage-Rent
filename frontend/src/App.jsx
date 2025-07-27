@@ -2,19 +2,21 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import Register from "./components/Register";
 import Homes from "./components/Homes";
 import { useEffect, useState } from "react";
-import UserContext from "./contexts/UserContext";
+import { ProfileContext, UserContext } from "./contexts/UserContext";
 import HouseContext from "./contexts/HouseContext";
 import Notfound from "./components/Notfound";
 import Profile from "./components/Profile";
 import HomeSingleInfo from "./components/HomeSingleInfo";
+import SelectionContext from "./contexts/SelectionContext";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  let [loggedUser, setLoggedUser] = useState(null);
-  let [containedHouses, setContainedHouses] = useState(null);
+  const [loggedUser, setLoggedUser] = useState(null);
+  const [containedHouses, setContainedHouses] = useState(null);
+  const [selection, setSelection] = useState(1);
+  const [mode, setMode] = useState(1);
 
   useEffect(() => {
     setLoggedUser({
@@ -27,60 +29,60 @@ function App() {
     <>
       <UserContext.Provider value={{ loggedUser, setLoggedUser }}>
         <HouseContext.Provider value={{ containedHouses, setContainedHouses }}>
-          <BrowserRouter>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  loggedUser?.email != null ? (
-                    <Navigate to="/homes" />
-                  ) : (
-                    <Home />
-                  )
-                }
-              ></Route>
-              <Route
-                path="/login"
-                element={
-                  loggedUser?.email != null ? (
-                    <Navigate to="/homes" />
-                  ) : (
-                    <Login />
-                  )
-                }
-              ></Route>
-              <Route
-                path="/register"
-                element={
-                  loggedUser?.email != null ? (
-                    <Navigate to="/homes" />
-                  ) : (
-                    <Register />
-                  )
-                }
-              ></Route>
-              <Route path="/homes" element={<Homes />}></Route>
-              <Route
-                path="/profile"
-                element={
-                  loggedUser?.email != null ? <Profile /> : <Navigate to="/" />
-                }
-              ></Route>
-              <Route
-                path="/homeSingle/:houseName"
-                element={
-                  loggedUser?.email != null ? (
-                    <HomeSingleInfo houses={containedHouses} />
-                  ) : (
-                    <Navigate to="/homes" />
-                  )
-                }
-              ></Route>
-              <Route path="*" element={<Notfound />}></Route>
-            </Routes>
-          </BrowserRouter>
+          <SelectionContext.Provider value={{ selection, setSelection }}>
+            <ProfileContext.Provider value={{ mode, setMode }}>
+              <BrowserRouter>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      loggedUser?.email != null ? (
+                        <Navigate to="/homes" />
+                      ) : (
+                        <Home />
+                      )
+                    }
+                  ></Route>
+                  <Route path="/homes" element={<Homes />}></Route>
+                  <Route
+                    path="/profile"
+                    element={
+                      loggedUser?.email != null ? (
+                        <Profile />
+                      ) : (
+                        <Navigate to="/" />
+                      )
+                    }
+                  ></Route>
+                  <Route
+                    path="/homeSingle/:houseName"
+                    element={
+                      loggedUser?.email != null ? (
+                        <HomeSingleInfo houses={containedHouses} />
+                      ) : (
+                        <Navigate to="/homes" />
+                      )
+                    }
+                  ></Route>
+                  <Route path="*" element={<Notfound />}></Route>
+                </Routes>
+              </BrowserRouter>
+            </ProfileContext.Provider>
+          </SelectionContext.Provider>
         </HouseContext.Provider>
       </UserContext.Provider>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }

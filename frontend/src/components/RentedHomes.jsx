@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import UserContext from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 import RentedHome from "./RentedHome";
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RentedHomes() {
+  const navigate = useNavigate()
   const loggedUser = useContext(UserContext);
 
   const userId = loggedUser.loggedUser.id;
@@ -29,18 +33,31 @@ function RentedHomes() {
   }, [rentedHouses]);
 
   return (
-    <div className="profile-inputs">
-      <h1>Rented Homes</h1>
-      <div className="rented-homes-list">
+    <>
+      <div className="profile-inputs">
         {rentedHouses !== undefined ? (
-          rentedHouses.map((rentedHouse, index) => {
-            return <RentedHome key={index} rentedHouse={rentedHouse} />;
-          })
+          <>
+            <h2>Rented Homes</h2>
+            <p>Manage your current rental properties</p>
+            <div className="rented-homes-list">
+              {rentedHouses.map((rentedHouse, index) => {
+                return <RentedHome key={index} rentedHouse={rentedHouse} />;
+              })}
+            </div>
+          </>
         ) : (
-          <h2>No rented homes found</h2>
+          <div className="rented-homes-no-homes">
+            <img src="/NoRentalsLogo.JPG" />
+            <h2>No Current Rented Homes</h2>
+            <p>You haven&apos;t rented any properties yet. Start exploring our amazing collection of homes and find your perfect rental.</p>
+            <div className="rented-homes-no-homes-button" onClick={() => navigate("/")}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <p>Search for homes</p>
+            </div>
+          </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
