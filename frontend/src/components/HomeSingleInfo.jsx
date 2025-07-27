@@ -47,7 +47,7 @@ function HomeSingleInfo({ houses }) {
       })
       .then((data) => {
         if (data !== undefined) {
-          toast.success(`Successfully rented ${filteredHouse.houseName}!`)
+          toast.success(`Successfully rented ${filteredHouse.houseName}!`);
         }
       })
       .catch((err) => {
@@ -198,7 +198,7 @@ function HomeSingleInfo({ houses }) {
 }
 
 HomeSingleInfo.propTypes = {
-  houses: PropTypes.array
+  houses: PropTypes.array,
 };
 
 export default HomeSingleInfo;

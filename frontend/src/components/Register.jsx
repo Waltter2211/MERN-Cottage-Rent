@@ -103,7 +103,7 @@ function Register() {
         </form>
         <div className="login-sub-description">
           <h3>
-            Have an existing account? {" "}
+            Have an existing account?{" "}
             <span
               className="login-sub-description-highlight"
               onClick={() => setSelection(1)}

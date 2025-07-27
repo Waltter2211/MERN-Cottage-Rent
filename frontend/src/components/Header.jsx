@@ -54,14 +54,14 @@ function Header({
             </Link>
             <div>
               <div>
-                  <div className="header-buttons">
-                    <p className="header-logged-in-text">
-                      Logged in as {loggedUser.loggedUser.email}
-                    </p>
-                    <p className="header-logout-button" onClick={logout}>
-                      Logout
-                    </p>
-                  </div>
+                <div className="header-buttons">
+                  <p className="header-logged-in-text">
+                    Logged in as {loggedUser.loggedUser.email}
+                  </p>
+                  <p className="header-logout-button" onClick={logout}>
+                    Logout
+                  </p>
+                </div>
               </div>
             </div>
           </div>

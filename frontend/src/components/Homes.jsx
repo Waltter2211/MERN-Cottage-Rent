@@ -3,13 +3,20 @@ import Header from "./Header";
 import HouseContext from "../contexts/HouseContext";
 import Paginate from "./Paginate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBorderAll, faMagnifyingGlass, faHouse, faBuilding, faVanShuttle, faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBorderAll,
+  faMagnifyingGlass,
+  faHouse,
+  faBuilding,
+  faVanShuttle,
+  faEllipsis,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Homes() {
   const [houses, setHouses] = useState([]);
   const [initialHouses, setInitialHouses] = useState([]);
   const [tag, setTag] = useState("");
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   let containedHouses = useContext(HouseContext);
 
   useEffect(() => {
@@ -43,7 +50,7 @@ function Homes() {
   }
 
   function handleSearch(event) {
-    setSearchTerm(event.target.value)
+    setSearchTerm(event.target.value);
     let searchHouses = houses.filter((house) => {
       const regex = new RegExp(`${event.target.value}`, "i");
       return house.houseName.match(regex);
@@ -65,7 +72,10 @@ function Homes() {
 
   return (
     <>
-      <Header extraClassButton={"header-button-reverse"} extraClassButtonSelected={"header-button-selected-reverse"} />
+      <Header
+        extraClassButton={"header-button-reverse"}
+        extraClassButtonSelected={"header-button-selected-reverse"}
+      />
       <div className="homes">
         <div className="homes-main">
           <div className="homes-main-title-search">
@@ -97,15 +107,30 @@ function Homes() {
                     <p>All Properties</p>
                   </div>
                 </li>
-                <li className={tag === "Cottages" ? "list-div" : "homes-list-button"} id="Cottages">
-                  <div className="homes-list-button-frame" onClick={handleTagSelect} id="Cottages">
+                <li
+                  className={
+                    tag === "Cottages" ? "list-div" : "homes-list-button"
+                  }
+                  id="Cottages"
+                >
+                  <div
+                    className="homes-list-button-frame"
+                    onClick={handleTagSelect}
+                    id="Cottages"
+                  >
                     <div className="homes-list-button-fa-frame">
                       <FontAwesomeIcon icon={faHouse} />
                     </div>
                     <p id="Cottages">Cottages</p>
                   </div>
                 </li>
-                <li className={tag === "Tower Blocks" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Tower Blocks">
+                <li
+                  className={
+                    tag === "Tower Blocks" ? "list-div" : "homes-list-button"
+                  }
+                  onClick={handleTagSelect}
+                  id="Tower Blocks"
+                >
                   <div className="homes-list-button-frame" id="Tower Blocks">
                     <div className="homes-list-button-fa-frame">
                       <FontAwesomeIcon icon={faBuilding} />
@@ -113,7 +138,11 @@ function Homes() {
                     <p id="Tower Blocks">Tower Blocks</p>
                   </div>
                 </li>
-                <li className={tag === "Vans" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Vans">
+                <li
+                  className={tag === "Vans" ? "list-div" : "homes-list-button"}
+                  onClick={handleTagSelect}
+                  id="Vans"
+                >
                   <div className="homes-list-button-frame" id="Vans">
                     <div className="homes-list-button-fa-frame">
                       <FontAwesomeIcon icon={faVanShuttle} />
@@ -121,7 +150,11 @@ function Homes() {
                     <p id="Vans">Vans</p>
                   </div>
                 </li>
-                <li className={tag == "Others" ? "list-div" : "homes-list-button"} onClick={handleTagSelect} id="Others">
+                <li
+                  className={tag == "Others" ? "list-div" : "homes-list-button"}
+                  onClick={handleTagSelect}
+                  id="Others"
+                >
                   <div className="homes-list-button-frame" id="Others">
                     <div className="homes-list-button-fa-frame">
                       <FontAwesomeIcon icon={faEllipsis} />
@@ -132,7 +165,12 @@ function Homes() {
               </ul>
             </div>
             <div className="homes-list-main">
-              <Paginate houses={houses} itemsPerPage={6} searchTerm={searchTerm} searchTag={tag} />
+              <Paginate
+                houses={houses}
+                itemsPerPage={6}
+                searchTerm={searchTerm}
+                searchTag={tag}
+              />
             </div>
           </div>
         </div>

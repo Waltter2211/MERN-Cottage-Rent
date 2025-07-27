@@ -172,12 +172,12 @@ body {
   padding: 6px 8px;
   border-radius: 8px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .header-rental-account-button:hover {
   background-color: rgb(229, 229, 231);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .header-logout-button {
@@ -796,12 +796,12 @@ body {
   border-radius: 6px;
   margin-top: 20px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-main-homes-not-found-clear-filters-button:hover {
   background-color: rgb(23, 78, 224);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .homes-list-pagination {
@@ -1516,12 +1516,12 @@ body {
   border: none;
   margin-top: 10px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .rented-homes-no-homes-button:hover {
   background-color: rgb(18, 85, 228);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .rented-homes-home {

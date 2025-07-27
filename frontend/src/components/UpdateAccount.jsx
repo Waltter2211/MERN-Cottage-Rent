@@ -30,8 +30,8 @@ function UpdateAccount() {
   }
 
   function handleCancelDeletion(event) {
-    event.preventDefault()
-    setConfirmDelete(2)
+    event.preventDefault();
+    setConfirmDelete(2);
   }
 
   function handleUpdateAccount(event) {
@@ -45,18 +45,18 @@ function UpdateAccount() {
     })
       .then((res) => {
         if (res.status === 422) {
-          toast.error('Please fill all the fields');
+          toast.error("Please fill all the fields");
         } else if (res.status === 403) {
-          toast.error('Account with that email already exists');
+          toast.error("Account with that email already exists");
         } else if (res.status === 200) {
           return res.json();
         } else {
-          toast.error('Server error');
+          toast.error("Server error");
         }
       })
       .then((data) => {
         if (data !== undefined) {
-          toast.success('Successfully updated account logging out to save');
+          toast.success("Successfully updated account logging out to save");
           setTimeout(() => {
             logout();
           }, 3000);
@@ -95,40 +95,69 @@ function UpdateAccount() {
       <h2>Account Settings</h2>
       <p>Update your account information</p>
       <form className="profile-form">
-        <h1><FontAwesomeIcon icon={faUser} /> Personal Information</h1>
+        <h1>
+          <FontAwesomeIcon icon={faUser} /> Personal Information
+        </h1>
         <h2>Full Name</h2>
         <input
           type="text"
           className="profile-input"
           onChange={handleInput}
-          name="name" placeholder="Enter your full name"
+          name="name"
+          placeholder="Enter your full name"
         ></input>
         <h2>Email Address</h2>
         <input
           type="email"
           className="profile-input"
           onChange={handleInput}
-          name="email" placeholder="Enter your email"
+          name="email"
+          placeholder="Enter your email"
         ></input>
         <h2>New Password</h2>
         <input
           type="password"
           className="profile-input"
           onChange={handleInput}
-          name="password" placeholder="Enter new password"
+          name="password"
+          placeholder="Enter new password"
         ></input>
         <div>
           {confirmDelete === 1 ? (
             <div className="profile-update-button-frame">
-              <button type="submit" className="profile-update-button" onClick={handleUpdateAccount}>Update Account</button>
-              <button type="button" className="profile-delete-button" onClick={handleCancelDeletion}>Delete Account</button>
+              <button
+                type="submit"
+                className="profile-update-button"
+                onClick={handleUpdateAccount}
+              >
+                Update Account
+              </button>
+              <button
+                type="button"
+                className="profile-delete-button"
+                onClick={handleCancelDeletion}
+              >
+                Delete Account
+              </button>
             </div>
           ) : (
             <div className="profile-delete-button-frame">
               <p>Are you sure you want to delete your account?</p>
               <div className="profile-update-button-frame">
-                <button className="profile-delete-button" onClick={handleDeleteAccount}>Yes</button>
-                <button className="profile-update-button" onClick={() => {setConfirmDelete(1);}}>No</button>
+                <button
+                  className="profile-delete-button"
+                  onClick={handleDeleteAccount}
+                >
+                  Yes
+                </button>
+                <button
+                  className="profile-update-button"
+                  onClick={() => {
+                    setConfirmDelete(1);
+                  }}
+                >
+                  No
+                </button>
               </div>
             </div>
           )}

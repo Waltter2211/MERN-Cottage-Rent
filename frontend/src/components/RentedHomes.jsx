@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RentedHomes() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const loggedUser = useContext(UserContext);
 
   const userId = loggedUser.loggedUser.id;
@@ -49,8 +49,14 @@ function RentedHomes() {
           <div className="rented-homes-no-homes">
             <img src="/NoRentalsLogo.JPG" />
             <h2>No Current Rented Homes</h2>
-            <p>You haven&apos;t rented any properties yet. Start exploring our amazing collection of homes and find your perfect rental.</p>
-            <div className="rented-homes-no-homes-button" onClick={() => navigate("/")}>
+            <p>
+              You haven&apos;t rented any properties yet. Start exploring our
+              amazing collection of homes and find your perfect rental.
+            </p>
+            <div
+              className="rented-homes-no-homes-button"
+              onClick={() => navigate("/")}
+            >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
               <p>Search for homes</p>
             </div>

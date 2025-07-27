@@ -8,32 +8,61 @@ import Login from "./Login";
 import Register from "./Register";
 
 function Home() {
-
-  const { selection, setSelection } = useContext(SelectionContext)
+  const { selection, setSelection } = useContext(SelectionContext);
 
   const navigate = useNavigate();
 
   return (
     <>
-      <Header extraClassHeader="header-blue" extraClassHeaderLogo="header-logo-white" />
+      <Header
+        extraClassHeader="header-blue"
+        extraClassHeaderLogo="header-logo-white"
+      />
       <div className="home">
         <div className="background-overlay"></div>
         <section className="main-content">
           <div className="info-field">
             <div className="info-field-small-title">
-              <p><FontAwesomeIcon icon={faHouse} /> Premium Property Rentals</p>
+              <p>
+                <FontAwesomeIcon icon={faHouse} /> Premium Property Rentals
+              </p>
             </div>
-            <h1>Welcome to <span className="info-field-span">house renting</span> site</h1>
+            <h1>
+              Welcome to <span className="info-field-span">house renting</span>{" "}
+              site
+            </h1>
             <h2>Rent homes fast and easy</h2>
             <div className="info-field-title-frame">
-              <p>Discover your perfect home from our curated collection of premium properties. Experience seamless rentals with verified listings and instant booking.</p>
+              <p>
+                Discover your perfect home from our curated collection of
+                premium properties. Experience seamless rentals with verified
+                listings and instant booking.
+              </p>
             </div>
             <div className="info-field-button-frame">
-              <button className="search-homes-button" onClick={() => {navigate("/homes");}}><FontAwesomeIcon icon={faMagnifyingGlass} /> SEARCH HOMES</button>
-              {selection === 1 ? 
-              <button className="already-a-member-button" onClick={() => setSelection(2)}>Create Account</button>
-              : 
-              <button className="already-a-member-button" onClick={() => setSelection(1)}>Already a Member?</button>}
+              <button
+                className="search-homes-button"
+                onClick={() => {
+                  navigate("/homes");
+                }}
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlass} /> SEARCH HOMES
+              </button>
+              {selection === 1 ? (
+                <button
+                  className="already-a-member-button"
+                  onClick={() => setSelection(2)}
+                >
+                  Create Account
+                </button>
+              ) : (
+                <button
+                  className="already-a-member-button"
+                  onClick={() => setSelection(1)}
+                >
+                  Already a Member?
+                </button>
+              )}
             </div>
             <div className="info-field-line"></div>
             <div className="info-field-stats-frame">
