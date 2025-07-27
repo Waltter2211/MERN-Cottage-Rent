@@ -945,10 +945,10 @@ body {
 
 .homes-single-info-page-main-image-info-tag {
   width: fit-content;
-  padding: 4px 6px;
   backdrop-filter: blur(20px);
   font-size: 11px;
   font-weight: 500;
+  margin-bottom: 4px;
 }
 
 .homes-single-info-page-main-image-info-tag > p {
