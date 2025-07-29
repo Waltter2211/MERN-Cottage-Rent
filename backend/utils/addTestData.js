@@ -5,7 +5,9 @@ require("dotenv").config();
 
 const createHouses = async () => {
   try {
-    await mongoose.connect(process.env.DATABASE || "mongodb://localhost:27017/test");
+    await mongoose.connect(
+      process.env.DATABASE || "mongodb://localhost:27017/test",
+    );
     housesData.forEach(async (house) => {
       await housesModel.create(house);
     });

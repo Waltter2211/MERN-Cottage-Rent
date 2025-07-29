@@ -10,7 +10,20 @@ module.exports = {
     // Example:
     // await db.collection('albums').updateOne({artist: 'The Beatles'}, {$set: {blacklisted: true}});
 
-    await db.collection('houses').updateMany({}, {$set: { houseDescription: "", houseBedrooms: 3, houseBathrooms: 2, houseSize: 950, houseAmenities: ["WiFi", "Parking", "Kitchen"] }})
+    await db
+      .collection("houses")
+      .updateMany(
+        {},
+        {
+          $set: {
+            houseDescription: "",
+            houseBedrooms: 3,
+            houseBathrooms: 2,
+            houseSize: 950,
+            houseAmenities: ["WiFi", "Parking", "Kitchen"],
+          },
+        },
+      );
   },
 
   /**
@@ -23,6 +36,18 @@ module.exports = {
     // Example:
     // await db.collection('albums').updateOne({artist: 'The Beatles'}, {$set: {blacklisted: false}});
 
-    await db.collection('houses').updateMany({}, {$unset: { houseBedrooms: 3, houseBathrooms: 2, houseSize: 950, houseAmenities: ["WiFi", "Parking", "Kitchen"] }})
-  }
+    await db
+      .collection("houses")
+      .updateMany(
+        {},
+        {
+          $unset: {
+            houseBedrooms: 3,
+            houseBathrooms: 2,
+            houseSize: 950,
+            houseAmenities: ["WiFi", "Parking", "Kitchen"],
+          },
+        },
+      );
+  },
 };

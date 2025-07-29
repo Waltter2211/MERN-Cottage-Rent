@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,33 @@ import Register from "./Register";
 function Home() {
   const { selection, setSelection } = useContext(SelectionContext);
 
+  const [housesCount, setHousesCount] = useState(0);
+  const [usersCount, setUsersCount] = useState(0);
+
+  useEffect(() => {
+    handleGetHousesCount();
+    handleGetUsersCount();
+  }, []);
+
   const navigate = useNavigate();
+
+  function handleGetHousesCount() {
+    fetch("http://localhost:8000/houses/housesCount")
+      .then((res) => res.json())
+      .then(({ housesCount }) => setHousesCount(housesCount))
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleGetUsersCount() {
+    fetch("http://localhost:8000/users/usersCount")
+      .then((res) => res.json())
+      .then(({ usersCount }) => setUsersCount(usersCount))
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <>
@@ -67,11 +93,11 @@ function Home() {
             <div className="info-field-line"></div>
             <div className="info-field-stats-frame">
               <div className="info-field-stat">
-                <h2>500+</h2>
+                <h2>{housesCount}</h2>
                 <p>Properties</p>
               </div>
               <div className="info-field-stat">
-                <h2>1k+</h2>
+                <h2>{usersCount}</h2>
                 <p>Happy Customers</p>
               </div>
               <div className="info-field-stat">

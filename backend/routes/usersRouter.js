@@ -7,15 +7,22 @@ require("dotenv").config();
 
 const webtoken = process.env.JSONTOKEN;
 
-usersRouter.get("/", (req, res) => {
-  usersModel
-    .find({})
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+usersRouter.get("/", async (req, res) => {
+  try {
+    let data = await usersModel.find({});
+    res.send(data);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+usersRouter.get("/usersCount", async (req, res) => {
+  try {
+    let users = await usersModel.find({});
+    res.send({ usersCount: users.length });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 usersRouter.post("/register", async (req, res) => {

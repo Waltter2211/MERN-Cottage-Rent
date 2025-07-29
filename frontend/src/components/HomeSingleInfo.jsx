@@ -127,24 +127,41 @@ function HomeSingleInfo({ houses }) {
               <div className="homes-single-info-page-main-info-description">
                 <h2>Description</h2>
                 <p>
-                  {filteredHouse.houseDescription ? filteredHouse.houseDescription : "This house has no description"}
+                  {filteredHouse.houseDescription
+                    ? filteredHouse.houseDescription
+                    : "This house has no description"}
                 </p>
               </div>
               <div className="homes-single-info-page-main-info-amenities">
                 <h2>Amenities</h2>
                 <div className="homes-single-info-page-main-info-amenities-frame">
-                  {filteredHouse.houseAmenities.length > 0 ? filteredHouse.houseAmenities.map((amenity, index) => {
+                  {filteredHouse.houseAmenities.length > 0 ? (
+                    filteredHouse.houseAmenities.map((amenity, index) => {
                       return (
-                        <div key={index} className="homes-single-info-page-main-info-amenity">
-                          <FontAwesomeIcon icon={amenity === "WiFi" ? faWifi : amenity === "Parking" ? faCarSide : amenity === "Kitchen" ? faUtensils : ""} />
+                        <div
+                          key={index}
+                          className="homes-single-info-page-main-info-amenity"
+                        >
+                          <FontAwesomeIcon
+                            icon={
+                              amenity === "WiFi"
+                                ? faWifi
+                                : amenity === "Parking"
+                                  ? faCarSide
+                                  : amenity === "Kitchen"
+                                    ? faUtensils
+                                    : ""
+                            }
+                          />
                           <p>{amenity}</p>
                         </div>
-                      )
-                    }) :
+                      );
+                    })
+                  ) : (
                     <div className="homes-single-info-page-main-info-amenities-frame-no-amenities">
-                      <p>This house has no amenities</p> 
+                      <p>This house has no amenities</p>
                     </div>
-                  }
+                  )}
                 </div>
               </div>
             </div>

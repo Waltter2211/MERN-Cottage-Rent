@@ -10,7 +10,7 @@ module.exports = {
     // Example:
     // await db.collection('albums').updateOne({artist: 'The Beatles'}, {$set: {blacklisted: true}});
 
-    await db.collection("users").updateMany({}, { $set: { migrations: true } })
+    await db.collection("users").updateMany({}, { $set: { migrations: true } });
   },
 
   /**
@@ -23,6 +23,8 @@ module.exports = {
     // Example:
     // await db.collection('albums').updateOne({artist: 'The Beatles'}, {$set: {blacklisted: false}});
 
-    await db.collection("users").updateMany({}, { $unset: { migrations: false } })
-  }
+    await db
+      .collection("users")
+      .updateMany({}, { $unset: { migrations: false } });
+  },
 };

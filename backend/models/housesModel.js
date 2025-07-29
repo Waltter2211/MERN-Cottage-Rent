@@ -29,27 +29,27 @@ const housesSchema = mongoose.Schema(
     houseDescription: {
       type: String,
       required: true,
-      min: 0
+      min: 0,
     },
     houseBedrooms: {
       type: Number,
       required: true,
-      min: 0
+      min: 0,
     },
     houseBathrooms: {
       type: Number,
       required: true,
-      min: 0
+      min: 0,
     },
     houseSize: {
       type: Number,
       required: true,
-      min: 0
+      min: 0,
     },
     houseAmenities: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   { timestamps: true },
 );
