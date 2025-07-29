@@ -107,15 +107,15 @@ function HomeSingleInfo({ houses }) {
                 <h2>Property Details</h2>
                 <div className="homes-single-info-page-main-info-property-details-frame">
                   <div className="homes-sing-info-page-main-info-detail bedrooms-color">
-                    <h3>2</h3>
+                    <h3>{filteredHouse.houseBedrooms}</h3>
                     <p>Bedrooms</p>
                   </div>
                   <div className="homes-sing-info-page-main-info-detail bathrooms-color">
-                    <h3>1</h3>
+                    <h3>{filteredHouse.houseBathrooms}</h3>
                     <p>Bathrooms</p>
                   </div>
                   <div className="homes-sing-info-page-main-info-detail size-color">
-                    <h3>850</h3>
+                    <h3>{filteredHouse.houseSize}</h3>
                     <p>Sq Ft</p>
                   </div>
                   <div className="homes-sing-info-page-main-info-detail available-color">
@@ -127,27 +127,41 @@ function HomeSingleInfo({ houses }) {
               <div className="homes-single-info-page-main-info-description">
                 <h2>Description</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-                  unde asperiores soluta, maxime, facere voluptatem eius tempora
-                  nam sed illum rem cumque numquam error, laboriosam omnis.
-                  Voluptatum earum ut quam.
+                  {filteredHouse.houseDescription
+                    ? filteredHouse.houseDescription
+                    : "This house has no description"}
                 </p>
               </div>
               <div className="homes-single-info-page-main-info-amenities">
                 <h2>Amenities</h2>
                 <div className="homes-single-info-page-main-info-amenities-frame">
-                  <div className="homes-single-info-page-main-info-amenity">
-                    <FontAwesomeIcon icon={faWifi} />
-                    <p>WiFi</p>
-                  </div>
-                  <div className="homes-single-info-page-main-info-amenity">
-                    <FontAwesomeIcon icon={faCarSide} />
-                    <p>Parking</p>
-                  </div>
-                  <div className="homes-single-info-page-main-info-amenity">
-                    <FontAwesomeIcon icon={faUtensils} />
-                    <p>Kitchen</p>
-                  </div>
+                  {filteredHouse.houseAmenities.length > 0 ? (
+                    filteredHouse.houseAmenities.map((amenity, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="homes-single-info-page-main-info-amenity"
+                        >
+                          <FontAwesomeIcon
+                            icon={
+                              amenity === "WiFi"
+                                ? faWifi
+                                : amenity === "Parking"
+                                  ? faCarSide
+                                  : amenity === "Kitchen"
+                                    ? faUtensils
+                                    : ""
+                            }
+                          />
+                          <p>{amenity}</p>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div className="homes-single-info-page-main-info-amenities-frame-no-amenities">
+                      <p>This house has no amenities</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

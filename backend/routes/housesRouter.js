@@ -14,6 +14,15 @@ housesRouter.get("/", async (req, res) => {
   }
 });
 
+housesRouter.get("/housesCount", async (req, res) => {
+  try {
+    let houses = await housesModel.find({});
+    res.send({ housesCount: houses.length });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 //search for house
 housesRouter.get("/:houseName", async (req, res) => {
   let search = req.params.houseName;
@@ -24,6 +33,7 @@ housesRouter.get("/:houseName", async (req, res) => {
     if (foundHouses.length === 0) {
       res.send({ message: "Couldn't find any houses with search" });
     } else {
+      console.log(foundHouses);
       res.send({
         message: `Found ${foundHouses.length} houses with search result`,
         foundHouses,
@@ -75,7 +85,7 @@ housesRouter.post("/rent/:userId/:houseId", verifyToken, async (req, res) => {
           let rent = {
             userId,
             houseId,
-            rentDate: new Date().toLocaleString(),
+            rentDate: new Date().toDateString(),
           };
           rentsModel.create(rent);
           res.send({ message: "House rented successfully" });

@@ -37,7 +37,7 @@ function RentedHome({ rentedHouse }) {
             <h2>{rentedHouse.houseId.houseName}</h2>
             <p>Active</p>
           </div>
-          <p>Rental ends: {rentedHouse.rentDate}</p>
+          <p>Rented at: {rentedHouse.rentDate}</p>
           <h3>${rentedHouse.houseId.houseCost}</h3>
         </div>
         <div className="rented-homes-home-rented-date">

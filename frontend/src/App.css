@@ -657,6 +657,8 @@ body {
   width: 100%;
   height: 50%;
   position: relative;
+  background-image: url("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+  background-size: cover;
 }
 
 .homes-list-home-image > img {
@@ -916,6 +918,8 @@ body {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
+  background-image: url("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+  background-size: cover;
 }
 
 .homes-single-info-page-main-image-backround {
@@ -941,10 +945,10 @@ body {
 
 .homes-single-info-page-main-image-info-tag {
   width: fit-content;
-  padding: 4px 6px;
   backdrop-filter: blur(20px);
   font-size: 11px;
   font-weight: 500;
+  margin-bottom: 4px;
 }
 
 .homes-single-info-page-main-image-info-tag > p {
@@ -1105,6 +1109,13 @@ body {
 .homes-single-info-page-main-info-amenities-frame {
   display: flex;
   justify-content: space-around;
+}
+
+.homes-single-info-page-main-info-amenities-frame-no-amenities {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  color: grey;
 }
 
 .homes-single-info-page-main-info-amenity {
@@ -1540,6 +1551,8 @@ body {
 .rented-homes-home-img-frame {
   width: 20%;
   height: 100%;
+  background-image: url("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
+  background-size: cover;
 }
 
 .rented-homes-home-image {
