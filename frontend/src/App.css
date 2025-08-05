@@ -15,31 +15,6 @@ body {
   font-size: 20px;
 }
 
-/* .btn {
-  padding: 30px;
-  background-color: rgb(28, 132, 218);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.btn:hover {
-  background-color: rgb(106, 161, 206);
-}
-
-.delete {
-  background-color: rgb(238, 66, 66);
-}
-
-.delete:hover {
-  background-color: lightcoral;
-} */
-
 .blue {
   color: rgb(28, 132, 218);
 }
@@ -90,6 +65,10 @@ body {
   color: rgb(24, 99, 246);
   cursor: pointer;
   font-size: 24px;
+}
+
+.header-buttons-frame-mobile {
+  display: none;
 }
 
 .header-buttons {
@@ -1653,4 +1632,95 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(92, 92, 92);
+}
+
+@media only screen and (max-width: 1250px) {
+  /* header css */
+
+  .header-content {
+    padding: 0px 2%;
+  }
+
+  .header-buttons-frame {
+    display: none;
+  }
+
+  .header-buttons-frame-mobile {
+    display: block;
+  }
+
+  .header-sidebar-background-overlay {
+    width: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .header-sidebar-background-overlay-visible {
+    width: 100%;
+  }
+
+  .header-sidebar {
+    width: 0;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 30;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .header-sidebar > p {
+    color: grey;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .header-sidebar-visible {
+    width: 280px;
+  }
+
+  .header-sidebar-mobile-home {
+    color: black;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+  }
+
+  .header-sidebar-mobile-home > h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .header-sidebar-mobile-home-button-frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 0.1px solid rgb(239, 239, 239);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .header-sidebar-mobile-home-button-frame-selected {
+    background-color: black;
+    color: white;
+  }
+
+  .mobile-button-color-blue {
+    color: white;
+    background-color: rgb(24, 99, 246);
+  }
 }
