@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
 import SelectionContext from "../contexts/SelectionContext";
 import Login from "./Login";
 import Register from "./Register";
@@ -12,6 +12,7 @@ function Home() {
 
   const [housesCount, setHousesCount] = useState(0);
   const [usersCount, setUsersCount] = useState(0);
+  const [loginRegisterFrame, setLoginRegisterFrame] = useState(false);
 
   useEffect(() => {
     handleGetHousesCount();
@@ -38,11 +39,18 @@ function Home() {
       });
   }
 
+  function handleLoginRegisterFrame(frameSelection) {
+    setLoginRegisterFrame(!loginRegisterFrame)
+    setSelection(frameSelection)
+  }
+
   return (
     <>
+      <div className={loginRegisterFrame ? "login-register-frame-mobile-background-overlay login-register-frame-mobile-background-overlay-visible" : "login-register-frame-mobile-background-overlay"}></div>
       <Header
         extraClassHeader="header-blue"
         extraClassHeaderLogo="header-logo-white"
+        extraMobileFunction={handleLoginRegisterFrame}
       />
       <div className="home">
         <div className="background-overlay"></div>
@@ -53,10 +61,11 @@ function Home() {
                 <FontAwesomeIcon icon={faHouse} /> Premium Property Rentals
               </p>
             </div>
-            <h1>
-              Welcome to <span className="info-field-span">house renting</span>{" "}
-              site
-            </h1>
+            <div className="info-field-title-main-text">
+              <h1>Welcome to</h1>
+              <h1><span className="info-field-span">house renting</span>{" "}</h1>
+              <h1>site</h1>
+            </div>
             <h2>Rent homes fast and easy</h2>
             <div className="info-field-title-frame">
               <p>
@@ -90,6 +99,28 @@ function Home() {
                 </button>
               )}
             </div>
+            <div className="info-field-button-frame-mobile">
+              <button
+                className="search-homes-button"
+                onClick={() => {
+                  navigate("/homes");
+                }}
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlass} /> SEARCH HOMES
+              </button>
+                <button
+                  className="already-a-member-button"
+                  onClick={() => handleLoginRegisterFrame(2)}
+                >
+                  Create Account
+                </button>
+                <button
+                  className="already-a-member-button"
+                  onClick={() => handleLoginRegisterFrame(1)}
+                >
+                  Already a Member?
+                </button>
+            </div>
             <div className="info-field-line"></div>
             <div className="info-field-stats-frame">
               <div className="info-field-stat">
@@ -106,8 +137,14 @@ function Home() {
               </div>
             </div>
           </div>
-          {selection === 1 ? <Login /> : <Register />}
+          <div className="login-register-frame">
+            {selection === 1 ? <Login /> : <Register />}
+          </div>
         </section>
+        <div className={loginRegisterFrame ? "login-register-frame-mobile login-register-frame-mobile-visible" : "login-register-frame-mobile"}>
+          <p onClick={() => setLoginRegisterFrame(!loginRegisterFrame)}><FontAwesomeIcon icon={faX} /></p>
+          {selection === 1 ? <Login /> : <Register />}
+        </div>
       </div>
     </>
   );

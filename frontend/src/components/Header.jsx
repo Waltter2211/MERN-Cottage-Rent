@@ -15,6 +15,7 @@ function Header({
   extraClassHeaderLogo,
   extraClassButton,
   extraClassButtonSelected,
+  extraMobileFunction,
 }) {
   const navigate = useNavigate();
 
@@ -154,22 +155,14 @@ function Header({
                     <div className="header-sidebar-mobile-home">
                       <h1>MERN-Rent</h1>
                       <div
-                        className={
-                          selection === 1
-                            ? "header-sidebar-mobile-home-button-frame header-sidebar-mobile-home-button-frame-selected"
-                            : "header-sidebar-mobile-home-button-frame"
-                        }
-                        onClick={() => handleSelection(1)}
+                        className="header-sidebar-mobile-home-button-frame"
+                        onClick={() => extraMobileFunction(1)}
                       >
                         <p>Login</p>
                       </div>
                       <div
-                        className={
-                          selection === 2
-                            ? "header-sidebar-mobile-home-button-frame header-sidebar-mobile-home-button-frame-selected"
-                            : "header-sidebar-mobile-home-button-frame"
-                        }
-                        onClick={() => handleSelection(2)}
+                        className="header-sidebar-mobile-home-button-frame header-sidebar-mobile-home-button-frame-selected"
+                        onClick={() => extraMobileFunction(2)}
                       >
                         <p>Register</p>
                       </div>
@@ -308,6 +301,7 @@ Header.propTypes = {
   extraClassHeaderLogo: PropTypes.object,
   extraClassButton: PropTypes.string,
   extraClassButtonSelected: PropTypes.string,
+  extraMobileFunction: PropTypes.func,
 };
 
 export default Header;
