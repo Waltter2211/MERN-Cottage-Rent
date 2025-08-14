@@ -1836,7 +1836,46 @@ body {
 
   /* home css */
 
+  .info-field {
+    align-items: center;
+  }
+
   .info-field > h2 {
     font-size: 16px;
+  }
+
+  .info-field-title-main-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-field-title-main-text > h1 {
+    align-self: center;
+    font-size: 30px;
+  }
+
+  .info-field-title-frame {
+    padding-right: 0;
+  }
+
+  .info-field-title-frame > p {
+    text-align: center;
+  }
+
+  .info-field-button-frame-mobile {
+    width: 100%;
+  }
+
+  .info-field-stats-frame {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .info-field-stat > h2 {
+    font-size: 20px;
+  }
+
+  .info-field-stat > p {
+    font-size: 10px;
   }
 }

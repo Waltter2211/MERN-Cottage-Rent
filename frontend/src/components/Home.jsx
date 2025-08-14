@@ -63,7 +63,7 @@ function Home() {
             </div>
             <div className="info-field-title-main-text">
               <h1>Welcome to</h1>
-              <h1><span className="info-field-span">house renting</span>{" "}</h1>
+              <h1 className="info-field-span">house renting</h1>
               <h1>site</h1>
             </div>
             <h2>Rent homes fast and easy</h2>
