@@ -1813,10 +1813,93 @@ body {
     width: fit-content;
     background-color: white;
   }
+
+  /* homes css */
+
+  .homes {
+    overflow: scroll;
+  }
+
+  .homes-main {
+    width: 80%;
+  }
+
+  .homes-search {
+    width: 35%;
+    min-width: 350px;
+  }
+
+  .homes-list {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .homes-list-sidebar {
+    width: 100%;
+  }
+
+  .homes-list-buttons {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .homes-list-button {
+    min-width: 190px;
+  }
+
+  .list-div {
+    min-width: 190px;
+  }
+
+  .homes-list-main {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .homes-list-pagination {
+    height: 7vh;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  /* homes css */
+
+  .homes-main-title-search {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+  }
+
+  .homes-search {
+    width: 100%;
+  }
+
+  .homes-list-sidebar {
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+    padding: 0;
+  }
+
+  .homes-list-buttons {
+    column-gap: 10px;
+  }
+
+  .homes-list-button {
+    border: 0.1px solid rgb(235, 235, 235);
+    border-radius: 9px;
+    background-color: white;
+  }
+
+  .homes-list-main {
+    flex-wrap: wrap;
+  }
+
+  .homes-list-main-home {
+    width: 49%;
+  }
 }
 
 @media only screen and (max-width: 840px) {
-
   /* home css */
 
   .main-content {
@@ -1832,8 +1915,23 @@ body {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 540px) {
 
+  .homes-main {
+    width: 90%;
+  }
+
+  .homes-search {
+    width: 100%;
+    min-width: 0px;
+  }
+
+  .homes-list-main-home {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
   /* home css */
 
   .info-field {
