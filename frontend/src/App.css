@@ -1859,6 +1859,36 @@ body {
   .homes-list-pagination {
     height: 7vh;
   }
+
+  /* homes info css */
+
+  .homes-single-info-page {
+    overflow-y: scroll;
+  }
+
+  .homes-single-info-page-main {
+    width: 90%;
+  }
+
+  .homes-single-info-page-main-info-property-details {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-description {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-amenities {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-rent {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-help {
+    height: fit-content;
+  }
 }
 
 @media only screen and (max-width: 960px) {
@@ -1897,6 +1927,40 @@ body {
   .homes-list-main-home {
     width: 49%;
   }
+
+  /* homes info css */
+
+  .homes-single-info-page {
+    overflow-y: scroll;
+  }
+
+  .homes-single-info-page-main {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-img-frame {
+    width: 100%;
+    height: 40%;
+    min-height: 200px;
+    max-height: 260px;
+  }
+
+  .homes-single-info-page-main-info-frame {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homes-single-info-page-main-info-frame-left {
+    width: 100%;
+  }
+
+  .homes-single-info-page-main-info-frame-right {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 
 @media only screen and (max-width: 840px) {
@@ -1915,7 +1979,42 @@ body {
   }
 }
 
+@media only screen and (max-width: 740px) {
+  /* homes info css */
+
+  .homes-single-info-page-main-info-property-details-frame {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 0px;
+    row-gap: 15px;
+  }
+
+  .homes-sing-info-page-main-info-detail {
+    width: 48%;
+  }
+
+  .homes-single-info-page-main-info-amenities {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-amenities-frame {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+  }
+
+  .homes-single-info-page-main-info-amenity {
+    width: 48%;
+  }
+
+  .homes-single-info-page-main-info-amenity > p {
+    font-size: 12px;
+  }
+}
+
 @media only screen and (max-width: 540px) {
+  /* homes css */
 
   .homes-main {
     width: 90%;
@@ -1928,6 +2027,49 @@ body {
 
   .homes-list-main-home {
     width: 100%;
+  }
+
+  /* homes info css */
+
+  .homes-single-info-page-main-image-info {
+    padding: 10px;
+  }
+
+  .close-btn {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .homes-single-info-page-main-image-info-title-cost {
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-title-availability {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-title-availability > h1 {
+    font-size: 20px;
+  }
+
+  .homes-single-info-page-main-image-info-location-availability {
+    column-gap: 0px;
+    font-size: 12px;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-cost-amount-available {
+    align-items: flex-start;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-cost-amount-available > h2 {
+    font-size: 20px;
   }
 }
 
