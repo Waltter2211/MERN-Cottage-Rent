@@ -90,8 +90,28 @@ function Header({
                     <FontAwesomeIcon icon={faX} />
                   </p>
                   {location.pathname === "/profile" && (
-                    <div>
-                      <p>Profile</p>
+                    <div className="header-sidebar-mobile-home">
+                      <h1>MERN-Rent</h1>
+                      <div
+                        className="header-sidebar-mobile-home-button-frame"
+                        onClick={() => handleNavigation(1)}
+                      >
+                        <p>My Rentals</p>
+                      </div>
+                      <div
+                        className="header-sidebar-mobile-home-button-frame header-sidebar-mobile-home-button-frame-selected"
+                        onClick={() => handleNavigation(2)}
+                      >
+                        <p>Account</p>
+                      </div>
+                      <div
+                        className="header-sidebar-mobile-home-button-frame mobile-button-color-blue"
+                        onClick={logout}
+                      >
+                        <p>
+                          <FontAwesomeIcon icon={faArrowRightFromBracket} /> Logout
+                        </p>
+                      </div>
                     </div>
                   )}
                 </div>
