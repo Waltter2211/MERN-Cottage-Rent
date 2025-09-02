@@ -15,31 +15,6 @@ body {
   font-size: 20px;
 }
 
-/* .btn {
-  padding: 30px;
-  background-color: rgb(28, 132, 218);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.btn:hover {
-  background-color: rgb(106, 161, 206);
-}
-
-.delete {
-  background-color: rgb(238, 66, 66);
-}
-
-.delete:hover {
-  background-color: lightcoral;
-} */
-
 .blue {
   color: rgb(28, 132, 218);
 }
@@ -90,6 +65,10 @@ body {
   color: rgb(24, 99, 246);
   cursor: pointer;
   font-size: 24px;
+}
+
+.header-buttons-frame-mobile {
+  display: none;
 }
 
 .header-buttons {
@@ -240,8 +219,8 @@ body {
   color: rgb(190, 220, 253);
 }
 
-.info-field > h1 {
-  font-size: 50px;
+.info-field-title-main-text {
+  font-size: 34px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -265,6 +244,10 @@ body {
 .info-field-button-frame {
   display: flex;
   column-gap: 15px;
+}
+
+.info-field-button-frame-mobile {
+  display: none;
 }
 
 .search-homes-button {
@@ -328,8 +311,17 @@ body {
 
 /* login & register css */
 
-.login-frame {
+.login-register-frame {
   width: 50%;
+  display: flex;
+}
+
+.login-register-frame-mobile {
+  display: none;
+}
+
+.login-frame {
+  width: 100%;
   color: white;
   display: flex;
   justify-content: flex-end;
@@ -1653,4 +1645,574 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(92, 92, 92);
+}
+
+@media only screen and (max-width: 1280px) {
+  /* header css */
+
+  .header-content {
+    padding: 0px 2%;
+  }
+
+  .header-buttons-frame {
+    display: none;
+  }
+
+  .header-buttons-frame-mobile {
+    display: block;
+  }
+
+  .header-sidebar-background-overlay {
+    width: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .header-sidebar-background-overlay-visible {
+    width: 100%;
+  }
+
+  .header-sidebar {
+    width: 0;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 30;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .header-sidebar > p {
+    color: grey;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .header-sidebar-visible {
+    width: 280px;
+  }
+
+  .header-sidebar-mobile-home {
+    color: black;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+  }
+
+  .header-sidebar-mobile-home > h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .header-sidebar-mobile-home-button-frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 0.1px solid rgb(239, 239, 239);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .header-sidebar-mobile-home-button-frame-selected {
+    background-color: black;
+    color: white;
+  }
+
+  .mobile-button-color-blue {
+    color: white;
+    background-color: rgb(24, 99, 246);
+  }
+
+  /* home css */
+
+  .info-field {
+    width: 100%;
+  }
+
+  .info-field-title-frame > p {
+    font-size: 14px;
+  }
+
+  .info-field-button-frame {
+    display: none;
+  }
+
+  .info-field-button-frame-mobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  /* login & register css */
+
+  .login-register-frame {
+    display: none;
+  }
+
+  .login-register-frame-mobile {
+    width: 100%;
+    height: 0;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    transition: 0.5s;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: 50;
+  }
+
+  .login-register-frame-mobile-visible {
+    height: 80%;
+  }
+
+  .login-register-frame-mobile-background-overlay {
+    width: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 40;
+  }
+
+  .login-register-frame-mobile-background-overlay-visible {
+    width: 100%;
+  }
+
+  .login-register-frame-mobile > p {
+    color: grey;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .login-frame {
+    justify-content: center;
+  }
+
+  .login {
+    width: fit-content;
+    background-color: white;
+  }
+
+  /* homes css */
+
+  .homes {
+    overflow: scroll;
+  }
+
+  .homes-main {
+    width: 80%;
+  }
+
+  .homes-search {
+    width: 35%;
+    min-width: 350px;
+  }
+
+  .homes-list {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .homes-list-sidebar {
+    width: 100%;
+  }
+
+  .homes-list-buttons {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .homes-list-button {
+    min-width: 190px;
+  }
+
+  .list-div {
+    min-width: 190px;
+  }
+
+  .homes-list-main {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .homes-list-pagination {
+    height: 7vh;
+  }
+
+  /* homes info css */
+
+  .homes-single-info-page {
+    overflow-y: scroll;
+  }
+
+  .homes-single-info-page-main {
+    width: 90%;
+  }
+
+  .homes-single-info-page-main-info-property-details {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-description {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-amenities {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-rent {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-help {
+    height: fit-content;
+  }
+
+  /* profile css */
+
+  .profile {
+    overflow: auto;
+  }
+
+  .profile-frame {
+    width: 90%;
+    height: fit-content;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: auto;
+  }
+
+  .profile-selection {
+    width: 100%;
+    height: 50%;
+  }
+
+  .profile-selection-img-frame {
+    width: fit-content;
+    min-width: 60px;
+    max-width: 60px;
+  }
+
+  /* update profile css */
+
+  .profile-inputs {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .profile-form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  /* homes css */
+
+  .homes-main-title-search {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: flex-start;
+  }
+
+  .homes-search {
+    width: 100%;
+  }
+
+  .homes-list-sidebar {
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+    padding: 0;
+  }
+
+  .homes-list-buttons {
+    column-gap: 10px;
+  }
+
+  .homes-list-button {
+    border: 0.1px solid rgb(235, 235, 235);
+    border-radius: 9px;
+    background-color: white;
+  }
+
+  .homes-list-main {
+    flex-wrap: wrap;
+  }
+
+  .homes-list-main-home {
+    width: 49%;
+  }
+
+  /* homes info css */
+
+  .homes-single-info-page {
+    overflow-y: scroll;
+  }
+
+  .homes-single-info-page-main {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-img-frame {
+    width: 100%;
+    height: 40%;
+    min-height: 200px;
+    max-height: 260px;
+  }
+
+  .homes-single-info-page-main-info-frame {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homes-single-info-page-main-info-frame-left {
+    width: 100%;
+  }
+
+  .homes-single-info-page-main-info-frame-right {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  /* home css */
+
+  .main-content {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+
+  .info-field-title-main-text {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  /* homes info css */
+
+  .homes-single-info-page-main-info-property-details-frame {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 0px;
+    row-gap: 15px;
+  }
+
+  .homes-sing-info-page-main-info-detail {
+    width: 48%;
+  }
+
+  .homes-single-info-page-main-info-amenities {
+    height: fit-content;
+  }
+
+  .homes-single-info-page-main-info-amenities-frame {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+  }
+
+  .homes-single-info-page-main-info-amenity {
+    width: 48%;
+  }
+
+  .homes-single-info-page-main-info-amenity > p {
+    font-size: 12px;
+  }
+
+  /* profile css */
+
+  /* rented homes css */
+
+  .rented-homes-no-homes {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  /* homes css */
+
+  .homes-main {
+    width: 90%;
+  }
+
+  .homes-search {
+    width: 100%;
+    min-width: 0px;
+  }
+
+  .homes-list-main-home {
+    width: 100%;
+  }
+
+  /* homes info css */
+
+  .homes-single-info-page-main-image-info {
+    padding: 10px;
+  }
+
+  .close-btn {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .homes-single-info-page-main-image-info-title-cost {
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-title-availability {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-title-availability > h1 {
+    font-size: 20px;
+  }
+
+  .homes-single-info-page-main-image-info-location-availability {
+    column-gap: 0px;
+    font-size: 12px;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-cost-amount-available {
+    align-items: flex-start;
+    row-gap: 5px;
+  }
+
+  .homes-single-info-page-main-image-info-cost-amount-available > h2 {
+    font-size: 20px;
+  }
+
+  /* profile css */
+
+  /* rented homes css */
+
+  .rented-homes-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .rented-homes-home {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+  }
+
+  .rented-homes-home-img-frame {
+    width: fit-content;
+    height: fit-content;
+    max-width: 150px;
+  }
+
+  .rented-homes-home-wrapper {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .rented-homes-home-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rented-homes-home-rented-date {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rented-homes-no-homes {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  /* home css */
+
+  .info-field {
+    align-items: center;
+  }
+
+  .info-field > h2 {
+    font-size: 16px;
+  }
+
+  .info-field-title-main-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-field-title-main-text > h1 {
+    align-self: center;
+    font-size: 30px;
+  }
+
+  .info-field-title-frame {
+    padding-right: 0;
+  }
+
+  .info-field-title-frame > p {
+    text-align: center;
+  }
+
+  .info-field-button-frame-mobile {
+    width: 100%;
+  }
+
+  .info-field-stats-frame {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .info-field-stat > h2 {
+    font-size: 20px;
+  }
+
+  .info-field-stat > p {
+    font-size: 10px;
+  }
+
+  /* profile css */
+
+  /* rented homes css */
+
+  .rented-homes-no-homes {
+    width: 100%;
+  }
 }
