@@ -2,7 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouse,
+  faMagnifyingGlass,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import SelectionContext from "../contexts/SelectionContext";
 import Login from "./Login";
 import Register from "./Register";
@@ -40,13 +44,19 @@ function Home() {
   }
 
   function handleLoginRegisterFrame(frameSelection) {
-    setLoginRegisterFrame(!loginRegisterFrame)
-    setSelection(frameSelection)
+    setLoginRegisterFrame(!loginRegisterFrame);
+    setSelection(frameSelection);
   }
 
   return (
     <>
-      <div className={loginRegisterFrame ? "login-register-frame-mobile-background-overlay login-register-frame-mobile-background-overlay-visible" : "login-register-frame-mobile-background-overlay"}></div>
+      <div
+        className={
+          loginRegisterFrame
+            ? "login-register-frame-mobile-background-overlay login-register-frame-mobile-background-overlay-visible"
+            : "login-register-frame-mobile-background-overlay"
+        }
+      ></div>
       <Header
         extraClassHeader="header-blue"
         extraClassHeaderLogo="header-logo-white"
@@ -108,18 +118,18 @@ function Home() {
               >
                 <FontAwesomeIcon icon={faMagnifyingGlass} /> SEARCH HOMES
               </button>
-                <button
-                  className="already-a-member-button"
-                  onClick={() => handleLoginRegisterFrame(2)}
-                >
-                  Create Account
-                </button>
-                <button
-                  className="already-a-member-button"
-                  onClick={() => handleLoginRegisterFrame(1)}
-                >
-                  Already a Member?
-                </button>
+              <button
+                className="already-a-member-button"
+                onClick={() => handleLoginRegisterFrame(2)}
+              >
+                Create Account
+              </button>
+              <button
+                className="already-a-member-button"
+                onClick={() => handleLoginRegisterFrame(1)}
+              >
+                Already a Member?
+              </button>
             </div>
             <div className="info-field-line"></div>
             <div className="info-field-stats-frame">
@@ -141,8 +151,16 @@ function Home() {
             {selection === 1 ? <Login /> : <Register />}
           </div>
         </section>
-        <div className={loginRegisterFrame ? "login-register-frame-mobile login-register-frame-mobile-visible" : "login-register-frame-mobile"}>
-          <p onClick={() => setLoginRegisterFrame(!loginRegisterFrame)}><FontAwesomeIcon icon={faX} /></p>
+        <div
+          className={
+            loginRegisterFrame
+              ? "login-register-frame-mobile login-register-frame-mobile-visible"
+              : "login-register-frame-mobile"
+          }
+        >
+          <p onClick={() => setLoginRegisterFrame(!loginRegisterFrame)}>
+            <FontAwesomeIcon icon={faX} />
+          </p>
           {selection === 1 ? <Login /> : <Register />}
         </div>
       </div>

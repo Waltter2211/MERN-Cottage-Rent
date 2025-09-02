@@ -26,8 +26,6 @@ function Header({
   const [sideBar, setSideBar] = useState(false);
   const location = useLocation();
 
-  console.log(location.pathname);
-
   function logout() {
     localStorage.clear();
     loggedUser.setLoggedUser(null);
@@ -109,7 +107,8 @@ function Header({
                         onClick={logout}
                       >
                         <p>
-                          <FontAwesomeIcon icon={faArrowRightFromBracket} /> Logout
+                          <FontAwesomeIcon icon={faArrowRightFromBracket} />{" "}
+                          Logout
                         </p>
                       </div>
                     </div>
@@ -239,7 +238,8 @@ function Header({
                           onClick={logout}
                         >
                           <p>
-                            <FontAwesomeIcon icon={faArrowRightFromBracket} /> Logout
+                            <FontAwesomeIcon icon={faArrowRightFromBracket} />{" "}
+                            Logout
                           </p>
                         </div>
                       </div>
@@ -264,7 +264,8 @@ function Header({
                         onClick={logout}
                       >
                         <p>
-                          <FontAwesomeIcon icon={faArrowRightFromBracket} /> Logout
+                          <FontAwesomeIcon icon={faArrowRightFromBracket} />{" "}
+                          Logout
                         </p>
                       </div>
                     </div>
