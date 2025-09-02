@@ -270,51 +270,6 @@ function Header({
                     </div>
                   )}
                 </div>
-                {/* {loggedUser.loggedUser?.email == null ? (
-                  <div className="header-buttons header-buttons-mobile">
-                    <p
-                      className={
-                        selection === 1
-                          ? `header-button-selected ${extraClassButtonSelected}`
-                          : `header-button ${extraClassButton}`
-                      }
-                      onClick={() => handleSelection(1)}
-                    >
-                      Login
-                    </p>
-                    <p
-                      className={
-                        selection === 2
-                          ? `header-button-selected ${extraClassButtonSelected}`
-                          : `header-button ${extraClassButton}`
-                      }
-                      onClick={() => handleSelection(2)}
-                    >
-                      Register
-                    </p>
-                  </div>
-                ) : (
-                  <div className="header-buttons">
-                    <p
-                      className="header-rental-account-button"
-                      onClick={() => handleNavigation(1)}
-                    >
-                      My Rentals
-                    </p>
-                    <p
-                      className="header-rental-account-button"
-                      onClick={() => handleNavigation(2)}
-                    >
-                      Account
-                    </p>
-                    <p className="header-logged-in-text">
-                      Logged in as {loggedUser.loggedUser.email}
-                    </p>
-                    <p className="header-logout-button" onClick={logout}>
-                      Logout
-                    </p>
-                  </div>
-                )} */}
               </div>
               <div className="header-buttons-frame">
                 {loggedUser.loggedUser?.email == null ? (
