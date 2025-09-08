@@ -36,7 +36,7 @@ function UpdateAccount() {
 
   function handleUpdateAccount(event) {
     event.preventDefault();
-    fetch(`http://localhost:8000/users/edituser/${loggedUser.loggedUser.id}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/users/edituser/${loggedUser.loggedUser.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function UpdateAccount() {
   function handleDeleteAccount(event) {
     event.preventDefault();
     fetch(
-      `http://localhost:8000/users/deleteuser/${loggedUser.loggedUser.id}`,
+      `${import.meta.env.VITE_BASE_URL}/users/deleteuser/${loggedUser.loggedUser.id}`,
       {
         method: "DELETE",
         headers: {

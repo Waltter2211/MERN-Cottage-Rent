@@ -29,7 +29,7 @@ function HomeSingleInfo({ houses }) {
   const token = localStorage.getItem("jsontoken");
 
   function handleRent() {
-    fetch(`http://localhost:8000/houses/rent/${userId}/${houseId}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/houses/rent/${userId}/${houseId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

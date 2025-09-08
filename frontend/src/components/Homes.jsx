@@ -20,7 +20,7 @@ function Homes() {
   let containedHouses = useContext(HouseContext);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/houses/`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/houses/`, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("jsontoken"),

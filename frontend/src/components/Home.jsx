@@ -26,7 +26,7 @@ function Home() {
   const navigate = useNavigate();
 
   function handleGetHousesCount() {
-    fetch("http://localhost:8000/houses/housesCount")
+    fetch(`${import.meta.env.VITE_BASE_URL}/houses/housesCount`)
       .then((res) => res.json())
       .then(({ housesCount }) => setHousesCount(housesCount))
       .catch((err) => {
@@ -35,7 +35,7 @@ function Home() {
   }
 
   function handleGetUsersCount() {
-    fetch("http://localhost:8000/users/usersCount")
+    fetch(`${import.meta.env.VITE_BASE_URL}/users/usersCount`)
       .then((res) => res.json())
       .then(({ usersCount }) => setUsersCount(usersCount))
       .catch((err) => {

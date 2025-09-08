@@ -9,7 +9,7 @@ function RentedHome({ rentedHouse }) {
   function handleReturnHouse(event) {
     event.preventDefault();
 
-    fetch(`http://localhost:8000/houses/return/${rentUserId}/${rentId}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/houses/return/${rentUserId}/${rentId}`, {
       method: "DELETE",
       headers: {
         Authorization: token,

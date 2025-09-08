@@ -15,7 +15,7 @@ function RentedHomes() {
   const [rentedHouses, setRentedHouses] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/houses/rents/${userId}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/houses/rents/${userId}`, {
       method: "GET",
       headers: {
         Authorization: token,

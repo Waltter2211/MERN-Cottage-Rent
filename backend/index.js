@@ -5,8 +5,8 @@ const usersRouter = require("./routes/usersRouter");
 const housesRouter = require("./routes/housesRouter");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8000;
-const database = process.env.DATABASE || "mongodb://localhost:27017/test";
+const PORT = process.env.PORT;
+const database = process.env.DATABASE;
 
 const app = express();
 
@@ -29,4 +29,7 @@ mongoose
 app.listen(PORT, () => {
   console.log("Connected to server");
   console.log(`Website can be found in: http://localhost:${PORT}`);
+  console.log(PORT)
+  console.log(database)
+  console.log(process.env.JSONTOKEN)
 });

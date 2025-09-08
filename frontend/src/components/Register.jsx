@@ -21,7 +21,7 @@ function Register() {
 
   function handleRegister(event) {
     event.preventDefault();
-    fetch("http://localhost:8000/users/register", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

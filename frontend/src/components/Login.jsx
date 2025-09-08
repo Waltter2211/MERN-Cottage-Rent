@@ -25,7 +25,7 @@ function Login() {
 
   function handleLogin(event) {
     event.preventDefault();
-    fetch("http://localhost:8000/users/login", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
