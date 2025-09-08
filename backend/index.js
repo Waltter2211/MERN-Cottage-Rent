@@ -29,7 +29,4 @@ mongoose
 app.listen(PORT, () => {
   console.log("Connected to server");
   console.log(`Website can be found in: http://localhost:${PORT}`);
-  console.log(PORT)
-  console.log(database)
-  console.log(process.env.JSONTOKEN)
 });
